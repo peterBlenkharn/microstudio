@@ -1,0 +1,17 @@
+/* —— Full-page Confetti Canvas —— */
+#confetti-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* —— Footer —— */
+.footer {
+  padding: 2rem 1rem;
+  font-size: .9rem;
+  text-align: center;
+  background: #07090f;
+}
