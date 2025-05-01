@@ -105,8 +105,8 @@ const SHAPE_GENERATORS = {
 function createConfettiPiece(container, x, y) {
   // pick random shape
   const types = Object.keys(SHAPE_GENERATORS);
-  const type = types[Math.floor(Math.random() * types.length)];
-  const el = SHAPE_GENERATORS[type]();
+  const type  = types[Math.floor(Math.random() * types.length)];
+  const el    = SHAPE_GENERATORS[type]();
 
   // style it
   const color = COLORS[Math.floor(Math.random() * COLORS.length)];
@@ -115,19 +115,35 @@ function createConfettiPiece(container, x, y) {
   const depth = random(0.5, 1.5);
 
   el.classList.add('confetti');
-  el.style.width        = type==='triangle' ? '' : `${size}px`;
-  el.style.height       = type==='triangle' ? '' : `${size}px`;
-  el.style.color        = color;
-  el.style.transform    = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${depth})`;
 
-  // store base for parallax
-  el.dataset.baseX      = x;
-  el.dataset.baseY      = y;
-  el.dataset.rotation   = rot;
-  el.dataset.depth      = depth;
+  // size for non-triangle
+  if (type !== 'triangle') {
+    el.style.width  = `${size}px`;
+    el.style.height = `${size}px`;
+  }
+
+  // fill logic
+  if (type === 'circle' || type === 'square') {
+    // solid CSS background for div-based shapes
+    el.style.backgroundColor = color;
+  } else {
+    // drives SVG fill (triangle) and text/bars (star, cross)
+    el.style.color = color;
+  }
+
+  // place + rotate + depth
+  el.style.transform = 
+    `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${depth})`;
+
+  // store for parallax
+  el.dataset.baseX    = x;
+  el.dataset.baseY    = y;
+  el.dataset.rotation = rot;
+  el.dataset.depth    = depth;
 
   container.append(el);
 }
+
 
 // ===== Parallax Update =====
 function updateParallax(mouseX, mouseY, scrollY) {
