@@ -1,5 +1,5 @@
 // ===== Configuration =====
-const NUM_CONFETTI = 160;
+const NUM_CONFETTI = 500;
 const COLORS = ['#FFD700','#FF2E63','#08D9D6','#EAEAEA'];
 
 // ===== Utility Functions =====
