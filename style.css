@@ -322,3 +322,11 @@ h1, h2, h3 { margin-bottom: .5em; }
   .hero-content h1 { font-size: 3.5rem; }
   .section { padding: 6rem 1rem; }
 }
+
+@media (max-width: 600px) {
+  .about-panels .panel {
+    clip-path: none;
+    padding: 3rem 0;
+  }
+}
+
