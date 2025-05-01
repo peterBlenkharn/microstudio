@@ -18,6 +18,11 @@
   max-height: 140px;
 }
 
+.game-art{
+  width: 100%;
+  display: block;
+}
+
 /* Title & tagline */
 .project-title {
   margin: 1rem 0 .25em;
