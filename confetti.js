@@ -175,9 +175,10 @@ function initConfetti() {
   document.addEventListener('scroll', () => {
     updateParallax(mx, my, window.scrollY);
   });
+    // after the for-loop that does createConfettiPiece(...)
+  console.log(`🌟 Appended ${container.children.length} confetti pieces (asked for ${NUM_CONFETTI})`);
 }
 
 initConfetti();
-  // after the for-loop that does createConfettiPiece(...)
-  console.log(`🌟 Appended ${container.children.length} confetti pieces (asked for ${NUM_CONFETTI})`);
+
 
