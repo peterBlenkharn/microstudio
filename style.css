@@ -28,6 +28,45 @@ h1, h2, h3 { margin-bottom: .5em; }
   z-index: -1;       /* important: sits behind all page content */
 }
 
+/* Base hero title */
+.hero-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;     /* baseline size for “studio for … IDEAS” */
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+
+/* “micro” small & cyan */
+.title-micro {
+  font-size: 0.6em;    /* 60% of .hero-title */
+  color: var(--cyan);
+  vertical-align: text-top;
+  margin-right: 0.25em;
+}
+
+/* “BIG” large & yellow */
+.title-big {
+  font-size: 2.5em;    /* 250% of .hero-title */
+  color: var(--yellow);
+  display: inline-block;
+  line-height: 1;
+  margin-right: 0.25em;
+}
+
+/* Responsive bump-up on larger screens */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .title-micro {
+    font-size: 0.6em;
+  }
+  .title-big {
+    font-size: 2.5em;
+  }
+}
 
 /* —— Utility —— */
 .btn {
