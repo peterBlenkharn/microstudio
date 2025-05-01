@@ -178,3 +178,6 @@ function initConfetti() {
 }
 
 initConfetti();
+  // after the for-loop that does createConfettiPiece(...)
+  console.log(`🌟 Appended ${container.children.length} confetti pieces (asked for ${NUM_CONFETTI})`);
+
