@@ -1,13 +1,47 @@
 /* —— Variables & Base —— */
 :root {
-  --bg: #0a0d16;
-  --cream: #f5f1e8;
-  --yellow: #ffd700;
-  --pink: #ff2e63;
-  --cyan: #08d9d6;
-  --gap: 1.5rem;
-  --max-width: 1200px;
+  /* —— Base Colours —— */
+  --bg:             #0a0d16;
+  --cream:          #f5f1e8;
+  --yellow:         #ffd700;
+  --pink:           #ff2e63;
+  --cyan:           #08d9d6;
+
+  /* —— Background Variants —— */
+  --bg-light:       #141a2b;  /* ~20% lighter */
+  --bg-dark:        #05060a;  /* ~20% darker */
+  --bg-very-light:  #1f2a45;  /* ~40% lighter */
+  --bg-very-dark:   #000000;  /* near black */
+
+  /* —— Cream Variants —— */
+  --cream-light:    #ffffff;  /* pure white */
+  --cream-dark:     #ded8cf;  /* ~20% darker */
+  --cream-very-light:#ffffff; /* same as light for near-white */
+  --cream-very-dark: #c2beb6; /* ~30% darker */
+
+  /* —— Yellow Variants —— */
+  --yellow-light:    #fff5b8; /* ~20% lighter */
+  --yellow-dark:     #e6c200; /* ~20% darker */
+  --yellow-very-light:#fffba3;/* ~40% lighter */
+  --yellow-very-dark: #b38f00;/* ~40% darker */
+
+  /* —— Pink Variants —— */
+  --pink-light:      #ff80a1; /* ~20% lighter */
+  --pink-dark:       #e6004d; /* ~20% darker */
+  --pink-very-light: #ffcce0; /* ~40% lighter */
+  --pink-very-dark:  #b2003f; /* ~40% darker */
+
+  /* —— Cyan Variants —— */
+  --cyan-light:      #57e3e0; /* ~20% lighter */
+  --cyan-dark:       #00bfb9; /* ~20% darker */
+  --cyan-very-light: #9ff2f0; /* ~40% lighter */
+  --cyan-very-dark:  #007c78; /* ~40% darker */
+
+  /* —— Layout Vars —— */
+  --gap:            1.5rem;
+  --max-width:      1200px;
 }
+
 * { box-sizing: border-box; margin:0; padding:0; }
 body {
   font-family: 'Inter', sans-serif;
@@ -341,15 +375,15 @@ h1, h2, h3 { margin-bottom: .5em; }
 /* panel-specific gradients */
 .panel-1 {
   --panel-bg-start: var(--pink);
-  --panel-bg-end: #d32f6b;   /* a touch darker */
+  --panel-bg-end: var(--pink-very-dark;   /* a touch darker */
 }
 .panel-2 {
   --panel-bg-start: var(--yellow);
-  --panel-bg-end: #cca300;
+  --panel-bg-end: var(--yellow-very-dark;
 }
 .panel-3 {
   --panel-bg-start: var(--cyan);
-  --panel-bg-end: #07b8b2;
+  --panel-bg-end: var(--cyan-very-dark);
 }
 
 /* —— Contrast-safe Text —— */
