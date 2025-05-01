@@ -144,6 +144,10 @@ h1, h2, h3 { margin-bottom: .5em; }
   margin-right: 0.25em;
 }
 
+.title-dot{
+  color: var--(--pink);
+}
+
 /* Responsive bump-up on larger screens */
 @media (min-width: 768px) {
   .hero-title {
