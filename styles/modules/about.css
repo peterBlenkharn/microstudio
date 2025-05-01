@@ -37,9 +37,9 @@
 }
 
 /* panel colours via custom-prop overrides */
-.panel-1 { --panel-bg-start: var(--pink-very-light);   --panel-bg-end: var(--pink-very-dark); }
-.panel-2 { --panel-bg-start: var(--yellow-very-light); --panel-bg-end: var(--yellow-very-dark); }
-.panel-3 { --panel-bg-start: var(--cyan-very-light);   --panel-bg-end: var(--cyan-very-dark); }
+.panel-1 { --panel-bg-start: var(--pink-light);   --panel-bg-end: var(--pink-very-dark); }
+.panel-2 { --panel-bg-start: var(--yellow-light); --panel-bg-end: var(--yellow-very-dark); }
+.panel-3 { --panel-bg-start: var(--cyan-light);   --panel-bg-end: var(--cyan-very-dark); }
 
 /* Inner content stays level */
 .panel__inner {
