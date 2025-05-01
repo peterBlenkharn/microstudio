@@ -1,0 +1,47 @@
+/* —— Buttons —— */
+.btn {
+  display: inline-block;
+  padding: .75em 1.5em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: .5em .25em;
+}
+.btn-primary   { background: var(--yellow); color: var(--bg); }
+.btn-secondary { background: var(--pink);   color: var(--bg); }
+.btn-tertiary  { background: var(--cyan);   color: var(--bg); }
+
+/* —— Card Grid —— */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: var(--gap);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* —— Base Card Styles —— */
+.card {
+  background: var(--cream);
+  color: var(--bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ensure every card’s button hugs the bottom */
+.card .btn {
+  margin-top: auto;
+}
+
+/* —— Icon Utility —— */
+.icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: .5em;
+  color: currentColor;
+}
