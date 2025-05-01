@@ -1,0 +1,42 @@
+:root {
+  /* —— Base Colours —— */
+  --bg:             #0a0d16;
+  --cream:          #f5f1e8;
+  --yellow:         #ffd700;
+  --pink:           #ff2e63;
+  --cyan:           #08d9d6;
+
+  /* —— Background Variants —— */
+  --bg-light:       #141a2b;
+  --bg-dark:        #05060a;
+  --bg-very-light:  #1f2a45;
+  --bg-very-dark:   #000000;
+
+  /* —— Cream Variants —— */
+  --cream-light:    #ffffff;
+  --cream-dark:     #ded8cf;
+  --cream-very-light:#ffffff;
+  --cream-very-dark: #c2beb6;
+
+  /* —— Yellow Variants —— */
+  --yellow-light:    #fff5b8;
+  --yellow-dark:     #e6c200;
+  --yellow-very-light:#fffba3;
+  --yellow-very-dark: #b38f00;
+
+  /* —— Pink Variants —— */
+  --pink-light:      #ff80a1;
+  --pink-dark:       #e6004d;
+  --pink-very-light: #ffcce0;
+  --pink-very-dark:  #b2003f;
+
+  /* —— Cyan Variants —— */
+  --cyan-light:      #57e3e0;
+  --cyan-dark:       #00bfb9;
+  --cyan-very-light: #9ff2f0;
+  --cyan-very-dark:  #007c78;
+
+  /* —— Layout Vars —— */
+  --gap:            1.5rem;
+  --max-width:      1200px;
+}
