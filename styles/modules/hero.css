@@ -1,0 +1,69 @@
+/* —— Navigation & Hero Section —— */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a,
+.logo {
+  color: var(--cream);
+  text-decoration: none;
+}
+.logo { font-weight: bold; }
+
+.hero {
+  position: relative;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: var(--cream);
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* —— “micro” & “BIG” Title Styles —— */
+.hero-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+.title-micro {
+  font-size: 0.6em;
+  color: var(--cyan);
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 0.25em;
+}
+.title-big {
+  font-size: 2.5em;
+  color: var(--yellow);
+  display: inline-block;
+  line-height: 1;
+  margin-right: 0.25em;
+}
+
+/* Responsive bump-ups */
+@media (min-width: 768px) {
+  .hero-content h1 { font-size: 3.5rem; }
+  .hero-title     { font-size: 3rem; }
+}
