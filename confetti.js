@@ -15,18 +15,30 @@ function shuffleArray(arr) {
 }
 
 // Generate evenly spaced but jittered grid points
-function generateGridPoints(cols, rows, width, height) {
+function generateGridPoints(cols, rows, width, height, count) {
   const pts = [];
-  for (let y = 0; y < rows; y++) {
-    for (let x = 0; x < cols; x++) {
-      const px = (x + Math.random()) * (width / cols);
-      const py = (y + Math.random()) * (height / rows);
+  const cellW   = width  / cols;
+  const cellH   = height / rows;
+  const jitterW = cellW   * 0.3;  // up to ±30% of cell width
+  const jitterH = cellH   * 0.3;  // up to ±30% of cell height
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      // cell centre
+      const cx = col * cellW + cellW / 2;
+      const cy = row * cellH + cellH / 2;
+      // jitter around centre
+      const px = cx + random(-jitterW, jitterW);
+      const py = cy + random(-jitterH, jitterH);
       pts.push([px, py]);
     }
   }
+
   shuffleArray(pts);
-  return pts;
+  // just take as many as we need
+  return pts.slice(0, count);
 }
+
 
 // ===== Shape Generators =====
 const SHAPE_GENERATORS = {
@@ -143,9 +155,10 @@ function initConfetti() {
   const H = window.innerHeight;
 
   // build an even grid of points
-  const cols = Math.floor(Math.sqrt(NUM_CONFETTI * (W / H)));
+  const cols = Math.ceil(Math.sqrt(NUM_CONFETTI * (W / H)));
   const rows = Math.ceil(NUM_CONFETTI / cols);
-  const points = generateGridPoints(cols, rows, W, H);
+  const points = generateGridPoints(cols, rows, W, H, NUM_CONFETTI);
+
 
   // create each piece
   for (let i = 0; i < NUM_CONFETTI; i++) {
