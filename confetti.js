@@ -1,6 +1,6 @@
 // ===== Configuration =====
 const NUM_CONFETTI = 500;
-const COLORS = ['#FFD700','#FF2E63','#08D9D6','#EAEAEA'];
+const COLORS = ['#FFD700','#FF2E63','#08D9D6'];
 
 // ===== Utility Functions =====
 function random(min, max) {
@@ -110,9 +110,9 @@ function createConfettiPiece(container, x, y) {
 
   // style it
   const color = COLORS[Math.floor(Math.random() * COLORS.length)];
-  const size  = random(8, 24);
+  const size  = random(12, 18);
   const rot   = random(0, 360);
-  const depth = random(0.5, 1.5);
+  const depth = random(0.5, 2.0);
 
   el.classList.add('confetti');
 
