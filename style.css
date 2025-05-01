@@ -130,7 +130,8 @@ h1, h2, h3 { margin-bottom: .5em; }
 .title-micro {
   font-size: 0.6em;    /* 60% of .hero-title */
   color: var(--cyan);
-  vertical-align: text-top;
+   display: inline-block;       /* ensure it’s treated as an inline box */
+  vertical-align: text-bottom; /* line up its bottom with the baseline of surrounding text */
   margin-right: 0.25em;
 }
 
@@ -176,6 +177,8 @@ h1, h2, h3 { margin-bottom: .5em; }
   gap: var(--gap);
   max-width: var(--max-width);
   margin: 0 auto;
+    /* grid items already stretch by default, but let’s be explicit */
+  align-items: stretch;
 }
 .card {
   background: var(--cream);
@@ -184,10 +187,17 @@ h1, h2, h3 { margin-bottom: .5em; }
   border-radius: 12px;
   text-align: left;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .card h3 { margin-top: .5em; }
 .card p { margin: .5em 0 1em; }
 .card .small { font-size: .9rem; }
+
+/* push every .btn to the bottom of its card */
+.card .btn {
+  margin-top: auto;
+}
 
 /* icons */
 .icon {
