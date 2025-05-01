@@ -19,6 +19,94 @@ h1, h2, h3 { margin-bottom: .5em; }
 .section { padding: 4rem 1rem; text-align: center; }
 .section-title { font-size: 2rem; margin-bottom: 2rem; }
 
+/* —— About / Features Strip —— */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: var(--gap);
+  max-width: var(--max-width);
+  margin: 2rem auto 0;
+}
+.feature {
+  position: relative;
+  background: var(--pink);
+  color: var(--cream);
+  padding: 2.5rem 1.5rem 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+.feature:nth-child(2) { background: var(--yellow); }
+.feature:nth-child(3) { background: var(--cyan); }
+.feature-icon {
+  position: absolute;
+  top: -1.5rem; left: 50%;
+  transform: translateX(-50%);
+  background: var(--cream);
+  color: var(--bg);
+  width: 3rem; height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.feature h3 {
+  margin-top: 2rem;  /* push below icon */
+  margin-bottom: .5em;
+  color: var(--bg);
+}
+.feature p {
+  font-size: .95rem;
+  line-height: 1.4;
+}
+
+/* —— Team Cards —— */
+.game-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;       /* we’ll style inner blocks */
+  overflow: hidden;
+}
+.game-art img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  max-height: 140px;
+}
+.project-title {
+  margin: 1rem 0 .25em;
+  color: var(--bg);
+}
+.tagline {
+  font-size: .9rem;
+  color: #333;
+  padding: 0 .75rem;
+  text-align: center;
+}
+.team-photo {
+  margin: 1rem 0;
+}
+.team-photo img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--cream);
+}
+.game-card .btn {
+  margin-bottom: 1rem;
+}
+
+/* —— Adjust card background back to cream —— */
+.game-card {
+  background: var(--cream);
+}
+
+
 #confetti-bg {
   position: fixed;
   top: 0; left: 0;
