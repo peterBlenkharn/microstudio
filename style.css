@@ -1,17 +1,107 @@
-/* ===== Confetti Background Container ===== */
-#confetti-bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: -1;
+/* —— Variables & Base —— */
+:root {
+  --bg: #0a0d16;
+  --cream: #f5f1e8;
+  --yellow: #ffd700;
+  --pink: #ff2e63;
+  --cyan: #08d9d6;
+  --gap: 1.5rem;
+  --max-width: 1200px;
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--cream);
+  background: var(--bg);
+  line-height: 1.5;
+}
+h1, h2, h3 { margin-bottom: .5em; }
+.section { padding: 4rem 1rem; text-align: center; }
+.section-title { font-size: 2rem; margin-bottom: 2rem; }
+
+/* —— Utility —— */
+.btn {
+  display: inline-block;
+  padding: .75em 1.5em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: .5em .25em;
+}
+.btn-primary { background: var(--yellow); color: var(--bg); }
+.btn-secondary { background: var(--pink);   color: var(--bg); }
+.btn-tertiary { background: var(--cyan);   color: var(--bg); }
+
+/* —— Grid Cards —— */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: var(--gap);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.card {
+  background: var(--cream);
+  color: var(--bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: left;
+  position: relative;
+}
+.card h3 { margin-top: .5em; }
+.card p { margin: .5em 0 1em; }
+.card .small { font-size: .9rem; }
+
+/* icons */
+.icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: .5em;
+  color: currentColor;
 }
 
-/* ===== Generic Confetti Piece Styles ===== */
-.confetti {
-  position: absolute;
-  transform-origin: center;
-  will-change: transform;
-  color: currentColor; /* for SVG shapes using currentColor */
+/* —— Hero —— */
+.hero {
+  position: relative;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: var(--cream);
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a { color: var(--cream); text-decoration: none; }
+.logo { font-weight: bold; color: var(--cream); }
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.hero-cta { display: flex; flex-wrap: wrap; justify-content: center; }
+
+/* —— Footer —— */
+.footer {
+  padding: 2rem 1rem;
+  font-size: .9rem;
+  text-align: center;
+  background: #07090f;
+}
+
+/* —— Responsive tweaks —— */
+@media (min-width: 768px) {
+  .hero-content h1 { font-size: 3.5rem; }
+  .section { padding: 6rem 1rem; }
 }
