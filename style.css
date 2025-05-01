@@ -1,1 +1,17 @@
+/* ===== Confetti Background Container ===== */
+#confetti-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
 
+/* ===== Generic Confetti Piece Styles ===== */
+.confetti {
+  position: absolute;
+  transform-origin: center;
+  will-change: transform;
+  color: currentColor; /* for SVG shapes using currentColor */
+}
