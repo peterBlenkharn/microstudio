@@ -64,7 +64,6 @@
 
 /* 3. Card body with its own padding */
 .card-body {
-  padding: 1.5rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
