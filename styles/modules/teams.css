@@ -40,3 +40,98 @@
   border-radius: 50%;
   border: 3px solid var(--cream);
 }
+
+
+/* 1. Base reset for game-card */
+.game-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--cream);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 2. Full-bleed header image */
+.game-art img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: block;
+}
+
+/* 3. Card body with its own padding */
+.card-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 4. Punchy title */
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5em;
+  color: var(--bg);
+}
+
+/* 5. Tagline styling */
+.tagline {
+  font-size: 1rem;
+  color: #333; /* or var(--bg-dark) if you prefer */
+  margin-bottom: 1rem;
+  max-width: 85%;
+}
+
+/* 6. Rectangular team photo */
+.team-photo {
+  padding: 0.5rem; /* gives breathing room */
+}
+.team-photo img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+}
+
+/* 7. Two-button footer */
+.card-cta {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.5rem 1.5rem;
+}
+.card-cta .btn {
+  flex: 1;
+  text-align: center;
+}
+
+/* 8. Steam-style button */
+.btn-steam {
+  background: #171a21; /* Steam dark blue-gray */
+  color: var(--cream);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-steam .btn-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5em;
+  /* ensure your PNG inverts correctly or use a white version */
+}
+
+/* 9. Responsive tweaks */
+@media (max-width: 600px) {
+  .card-cta {
+    flex-direction: column;
+  }
+}
