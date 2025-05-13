@@ -129,7 +129,7 @@
   <section id="teams" class="section teams">
   <h2 class="section-title">Meet the Teams</h2>
   <div class="cards">
-    <div class="card game-card">
+    <div class="card game-card" data-team="Lost Museum Team">
       
       <!-- FULL-BLEED HEADER IMAGE -->
       <div class="game-art">
@@ -147,14 +147,14 @@
       
       <!-- CARD CTA: two buttons, equal width -->
       <div class="card-cta">
-        <a href="#details" class="btn btn-primary">Learn More</a>
+        <button class="btn btn-primary btn-learn-more">Learn More</button>
         <a href="#wishlist" class="btn btn-steam">
           <img src="icons/steamicon.png" alt="" class="btn-icon">Wishlist
         </a>
       </div>
     </div>
 
-        <div class="card game-card">
+    <div class="card game-card" data-team="Ghrystlyst Team">
       
       <!-- FULL-BLEED HEADER IMAGE -->
       <div class="game-art">
@@ -172,14 +172,14 @@
       
       <!-- CARD CTA: two buttons, equal width -->
       <div class="card-cta">
-        <a href="#details" class="btn btn-primary">Learn More</a>
+        <button class="btn btn-primary btn-learn-more">Learn More</button>
         <a href="#wishlist" class="btn btn-steam">
           <img src="icons/steamicon.png" alt="" class="btn-icon">Wishlist
         </a>
       </div>
     </div>
 
-        <div class="card game-card">
+    <div class="card game-card" data-team="Parapet Team">
       
       <!-- FULL-BLEED HEADER IMAGE -->
       <div class="game-art">
@@ -197,15 +197,17 @@
       
       <!-- CARD CTA: two buttons, equal width -->
       <div class="card-cta">
-        <a href="#details" class="btn btn-primary">Learn More</a>
+        <button class="btn btn-primary btn-learn-more">Learn More</button>
         <a href="#wishlist" class="btn btn-steam">
           <img src="icons/steamicon.png" alt="" class="btn-icon">Wishlist
         </a>
       </div>
     </div>
     
-    <!-- Repeat .game-card for Team A and B -->
   </div>
+    
+  <!-- Added team details toggleable area -->
+  <div id="team-details" class="team-details" hidden></div>
     
   </section>
 
