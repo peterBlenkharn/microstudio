@@ -1,101 +1,29 @@
-/* Team Details Panel */
-.team-details {
-  margin-top: 2rem;
-  padding: 2rem;
-  background: var(--cream);
-  border-radius: 12px;
+/* Panel & Carousel */
+.team-details { margin-top:2rem; padding:2rem; background:var(--cream); border-radius:12px; }
+.member-carousel {
+  display:flex; overflow-x:auto; gap:var(--gap);
+  scroll-snap-type:x mandatory; padding-bottom:1rem;
 }
+.member-carousel::-webkit-scrollbar { display:none; }
+.member-card { flex:0 0 320px; scroll-snap-align:start; background:#fff; border:1px solid var(--bg-light); border-radius:8px; padding:1rem; text-align:center; }
 
-/* Grid of Member Cards */
-.member-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--gap);
-  margin-top: 1rem;
-}
+/* Profile */
+.member-photo { width:80px;height:80px; border-radius:50%; object-fit:cover; margin:0 auto .5rem; }
+.member-name { font-size:1.1rem; margin:.25em 0; }
+.member-links { display:flex; justify-content:center; gap:.5em; margin-bottom:.5em; }
+.link-icon { width:20px;height:20px; }
+.member-title{ font-size:.9rem; color:var(--bg-dark); margin:.5em 0; }
+.member-blurb{ font-size:.85rem; line-height:1.3; margin-bottom:1em; }
 
-/* Individual Member Card */
-.member-card {
-  background: #fff;
-  border: 1px solid var(--bg-light);
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-}
+/* Games row */
+.member-games { display:flex; gap:.5rem; overflow-x:auto; padding-bottom:.5rem; }
+.game-link { display:flex; flex-direction:column; align-items:center; font-size:.75rem; text-decoration:none; color:var(--bg); }
+.game-thumb { width:64px; aspect-ratio:2/3; background-size:cover; background-position:center; border-radius:4px; }
+.game-thumb.placeholder { background:var(--bg-light); }
 
-.member-photo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
-}
+/* Drinks & Snacks */
+.member-drink, .member-snack { display:inline-flex; align-items:center; gap:.5em; margin:.5em .25em; }
+.drink-thumb, .snack-thumb { width:32px;height:32px; border-radius:4px; object-fit:cover; }
 
-.member-name {
-  font-size: 1.1rem;
-  margin-bottom: 0.25em;
-}
-
-.member-title {
-  font-size: 0.9rem;
-  color: var(--bg-dark);
-  margin-bottom: 0.5em;
-}
-
-.member-blurb {
-  font-size: 0.85rem;
-  line-height: 1.3;
-  margin-bottom: 1em;
-}
-
-/* Favourite Games */
-.member-games {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75em;
-}
-.game-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.75rem;
-  text-decoration: none;
-  color: var(--bg);
-}
-.game-thumb {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 0.25em;
-}
-
-/* Drink & Snack */
-.member-drink,
-.member-snack {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  margin: 0.5em 0.25em;
-}
-.drink-thumb,
-.snack-thumb {
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-/* Profile / Social Links */
-.member-links {
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-  margin-top: 0.75em;
-}
-.link-icon {
-  width: 20px;
-  height: 20px;
-}
+/* Responsive */
+@media(max-width:600px){ .member-card{ flex:0 0 80%; } }
