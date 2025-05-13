@@ -1,0 +1,101 @@
+/* Team Details Panel */
+.team-details {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--cream);
+  border-radius: 12px;
+}
+
+/* Grid of Member Cards */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--gap);
+  margin-top: 1rem;
+}
+
+/* Individual Member Card */
+.member-card {
+  background: #fff;
+  border: 1px solid var(--bg-light);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.member-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.member-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.25em;
+}
+
+.member-title {
+  font-size: 0.9rem;
+  color: var(--bg-dark);
+  margin-bottom: 0.5em;
+}
+
+.member-blurb {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  margin-bottom: 1em;
+}
+
+/* Favourite Games */
+.member-games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75em;
+}
+.game-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: var(--bg);
+}
+.game-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.25em;
+}
+
+/* Drink & Snack */
+.member-drink,
+.member-snack {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.5em 0.25em;
+}
+.drink-thumb,
+.snack-thumb {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Profile / Social Links */
+.member-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 0.75em;
+}
+.link-icon {
+  width: 20px;
+  height: 20px;
+}
