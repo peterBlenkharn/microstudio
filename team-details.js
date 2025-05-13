@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let openTeamKey = null;
 
   // 1. Fetch team data once
-  fetch('/teamData.json')
+  fetch('/teamdata.json')
     .then(resp => resp.json())
     .then(json => { teamData = json; })
-    .catch(err => console.error('Error loading teamData.json:', err));
+    .catch(err => console.error('Error loading teamdata.json:', err));
 
   // 2. Attach click handlers
   document.querySelectorAll('.btn-learn-more').forEach(button => {
