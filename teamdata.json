@@ -100,17 +100,17 @@
       "Favourite Games": {
         "Game 1": {
           "Game Name": "No More Room In Hell",
-          "Steam Link": "",
+          "Steam Link": "https://store.steampowered.com/app/224260/No_More_Room_in_Hell/",
           "Image Name": "noMoreRoomInHell"
         },
         "Game 2": {
           "Game Name": "Creativerse",
-          "Steam Link": "",
+          "Steam Link": "https://store.steampowered.com/app/280790/Creativerse/",
           "Image Name": "creativerse"
         },
         "Game 3": {
           "Game Name": "For the King",
-          "Steam Link": "",
+          "Steam Link": "https://store.steampowered.com/app/527230/For_The_King/",
           "Image Name": "forTheKing"
         }
       },
@@ -140,9 +140,9 @@
       "Blurb": "I am a game developer who has just finished a degree in games development at university. In my spare time I’m likely either reading a book or making game mechanics for different projects. ",
       "Favourite Games": {
         "Game 1": {
-          "Game Name": "Animal Crossing DS",
+          "Game Name": "Animal Crossing",
           "Steam Link": "",
-          "Image Name": "animalCrossingDS"
+          "Image Name": "animalCrossing"
         },
         "Game 2": {
           "Game Name": "It Takes Two ",
@@ -151,7 +151,7 @@
         },
         "Game 3": {
           "Game Name": "Supermarket simulator",
-          "Steam Link": "",
+          "Steam Link": "https://store.steampowered.com/app/2670630/Supermarket_Simulator/",
           "Image Name": "supermarketSimulator"
         }
       },
@@ -225,12 +225,12 @@
       "Favourite Games": {
         "Game 1": {
           "Game Name": "Inscryption",
-          "Steam Link": "",
+          "Steam Link": "https://store.steampowered.com/app/1092790/Inscryption/",
           "Image Name": "inscryption"
         },
         "Game 2": {
           "Game Name": "Pony Island",
-          "Steam Link": "",
+          "Steam Link": "https://store.steampowered.com/app/405640/Pony_Island/",
           "Image Name": "ponyIsland"
         },
         "Game 3": {
@@ -267,7 +267,7 @@
       "Favourite Games": {
         "Game 1": {
           "Game Name": "Black Ops 3",
-          "Steam Link": "",
+          "Steam Link": "https://store.steampowered.com/app/311210/Call_of_Duty_Black_Ops_III/",
           "Image Name": "blackOps3"
         },
         "Game 2": {
@@ -391,12 +391,12 @@
       "Favourite Games": {
         "Game 1": {
           "Game Name": "Elden Ring",
-          "Steam Link": "//store.steampowered.com/app/1245620/ELDEN_RING/",
+          "Steam Link": "https://store.steampowered.com/app/1245620/ELDEN_RING/",
           "Image Name": "eldenRing"
         },
         "Game 2": {
           "Game Name": "Hollow Knight",
-          "Steam Link": "//store.steampowered.com/app/367520/Hollow_Knight/",
+          "Steam Link": "https://store.steampowered.com/app/367520/Hollow_Knight/",
           "Image Name": "hollowKnight"
         },
         "Game 3": {
@@ -600,7 +600,7 @@
         "Game 1": {
           "Game Name": "The Elder Scrolls III: Morrowind",
           "Steam Link": "https://store.steampowered.com/app/22320/The_Elder_Scrolls_III_Morrowind_Game_of_the_Year_Edition/",
-          "Image Name": "theElderScrollsIiiMorrowind"
+          "Image Name": "theElderScrollsMorrowind"
         },
         "Game 2": {
           "Game Name": "Devil May Cry 1",
