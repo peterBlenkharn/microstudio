@@ -1,0 +1,712 @@
+{
+  "Lost Museum Team": {
+    "Gabriele Poma": {
+      "Profile Image Name": "gabrielePoma",
+      "Nationalities": [
+        "IT"
+      ],
+      "Links": {
+        "Github": "",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "https://gabrielepoma.com/",
+        "LinkedIn": "www.linkedin.com/in/gabriele-poma-615851332",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "Gabriele is balanced sportive and nerdy guy with an interest in computing hardware and a passion for Game design and development which he is currently studying at the University of Greenwich.",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Assassin's Creed Odyssey",
+          "Steam Link": "https://store.steampowered.com/app/812140/Assassins_Creed_Odyssey/",
+          "Image Name": "assassinsCreedOdyssey"
+        },
+        "Game 2": {
+          "Game Name": "Dragon Ball Xenoverse 2 -",
+          "Steam Link": "https://store.steampowered.com/app/454650/DRAGON_BALL_XENOVERSE_2/",
+          "Image Name": "dragonBallXenoverse2"
+        },
+        "Game 3": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Lemon Iced Tea",
+        "Image Name": "lemonIcedTea"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Prawn Cocktail Crisps",
+        "Image Name": "prawnCocktailCrisps"
+      }
+    },
+    "Daniela Bunici": {
+      "Profile Image Name": "danielaBunici",
+      "Nationalities": [
+        "MD"
+      ],
+      "Links": {
+        "Github": "https://github.com/daniKitsu",
+        "Instagram": "https://www.instagram.com/danielasergeyvna/",
+        "Tiktok": "",
+        "Personal Website": "",
+        "LinkedIn": "https://www.linkedin.com/in/daniela-bunici-3531822a3/",
+        "Portfolio": "https://danielabunici.artstation.com/",
+        "itch.io": ""
+      },
+      "Blurb": "Daniela is a passionate graduate student of Games Design & Development at the University of Greenwich, specialising in environment design and working as a versatile 3D artist. She’s driven by a love for crafting immersive, visually compelling game worlds and making every scene feel alive and engaging. Whether it's building lush landscapes or stylised environments, Daniela is all about making games not just playable, but beautiful. In her spare time, she's always exploring new techniques in 3D modelling and animation, constantly expanding her creative toolkit.\n",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Atomic Heart",
+          "Steam Link": "https://store.steampowered.com/app/668580/Atomic_Heart/",
+          "Image Name": "atomicHeart"
+        },
+        "Game 2": {
+          "Game Name": "Stray",
+          "Steam Link": "https://store.steampowered.com/app/1332010/Stray/",
+          "Image Name": "stray"
+        },
+        "Game 3": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Fanta Grape Soda",
+        "Image Name": "fantaGrapeSoda"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Fried Crab Crisps",
+        "Image Name": "friedCrabCrisps"
+      }
+    },
+    "Patryk Parzelski": {
+      "Profile Image Name": "patrykParzelski",
+      "Nationalities": [
+        "GB", "PL"
+      ],
+      "Links": {
+        "Github": "",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "https://patrykparzelski.artstation.com/",
+        "LinkedIn": "https://www.linkedin.com/in/patrykparzelski",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "Patryk has always been interested in gaming, constantly playing varying genres of games to try and get a 'taste of them all', currently studying Games Design and Development at the University of Greenwich, specialising down the 3D Pathway. In my spare time, I try and learn different software related to my specialisation, always trying to improve areas I lack in and create varying art styles to challenge myself.",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "No More Room In Hell",
+          "Steam Link": "",
+          "Image Name": "noMoreRoomInHell"
+        },
+        "Game 2": {
+          "Game Name": "Creativerse",
+          "Steam Link": "",
+          "Image Name": "creativerse"
+        },
+        "Game 3": {
+          "Game Name": "For the King",
+          "Steam Link": "",
+          "Image Name": "forTheKing"
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Rubicon Black Cherry",
+        "Image Name": "rubiconBlackCherry"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Nik Naks - Hot & Spicy",
+        "Image Name": "niknaksHotAndSpicy"
+      }
+    },
+    "Molly Goodall": {
+      "Profile Image Name": "mollyGoodall",
+      "Nationalities": [
+        "GB"
+      ],
+      "Links": {
+        "Github": "https://github.com/mollyjulia",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "https://mollygoodall04.wixsite.com/mollygoodallportfolio",
+        "LinkedIn": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+        "Portfolio": "",
+        "itch.io": "https://mollyjulia.itch.io/"
+      },
+      "Blurb": "I am a game developer who has just finished a degree in games development at university. In my spare time I’m likely either reading a book or making game mechanics for different projects. ",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Animal Crossing DS",
+          "Steam Link": "",
+          "Image Name": "animalCrossingDS"
+        },
+        "Game 2": {
+          "Game Name": "It Takes Two ",
+          "Steam Link": "https://store.steampowered.com/app/1426210/It_Takes_Two/",
+          "Image Name": "itTakesTwo"
+        },
+        "Game 3": {
+          "Game Name": "Supermarket simulator",
+          "Steam Link": "",
+          "Image Name": "supermarketSimulator"
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Lemonade",
+        "Image Name": "lemonade"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Boost Bar",
+        "Image Name": "boostBar"
+      }
+    },
+    "Naomi Barnes": {
+      "Profile Image Name": "naomiBarnes",
+      "Nationalities": [
+        "GB"
+      ],
+      "Links": {
+        "Github": "https://github.com/NaomiVR",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "",
+        "LinkedIn": "https://uk.linkedin.com/in/naomi-barnes-824ab6264",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "Naomi has spent a large portion of her life playing games, programming and reading, While partaking in the micro studio she likes to tinker with varying languages being kotlin, java, python and C++ alongside C#.",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Realm Grinder",
+          "Steam Link": "https://store.steampowered.com/app/610080/Realm_Grinder/",
+          "Image Name": "realmGrinder"
+        },
+        "Game 2": {
+          "Game Name": "Stellaris",
+          "Steam Link": "https://store.steampowered.com/app/281990/Stellaris/",
+          "Image Name": "stellaris"
+        },
+        "Game 3": {
+          "Game Name": "Gunfire Reborn",
+          "Steam Link": "https://store.steampowered.com/app/1217060/Gunfire_Reborn/",
+          "Image Name": "gunfireReborn"
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Chocolate Milk",
+        "Image Name": "chocolateMilk"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Strawberry Maoam Strips",
+        "Image Name": "strawberryMaoamStrips"
+      }
+    }
+  },
+  "Ghrystlyst Team": {
+    "Andreea Pestrescu": {
+      "Profile Image Name": "andreeaPestrescu",
+      "Nationalities": [
+        "RO"
+      ],
+      "Links": {
+        "Github": "https://github.com/andree134",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "http://andreea.test.ro",
+        "LinkedIn": "https://www.linkedin.com/in/andreea-petrescu-4083b1222",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "Andreea is a soon to be a game design graduate with experience in shader programming, programming and Arduino systems. She likes cherries.",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Inscryption",
+          "Steam Link": "",
+          "Image Name": "inscryption"
+        },
+        "Game 2": {
+          "Game Name": "Pony Island",
+          "Steam Link": "",
+          "Image Name": "ponyIsland"
+        },
+        "Game 3": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Cherry Lucozade",
+        "Image Name": "cherryLucozade"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Malboro Touch XL",
+        "Image Name": "cigarettes"
+      }
+    },
+    "Justin Tawan Ward": {
+      "Profile Image Name": "justinTawanWard",
+      "Nationalities": [
+        "GB",
+        "TH"
+      ],
+      "Links": {
+        "Github": "https://github.com/TinTawan",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "https://www.justinward.uk",
+        "LinkedIn": "https://www.linkedin.com/in/justintward/",
+        "Portfolio": "",
+        "itch.io": "https://tawantin.itch.io/"
+      },
+      "Blurb": "I'm a graduate games development student, Outstanding TIGA Graduate of the Year 2025: Programmer and finalist in the TIGA Best Student Game 2024 award. I'd say I'm a resilient and committed game dev and I hope to go into the games industry.",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Black Ops 3",
+          "Steam Link": "",
+          "Image Name": "blackOps3"
+        },
+        "Game 2": {
+          "Game Name": "Kill Bug",
+          "Steam Link": "https://store.steampowered.com/app/2211730/KILLBUG/",
+          "Image Name": "killBug"
+        },
+        "Game 3": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Dr Pepper",
+        "Image Name": "drPepper"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Vanilla Latte Oreos",
+        "Image Name": "vanillaLatteOreos"
+      }
+    },
+    "Elie Khoubbieh": {
+      "Profile Image Name": "elieKhoubbieh",
+      "Nationalities": [
+        "IT",
+        "LB"
+      ],
+      "Links": {
+        "Github": "https://github.com/ElieGre",
+        "Instagram": "https://www.instagram.com/elie.jpeg/",
+        "Tiktok": "",
+        "Personal Website": "https://eliekhoubbieh.dev/",
+        "LinkedIn": "https://www.linkedin.com/in/elie-khoubbieh/",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "Elie is a passionate and imaginative game designer who’s been obsessed with games since the age of three. With a particular love for level design, he combines deep theoretical knowledge—like flow theory and game analysis—with playful, unconventional ideas to craft experiences that are both absurd and mechanically solid. Whether it’s a high-stakes casino takedown in The House Always Wins or chaotic Bathtub Racing, his games blend critical thinking with a personal touch of creative chaos. Elie thrives on building everything from materials and geometry to player experience, rigorously playtesting every element to ensure tight, engaging gameplay.",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Balatro",
+          "Steam Link": "https://store.steampowered.com/app/2379780/Balatro/",
+          "Image Name": "balatro"
+        },
+        "Game 2": {
+          "Game Name": "Dota 2",
+          "Steam Link": "https://store.steampowered.com/app/570/Dota_2/",
+          "Image Name": "dota2"
+        },
+        "Game 3": {
+          "Game Name": "Rematch",
+          "Steam Link": "https://store.steampowered.com/app/2138720/REMATCH/",
+          "Image Name": "rematch"
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Peach Iced Tea",
+        "Image Name": "peachIcedTea"
+      },
+      "Favourite Snack": {
+        "Snack Name": "White Chocolate Cookies",
+        "Image Name": "whiteChocolateCookies"
+      }
+    },
+    "Ivan Ivanov Kapitanski": {
+      "Profile Image Name": "ivanIvanovKapitanski",
+      "Nationalities": [
+        "BG"
+      ],
+      "Links": {
+        "Github": "https://github.com/tsar-ivan",
+        "Instagram": "https://www.instagram.com/ivan.k.jr",
+        "Tiktok": "",
+        "Personal Website": "",
+        "LinkedIn": "https://uk.linkedin.com/in/ivan-kapitanski-536402208",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "Ivan is an avid gamer and metalhead with a lifelong passion for programming, and an aspiring games developer. Despite his sometimes questionable coding style and habits, there is no programming task that he can't solve both quickly and efficiently, whether solo or as part of a team. When he isn't working on his projects, he can often be found buried in books about history, philosophy, and politics, unless he has spontaneously decided to go abroad with his friends. You want anything done? Just brief him on the problem, give him a source of caffeine, and watch!",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Europa Universalis IV",
+          "Steam Link": "https://store.steampowered.com/app/236850/Europa_Universalis_IV/",
+          "Image Name": "EUIV"
+        },
+        "Game 2": {
+          "Game Name": "World of Warships",
+          "Steam Link": "https://store.steampowered.com/app/552990/World_of_Warships/",
+          "Image Name": "worldOfWarships"
+        },
+        "Game 3": {
+          "Game Name": "Metal Gear Solid V",
+          "Steam Link": "https://store.steampowered.com/app/287700/METAL_GEAR_SOLID_V_THE_PHANTOM_PAIN/",
+          "Image Name": "metalGearSolidV"
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Peach Monster Energy",
+        "Image Name": "peachMonster"
+      },
+      "Favourite Snack": {
+        "Snack Name": "7 Days Croissant",
+        "Image Name": "7DaysCroissant"
+      }
+    },
+    "Josh Gorton": {
+      "Profile Image Name": "joshGorton",
+      "Nationalities": [
+        "GB"
+      ],
+      "Links": {
+        "Github": "",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "https://joshua8212.wixsite.com/joshua-gorton---port",
+        "LinkedIn": "https://www.linkedin.com/in/joshua-gorton-641221349",
+        "Portfolio": "",
+        "itch.io": "https://generaljdg.itch.io/"
+      },
+      "Blurb": "Josh is a game designer/programmer who studied at university of Greenwich for game design and development. And he cooks part time ",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Elden Ring",
+          "Steam Link": "//store.steampowered.com/app/1245620/ELDEN_RING/",
+          "Image Name": "eldenRing"
+        },
+        "Game 2": {
+          "Game Name": "Hollow Knight",
+          "Steam Link": "//store.steampowered.com/app/367520/Hollow_Knight/",
+          "Image Name": "hollowKnight"
+        },
+        "Game 3": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Dr Pepper",
+        "Image Name": "drPepper"
+      },
+      "Favourite Snack": {
+        "Snack Name": "White Kinder Bueno",
+        "Image Name": "whiteKinderBueno"
+      }
+    }
+  },
+  "Parapet Team": {
+    "Roberto Scialpi": {
+      "Profile Image Name": "robertoScialpi",
+      "Nationalities": [
+        "IT"
+      ],
+      "Links": {
+        "Github": "",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "",
+        "LinkedIn": "",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        },
+        "Game 2": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        },
+        "Game 3": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "",
+        "Image Name": ""
+      },
+      "Favourite Snack": {
+        "Snack Name": "",
+        "Image Name": ""
+      }
+    },
+    "Serhii Koslov": {
+      "Profile Image Name": "serhiiKoslov",
+      "Nationalities": [
+        "IT"
+      ],
+      "Links": {
+        "Github": "",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "",
+        "LinkedIn": "",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        },
+        "Game 2": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        },
+        "Game 3": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "",
+        "Image Name": ""
+      },
+      "Favourite Snack": {
+        "Snack Name": "",
+        "Image Name": ""
+      }
+    },
+    "Harry Hall": {
+      "Profile Image Name": "harryHall",
+      "Nationalities": [
+        "GB"
+      ],
+      "Links": {
+        "Github": "",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "",
+        "LinkedIn": "",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        },
+        "Game 2": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        },
+        "Game 3": {
+          "Game Name": "",
+          "Steam Link": "",
+          "Image Name": ""
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "",
+        "Image Name": ""
+      },
+      "Favourite Snack": {
+        "Snack Name": "",
+        "Image Name": ""
+      }
+    },
+    "Antonio Greco": {
+      "Profile Image Name": "antonioGreco",
+      "Nationalities": [
+        "IT"
+      ],
+      "Links": {
+        "Github": "https://github.com/Hurock",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "https://vitantoniogreco.co.uk",
+        "LinkedIn": "https://www.linkedin.com/in/vitantonio-greco-108517192/",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "Antonio is a passionate game developer focused on designing compelling gameplay mechanics and building powerful tools that enhance player experience. Currently developing a project for Microstudio while also working on personal game ideas, he thrives on blending technical skill with creative vision. Outside of game development, they're an avid Warhammer miniature painter, enthusiastic cook, DIY tinkerer, and regular at the gym bringing the same focus and energy to life as they do to code. Known for their curiosity, dedication, and hands-on mindset, they’re always looking to push boundaries and craft something meaningful.",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Monster Hunter",
+          "Steam Link": "https://store.steampowered.com/app/2246340/Monster_Hunter_Wilds/",
+          "Image Name": "monsterHunter"
+        },
+        "Game 2": {
+          "Game Name": "Shadow of Colossus",
+          "Steam Link": "",
+          "Image Name": "shadowOfColossus"
+        },
+        "Game 3": {
+          "Game Name": "Dragon Quest",
+          "Steam Link": "https://store.steampowered.com/app/1295510/DRAGON_QUEST_XI_S_Echoes_of_an_Elusive_Age__Definitive_Edition/",
+          "Image Name": "dragonQuest"
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Espresso",
+        "Image Name": "espresso"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Nutella Croissant",
+        "Image Name": "nutellaCroissant"
+      }
+    },
+    "Ishan Choudhury": {
+      "Profile Image Name": "ishanChoudhury",
+      "Nationalities": [
+        "BD",
+        "GB"
+      ],
+      "Links": {
+        "Github": "https://github.com/ishanchoudhury05",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "https://ishanchoudhury.uk/",
+        "LinkedIn": "https://www.linkedin.com/in/ishan-choudhury/",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "Ishan is a tried and true nerd. An individual who enjoys playing games and making games. Believe it or not, he studies Game Development in the University of Greenwich! A member of the Micro Studio crew working as a programmer. In his down time he enjoys learning and messing around with any electronic device possible and indulging in games from any time period. Oh, and he uses Arch btw.",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "The Elder Scrolls III: Morrowind",
+          "Steam Link": "https://store.steampowered.com/app/22320/The_Elder_Scrolls_III_Morrowind_Game_of_the_Year_Edition/",
+          "Image Name": "theElderScrollsIiiMorrowind"
+        },
+        "Game 2": {
+          "Game Name": "Devil May Cry 1",
+          "Steam Link": "https://store.steampowered.com/app/631510/Devil_May_Cry_HD_Collection/",
+          "Image Name": "devilMayCry1"
+        },
+        "Game 3": {
+          "Game Name": "Metro Exodus",
+          "Steam Link": "https://store.steampowered.com/app/412020/Metro_Exodus/",
+          "Image Name": "metroExodus"
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Aussie Lemonade Monster",
+        "Image Name": "aussieLemonadeMonster"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Dried Seaweed Strips",
+        "Image Name": "driedSeaweedStrips"
+      }
+    }
+  },
+  "Management Team": {
+    "Peter Blenkharn": {
+      "Title": "Lecturer / Dev / Creative",
+      "Profile Image Name": "peterBlenkharn",
+      "Nationalities": [
+        "GB"
+      ],
+      "Links": {
+        "Github": "https://github.com/peterBlenkharn",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "https://www.peterblenkharn.com/",
+        "LinkedIn": "linkedin.com/in/peterblenkharn",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "Slay the Spire",
+          "Steam Link": "https://store.steampowered.com/app/646570/Slay_the_Spire/",
+          "Image Name": "slayTheSpire"
+        },
+        "Game 2": {
+          "Game Name": "DREDGE",
+          "Steam Link": "https://store.steampowered.com/app/1562430/DREDGE/",
+          "Image Name": "dredge"
+        },
+        "Game 3": {
+          "Game Name": "Cities Skylines II",
+          "Steam Link": "https://store.steampowered.com/app/949230/Cities_Skylines_II/",
+          "Image Name": "citiesSkylines2"
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Diet Coke",
+        "Image Name": "dietCoke"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Chilli Lime Crunchips",
+        "Image Name": "chilliLimeCrunchips"
+      }
+    },
+    "Andrei Copascenu": {
+      "Title": "University Technician",
+      "Profile Image Name": "andreiCopascenu",
+      "Nationalities": [
+        "RO"
+      ],
+      "Links": {
+        "Github": "",
+        "Instagram": "",
+        "Tiktok": "",
+        "Personal Website": "",
+        "LinkedIn": "",
+        "Portfolio": "",
+        "itch.io": ""
+      },
+      "Blurb": "Andrei is absolutely sick",
+      "Favourite Games": {
+        "Game 1": {
+          "Game Name": "The Witcher 3",
+          "Steam Link": "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+          "Image Name": "theWitcher3"
+        },
+        "Game 2": {
+          "Game Name": "Mass Effect 2",
+          "Steam Link": "https://store.steampowered.com/app/2362420/Mass_Effect_2_2010_Edition/",
+          "Image Name": "massEffect2"
+        },
+        "Game 3": {
+          "Game Name": "Life is Strange",
+          "Steam Link": "https://store.steampowered.com/app/1265920/Life_is_Strange_Remastered/",
+          "Image Name": "listIsStrange"
+        }
+      },
+      "Favourite Drink": {
+        "Drink Name": "Water",
+        "Image Name": "water"
+      },
+      "Favourite Snack": {
+        "Snack Name": "Oreos",
+        "Image Name": "oreos"
+      }
+    }
+  }
+}
