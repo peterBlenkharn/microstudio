@@ -1,127 +1,151 @@
-/* 1. Details panel full-width + reduced height */
-.team-details {
-  max-width: var(--max-width);
-  margin: 2rem auto;
-  padding: 1.8rem;
-  background: var(--cream);
-  border-radius: 12px;
-  /* reduce height by 10% via padding and line-heights */
-}
-
-/* Thumbnail list on left */
+/* Thumbnail list: images + names */
 .member-thumbs {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: var(--gap);
   overflow-x: auto;
+  padding-bottom: 1rem;
 }
-.thumb-btn {
-  background: var(--pink-light);
-  border: none;
-  padding: 0.5em 1em;
-  border-radius: 4px;
+.thumb {
+  text-align: center;
   cursor: pointer;
 }
-.thumb-btn.active { background: var(--pink-dark); }
-
-/* Arrow pointer */
-.details-arrow {
-  width: 0; height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--cream);
-  position: absolute;
-  top: calc(100% - 1px);
-  transform: translateX(-50%);
+.thumb-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+}
+.thumb-img.placeholder {
+  background: var(--bg-light);
+}
+.thumb.active .thumb-img {
+  border-color: var(--pink);
+}
+.thumb-name {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--bg-dark);
 }
 
-/* 2-column grid: photo left, text right */
-.details-wrap { position: relative; }
+/* Arrow pointer: absolute inside .details-wrap */
+.details-arrow {
+  width: 0; height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--cream);
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+
+/* 2‑column detail grid */
 .detail-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 100px auto;
   gap: var(--gap);
   align-items: start;
   margin-bottom: 1rem;
 }
 .detail-photo {
-  width: 100%;
-  height: auto;
+  width: 100px; height: 100px;
   border-radius: 8px;
   object-fit: cover;
 }
 .detail-photo.placeholder {
   background: var(--bg-light);
-  aspect-ratio: 1;
 }
 
-/* Text card styling */
+/* Text card */
 .detail-text-card {
-  padding: 1rem;
   background: #f9f7f0;
+  padding: 1rem;
   border-radius: 8px;
-  min-height: 8em; /* uniform height */
+  min-height: 8em;
+  color: var(--bg-dark);
+}
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
 }
 .detail-name {
   margin: 0;
   font-size: 1.25rem;
-  color: var(--bg-dark);
+}
+.detail-links img {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
 }
 .detail-blurb {
+  margin-top: 0.5em;
   font-size: 0.9rem;
   line-height: 1.4;
-  margin-top: 0.5em;
-  color: var(--bg-dark);
 }
 
-/* Game images row, 15% smaller */
+/* Games row */
 .member-games {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
+.game-link {
+  text-decoration: none;
+  color: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.steam-icon {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 4px;
+}
 .game-thumb {
+  width: 70px;
   aspect-ratio: 2/3;
   background-size: cover;
   background-position: center;
   border-radius: 4px;
-  transform: scale(0.85); /* 15% smaller */
+  transform: scale(0.85);
 }
-.game-link {
-  position: relative;
-  text-decoration: none;
-  color: var(--bg-dark);
+.game-thumb.placeholder {
+  background: var(--bg-light);
 }
-.game-link .steam-icon {
-  position: absolute;
-  top: 4px; left: 4px;
-  width: 20px;
-  height: 20px;
-}
-.game-link span {
-  display: block;
+.game-title {
   margin-top: 0.25rem;
   font-size: 1rem;
+  font-weight: 600;
 }
 
-/* Drinks/snacks layout */
+/* Snacks & Drinks */
 .detail-snacks {
+  margin-top: 1rem;
+}
+.detail-snacks h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--bg-dark);
+}
+.snack-row {
   display: flex;
-  justify-content: space-between;
   gap: var(--gap);
 }
-.member-drink, .member-snack {
+.snack-item {
   text-align: center;
 }
-.drink-thumb, .snack-thumb {
-  width: 36px;
-  height: 36px;
+.snack-thumb {
+  width: 40px;
+  height: 40px;
   border-radius: 4px;
+  object-fit: cover;
 }
 
-/* Responsive adjustments */
-@media(max-width: 800px) {
+/* Responsive */
+@media (max-width: 600px) {
   .detail-grid { grid-template-columns: 1fr; }
-  .game-link { display: inline-block; }
+  .thumb-img { width: 50px; height: 50px; }
 }
