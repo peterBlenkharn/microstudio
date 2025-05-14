@@ -42,31 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Build thumbs + auto-select first
-  function buildPanel(teamKey, members) {
-    // 1) Thumbnails
-    thumbsContainer.innerHTML = Object.entries(members).map(([name, m]) => {
-      const imgPath = m['Profile Image Name']
-        ? `images/profilepics/${m['Profile Image Name']}.jpg`
-        : null;
-      return `
-        <div class="thumb" data-member="${name}">
-          ${imgPath
-            ? `<img src="${imgPath}" alt="${name}" class="thumb-img">`
-            : `<div class="thumb-img placeholder"></div>`}
-          <span class="thumb-name">${name}</span>
-        </div>
-      `;
-    }).join('');
+function buildPanel(teamKey, members) {
+  // Vertical list of thumbs
+  thumbsContainer.innerHTML = Object.entries(members).map(([name, m]) => {
+    const img = m['Profile Image Name']
+      ? `<img src="images/profilepics/${m['Profile Image Name']}.jpg" class="thumb-img" alt="${name}">`
+      : `<div class="thumb-img placeholder"></div>`;
+    return `<div class="thumb" data-member="${name}">${img}<span class="thumb-name">${name}</span></div>`;
+  }).join('');
 
-    // 2) Click handlers for thumbs
-    thumbsContainer.querySelectorAll('.thumb').forEach(el => {
-      el.addEventListener('click', () => selectMember(el.dataset.member));
-    });
-
-    // 3) Activate first thumb by default
-    selectMember(Object.keys(members)[0]);
-  }
+  // Click handlers
+  thumbsContainer.querySelectorAll('.thumb').forEach(el => el.addEventListener('click', () => selectMember(el.dataset.member)));
+  selectMember(Object.keys(members)[0]);
+}
 
   // Show details for a specific member
   function selectMember(name) {
@@ -88,41 +76,58 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Renders the detail card HTML ---
-  function renderMemberDetail(name, m) {
-    // Profile photo or placeholder
-    const photoHTML = m['Profile Image Name']
-      ? `<img src="images/profilepics/${m['Profile Image Name']}.jpg" class="detail-photo">`
-      : `<div class="detail-photo placeholder"></div>`;
+function renderMemberDetail(name, m) {
+  // Profile photo or placeholder
+  const photo = m['Profile Image Name']
+    ? `<img src="images/profilepics/${m['Profile Image Name']}.jpg" class="detail-photo" alt="${name}">`
+    : `<div class="detail-photo placeholder"></div>`;
 
-    // Build social icons under name
-    const socialHTML = renderLinks(m.Links);
-
-    // Text card
-    const textCard = `
-      <div class="detail-text-card">
-        <div class="detail-header">
-          <h4 class="detail-name">${name} ${flagEmoji(m.Nationalities)}</h4>
-          <div class="detail-links">${socialHTML}</div>
-        </div>
-        <p class="detail-blurb">${m.Blurb || ''}</p>
+  // Header: name above links
+  const links = renderLinks(m.Links);
+  const header = `
+    <div class="detail-header">
+      ${photo}
+      <div class="detail-title-links">
+        <h4 class="detail-name">${name} ${flagEmoji(m.Nationalities)}</h4>
+        <div class="detail-links">${links}</div>
       </div>
-    `;
+    </div>
+  `;
 
-    // Favorite games
-    const gamesHTML = renderGames(m['Favourite Games']);
+  // Blurb block below header
+  const blurb = `<div class="detail-blurb-block"><p class="detail-blurb">${m.Blurb || ''}</p></div>`;
 
-    // Favorites (drinks & snacks)
-    const favsHTML = renderSnackSection(m['Favourite Drink'], m['Favourite Snack']);
+  // Favorite Games horizontal row
+  const games = renderGamesRow(m['Favourite Games']);
 
-    return `
-      <div class="detail-grid">
-        <div class="photo-cell">${photoHTML}</div>
-        <div class="text-cell">${textCard}</div>
+  // Favorites row
+  const favs  = renderSnackSection(m['Favourite Drink'], m['Favourite Snack']);
+
+  return header + blurb + games + favs;
+}
+
+  // New helper for horizontal games row
+function renderGamesRow(games={}){
+  const list = Object.values(games).filter(g=>g['Game Name']); if(!list.length) return '';
+  return `
+    <div class="detail-section">
+      <h5 class="section-heading">Favorite Games</h5>
+      <div class="games-row">
+        ${list.map(g=>{
+          const thumb = g['Image Name']
+            ? `<div class="game-thumb" style="background-image:url('images/gamepics/${g['Image Name']}.jpg')"></div>`
+            : `<div class="game-thumb placeholder"></div>`;
+          return `
+            <a href="${g['Steam Link']}" target="_blank" class="game-item">
+              <img src="/microstudio/icons/steam.svg" class="game-steam-icon" alt="Steam">
+              <span class="game-title">${g['Game Name']}</span>
+              ${thumb}
+            </a>`;
+        }).join('')}
       </div>
-      ${gamesHTML}
-      ${favsHTML}
-    `;
-  }
+    </div>
+  `;
+}
 
   // 5) Helpers
   function flagEmoji(codes=[]) {
