@@ -74,14 +74,8 @@ function buildPanel(teamKey, members) {
     const memberData = teamData[currentTeam][name];
     // After injecting the detail card HTML:
     detailCard.innerHTML = renderMemberDetail(name, memberData);
-    if (window.twemoji) {
-      // parse only within the detail card container
-      twemoji.parse(detailCard, {
-        folder: 'svg',
-        ext: '.svg'
-      });
-    } else {
-      console.warn('Twemoji not loaded — flags may not render');
+    if (window.CountryFlagEmojiPolyfill) {
+      CountryFlagEmojiPolyfill.polyfill(); 
     }
   }
 
