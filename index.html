@@ -208,21 +208,25 @@
   </div>
     
   <!-- Team Details Container -->
-  <div id="team-details" class="team-details" hidden>
-    <!-- 1. Thumbnail list (images + names) -->
-    <div class="member-thumbs">
-      <!-- injected by JS: <div class="thumb" data-member="Name">
-           <img src="..." alt="Name"/>
-           <span>Name</span>
-         </div> -->
-    </div>
-  
-    <!-- 2. Details wrap: arrow + detail card -->
-    <div class="details-wrap">
-      <div class="details-arrow"></div>
-      <div class="member-detail-card"></div>
-    </div>
+<div id="team-details" class="team-details" hidden>
+
+  <!-- Vertical Thumbnail List -->
+  <div class="member-thumbs-vertical">
+    <!-- JS injects:
+      <div class="thumb" data-member="Andreea">
+        <img src="images/profilepics/andreea.jpg" alt="Andreea" class="thumb-img">
+        <span class="thumb-name">Andreea</span>
+      </div>
+    -->
   </div>
+
+  <!-- Panel Content: arrow + detail card -->
+  <div class="details-content-wrap">
+    <div class="details-arrow"></div>
+    <div class="member-detail-card"></div>
+  </div>
+
+</div>
     
   </section>
 
