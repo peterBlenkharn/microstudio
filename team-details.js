@@ -85,7 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>`;
   }
   function renderLinks(links={}){
-    const map={Github:'/icons/github.svg',LinkedIn:'/icons/linkedin.svg',itchio:'/icons/itchio.svg',Instagram:'/icons/instagram.svg',TikTok:'/icons/tiktok.svg',Website:'/icons/link.svg'};
+    const map={
+      Github:'/microstudio/icons/github.svg',
+      LinkedIn:'/microstudio/icons/linkedin.svg',
+      itchio:'/microstudio/icons/itchio.svg',
+      Instagram:'/microstudio/icons/instagram.svg',
+      TikTok:'/microstudio/icons/tiktok.svg',
+      Website:'/microstudio/icons/link.svg'};
     const html=Object.entries(links).filter(([,u])=>u).map(([k,u])=>{
       const h=u.startsWith('http')?u:'https://'+u;
       return `<a href="${h}" target="_blank" class="member-link">
