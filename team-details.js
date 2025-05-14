@@ -42,18 +42,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function buildPanel(teamKey, members) {
-    // 1. Create thumbnails
-    thumbsContainer.innerHTML = Object.keys(members)
-      .map(name => `<button class="thumb-btn" data-member="${name}">${name}</button>`)
-      .join('');
-
-    // 2. Hook thumb clicks
-    thumbsContainer.querySelectorAll('.thumb-btn').forEach(btn => {
-      btn.addEventListener('click', () => selectMember(btn.dataset.member));
+    // Render thumbnail list
+    thumbsContainer.innerHTML = Object.entries(members).map(([name,m]) => {
+      const imgSrc = m['Profile Image Name']
+        ? `images/profilepics/${m['Profile Image Name']}.jpg`
+        : null;
+      return `
+        <div class="thumb" data-member="${name}">
+          ${imgSrc
+            ? `<img src="${imgSrc}" alt="${name}" class="thumb-img">`
+            : `<div class="thumb-img placeholder"></div>`
+          }
+          <span class="thumb-name">${name}</span>
+        </div>
+      `;
+    }).join('');
+  
+    // Attach click handlers
+    thumbsContainer.querySelectorAll('.thumb').forEach(el => {
+      el.addEventListener('click', () => selectMember(el.dataset.member));
     });
-
-    // 3. Auto-select first member
-    selectMember(Object.keys(members)[0], members);
+  
+    // Auto-select first
+    selectMember(Object.keys(members)[0]);
   }
 
   function selectMember(name) {
@@ -72,35 +83,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderMemberDetail(name, m) {
-    // Profile or placeholder
-    const photoHTML = m['Profile Image Name']
+    // Profile vs placeholder
+    const profileHTML = m['Profile Image Name']
       ? `<img src="images/profilepics/${m['Profile Image Name']}.jpg" class="detail-photo">`
       : `<div class="detail-photo placeholder"></div>`;
-
+  
+    // Social icons (smaller)
+    const linksHTML = renderLinks(m.Links);
+  
     // Text block
-    const textBlock = `
+    const textCard = `
       <div class="detail-text-card">
-        <h4 class="detail-name">${name} ${flagEmoji(m.Nationalities)}</h4>
-        ${renderLinks(m.Links)}
+        <div class="detail-header">
+          <h4 class="detail-name">${name} ${flagEmoji(m.Nationalities)}</h4>
+          <div class="detail-links">${linksHTML}</div>
+        </div>
         <p class="detail-blurb">${m.Blurb || ''}</p>
       </div>
     `;
-
-    // Games row
+  
+    // Games row with Steam icon before title
     const gamesHTML = renderGames(m['Favourite Games']);
-
-    // Drinks/snacks row
-    const snacksHTML = `
-      <div class="detail-snacks">
-        ${renderSnack('drink', m['Favourite Drink'])}
-        ${renderSnack('snack', m['Favourite Snack'])}
-      </div>
-    `;
-
+  
+    // Snacks & drinks
+    const snacksHTML = renderSnackSection(m['Favourite Drink'], m['Favourite Snack']);
+  
     return `
       <div class="detail-grid">
-        <div class="photo-cell">${photoHTML}</div>
-        <div class="text-cell">${textBlock}</div>
+        <div class="photo-cell">${profileHTML}</div>
+        <div class="text-cell">${textCard}</div>
       </div>
       ${gamesHTML}
       ${snacksHTML}
@@ -113,17 +124,27 @@ document.addEventListener('DOMContentLoaded', () => {
       .map(cc => String.fromCodePoint(A+cc.charCodeAt(0)-65, A+cc.charCodeAt(1)-65))
       .join(' ');
   }
-  function renderGames(g=[]) {
-    const list = Object.values(g).filter(x=>x['Game Name']); if(!list.length) return '';
-    return `<div class="member-games">${list.map(x=>{
-      const url = x['Image Name'] ? `images/gamepics/${x['Image Name']}.jpg` : '';
-      return `
-        <a href="${x['Steam Link']}" target="_blank" class="game-link">
-          ${url ? `<div class="game-thumb" style="background-image:url('${url}')"></div>`
-               : `<div class="game-thumb placeholder"></div>`}
-          <span>${x['Game Name']}</span>
-        </a>`;
-    }).join('')}</div>`;
+  
+  // renderGames():
+  function renderGames(games = {}) {
+    const list = Object.values(games).filter(g => g['Game Name']);
+    if (!list.length) return '';
+    return `<div class="member-games">
+      ${list.map(g => {
+        const imgUrl = g['Image Name']
+          ? `images/gamepics/${g['Image Name']}.jpg`
+          : null;
+        return `
+          <a href="${g['Steam Link']}" target="_blank" class="game-link">
+            <img src="/microstudio/icons/steam.svg" class="steam-icon" alt="Steam"> 
+            ${imgUrl
+              ? `<div class="game-thumb" style="background-image:url('${imgUrl}')"></div>`
+              : `<div class="game-thumb placeholder"></div>`}
+            <span class="game-title">${g['Game Name']}</span>
+          </a>
+        `;
+      }).join('')}
+    </div>`;
   }
   function renderSnack(type,obj={}){
     const key=type.charAt(0).toUpperCase()+type.slice(1)+' Name';
@@ -133,6 +154,28 @@ document.addEventListener('DOMContentLoaded', () => {
       <span>${obj[key]}</span>
     </div>`;
   }
+
+  // New: renderSnackSection
+  function renderSnackSection(drink = {}, snack = {}) {
+    const drinkHTML = drink['Drink Name']
+      ? `<div class="snack-item">
+           <img src="images/drinkpics/${drink['Image Name']}.jpg" alt="${drink['Drink Name']}" class="snack-thumb">
+           <span>${drink['Drink Name']}</span>
+         </div>`
+      : '';
+    const snackHTML = snack['Snack Name']
+      ? `<div class="snack-item">
+           <img src="images/snackpics/${snack['Image Name']}.jpg" alt="${snack['Snack Name']}" class="snack-thumb">
+           <span>${snack['Snack Name']}</span>
+         </div>`
+      : '';
+    if (!drinkHTML && !snackHTML) return '';
+    return `<div class="detail-snacks">
+      <h5>Favorites</h5>
+      <div class="snack-row">${drinkHTML}${snackHTML}</div>
+    </div>`;
+  }
+  
   function renderLinks(links={}){
     const map={
       Github:'/microstudio/icons/github.svg',
