@@ -1,126 +1,127 @@
-/* —— 3a. Align details panel width with main content —— */
+/* 1. Details panel full-width + reduced height */
 .team-details {
   max-width: var(--max-width);
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 1.8rem;
   background: var(--cream);
   border-radius: 12px;
+  /* reduce height by 10% via padding and line-heights */
 }
 
-/* —— 3b. Carousel container —— */
-.member-carousel {
+/* Thumbnail list on left */
+.member-thumbs {
   display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
   overflow-x: auto;
+}
+.thumb-btn {
+  background: var(--pink-light);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.thumb-btn.active { background: var(--pink-dark); }
+
+/* Arrow pointer */
+.details-arrow {
+  width: 0; height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--cream);
+  position: absolute;
+  top: calc(100% - 1px);
+  transform: translateX(-50%);
+}
+
+/* 2-column grid: photo left, text right */
+.details-wrap { position: relative; }
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: var(--gap);
-  scroll-snap-type: x mandatory;
-  padding-bottom: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
 }
-.member-carousel::-webkit-scrollbar { display: none; }
-
-/* —— 1. Wider member cards —— */
-.member-card {
-  flex: 0 0 640px;               /* ~ double the previous 320px */
-  scroll-snap-align: start;
-  background: #fff;
-  border: 1px solid var(--bg-light);
+.detail-photo {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  color: var(--bg-dark);         /* 6. Higher contrast text */
-}
-
-/* —— 3c. Profile photo / placeholder —— */
-.member-photo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 0.5rem;
 }
-.member-photo.placeholder {
+.detail-photo.placeholder {
   background: var(--bg-light);
+  aspect-ratio: 1;
 }
 
-/* —— 6. Name, social links —— */
-.member-name {
+/* Text card styling */
+.detail-text-card {
+  padding: 1rem;
+  background: #f9f7f0;
+  border-radius: 8px;
+  min-height: 8em; /* uniform height */
+}
+.detail-name {
+  margin: 0;
   font-size: 1.25rem;
-  margin: 0.25em 0;
   color: var(--bg-dark);
 }
-.member-links {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.link-icon {
-  width: 20px;
-  height: 20px;
-}
-
-/* —— 3d. Fixed-height blurb container —— */
-.member-blurb {
+.detail-blurb {
   font-size: 0.9rem;
   line-height: 1.4;
-  margin: 0.5em 0 1em;
-  min-height: 4.2em;            /* ~3 lines of text */
+  margin-top: 0.5em;
   color: var(--bg-dark);
-  text-align: left;
-}
-.member-blurb.placeholder-blurb {
-  background: var(--bg-light);
-  border-radius: 4px;
 }
 
-/* —— 5. Favourite Games row, consistent layout —— */
+/* Game images row, 15% smaller */
 .member-games {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.game-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: var(--bg-dark);
-}
 .game-thumb {
-  width: 100%;
   aspect-ratio: 2/3;
   background-size: cover;
   background-position: center;
   border-radius: 4px;
+  transform: scale(0.85); /* 15% smaller */
 }
-.game-thumb.placeholder {
-  background: var(--bg-light);
+.game-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+.game-link .steam-icon {
+  position: absolute;
+  top: 4px; left: 4px;
+  width: 20px;
+  height: 20px;
 }
 .game-link span {
+  display: block;
   margin-top: 0.25rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
-/* —— 7. Drinks & snacks in a row —— */
-.member-drinks-snacks {
+/* Drinks/snacks layout */
+.detail-snacks {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 0.75rem;
+  justify-content: space-between;
+  gap: var(--gap);
 }
 .member-drink, .member-snack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 .drink-thumb, .snack-thumb {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
+  width: 36px;
+  height: 36px;
   border-radius: 4px;
 }
 
-/* —— Responsive: adjust card width on small devices —— */
-@media (max-width: 800px) {
-  .member-card { flex: 0 0 80%; }
+/* Responsive adjustments */
+@media(max-width: 800px) {
+  .detail-grid { grid-template-columns: 1fr; }
+  .game-link { display: inline-block; }
 }
