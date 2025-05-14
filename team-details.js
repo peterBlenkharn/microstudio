@@ -129,7 +129,7 @@ function renderGamesRow(games={}){
             : `<div class="game-thumb placeholder"></div>`;
           return `
             <a href="${g['Steam Link']}" target="_blank" class="game-item">
-              <img src="/microstudio/icons/steamicon.svg" class="game-steam-icon" alt="Steam">
+              <img src="/microstudio/icons/steamicon.png" class="game-steam-icon" alt="Steam">
               <span class="game-title">${g['Game Name']}</span>
               ${thumb}
             </a>`;
@@ -157,7 +157,7 @@ function renderGamesRow(games={}){
           : null;
         return `
           <a href="${g['Steam Link']}" target="_blank" class="game-link">
-            <img src="/microstudio/icons/steamicon.svg" class="steam-icon" alt="Steam"> 
+            <img src="/microstudio/icons/steamicon.png" class="steam-icon" alt="Steam"> 
             ${imgUrl
               ? `<div class="game-thumb" style="background-image:url('${imgUrl}')"></div>`
               : `<div class="game-thumb placeholder"></div>`}
