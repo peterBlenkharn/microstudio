@@ -1,3 +1,4 @@
+
 /*
   team-details.js — Enhanced version
 */
@@ -91,7 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
       itchio:'/microstudio/icons/itchio.svg',
       Instagram:'/microstudio/icons/instagram.svg',
       TikTok:'/microstudio/icons/tiktok.svg',
-      Website:'/microstudio/icons/link.svg'};
+      Website:'/microstudio/icons/link.svg',
+      itchio:'/microstudio/icons/itchio.svg'};
     const html=Object.entries(links).filter(([,u])=>u).map(([k,u])=>{
       const h=u.startsWith('http')?u:'https://'+u;
       return `<a href="${h}" target="_blank" class="member-link">
