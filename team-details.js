@@ -45,18 +45,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4) Render single member card
   function renderMember(name, m) {
-    return `
-      <div class="member-card">
-        <img src="images/profilepics/${m['Profile Image Name']}.jpg" alt="${name}" class="member-photo">
-        <h4 class="member-name">${name} ${flagEmoji(m.Nationalities)}</h4>
-        ${renderLinks(m.Links)}
-        ${m.Title ? `<p class="member-title">${m.Title}</p>` : ''}
-        ${m.Blurb ? `<p class="member-blurb">${m.Blurb}</p>` : ''}
-        ${renderGames(m['Favourite Games'])}
+  return `
+    <div class="member-card">
+      <!-- Profile PHOTO or placeholder -->
+      ${m['Profile Image Name']
+        ? `<img src="images/profilepics/${m['Profile Image Name']}.jpg" alt="${name}" class="member-photo">`
+        : `<div class="member-photo placeholder"></div>`
+      }
+      <!-- Name + flags -->
+      <h4 class="member-name">${name} ${flagEmoji(m.Nationalities)}</h4>
+  
+      <!-- Social Links under name -->
+      ${renderLinks(m.Links)}
+  
+      <!-- Fixed-height blurb container -->
+      ${m.Blurb
+        ? `<div class="member-blurb">${m.Blurb}</div>`
+        : `<div class="member-blurb placeholder-blurb"></div>`
+      }
+  
+      <!-- Favourite Games (max 3) -->
+      ${renderGames(m['Favourite Games'])}
+  
+      <!-- Drinks & Snacks -->
+      <div class="member-drinks-snacks">
         ${renderSnack('drink', m['Favourite Drink'])}
         ${renderSnack('snack', m['Favourite Snack'])}
       </div>
-    `;
+    </div>
+  `;
   }
 
   // 5) Helpers
