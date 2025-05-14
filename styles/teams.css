@@ -1,4 +1,13 @@
-/* Thumbnail list: images + names */
+/* Container aligns with main width, 10% shorter via padding tweaks */
+.team-details {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 1.6rem;
+  background: var(--cream);
+  border-radius: 12px;
+}
+
+/* Thumbnail column */
 .member-thumbs {
   display: flex;
   gap: var(--gap);
@@ -10,8 +19,8 @@
   cursor: pointer;
 }
 .thumb-img {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid transparent;
@@ -23,13 +32,13 @@
   border-color: var(--pink);
 }
 .thumb-name {
-  display: block;
   margin-top: 0.25rem;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--bg-dark);
 }
 
-/* Arrow pointer: absolute inside .details-wrap */
+/* Arrow pointer sits under active thumb */
+.details-wrap { position: relative; }
 .details-arrow {
   width: 0; height: 0;
   border-left: 8px solid transparent;
@@ -40,7 +49,7 @@
   transform: translateX(-50%) translateY(-100%);
 }
 
-/* 2‑column detail grid */
+/* Detail card grid: photo + text */
 .detail-grid {
   display: grid;
   grid-template-columns: 100px auto;
@@ -49,7 +58,8 @@
   margin-bottom: 1rem;
 }
 .detail-photo {
-  width: 100px; height: 100px;
+  width: 100px;
+  height: 100px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -57,7 +67,7 @@
   background: var(--bg-light);
 }
 
-/* Text card */
+/* Text card styling */
 .detail-text-card {
   background: #f9f7f0;
   padding: 1rem;
@@ -72,40 +82,49 @@
 }
 .detail-name {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 .detail-links img {
   width: 16px;
   height: 16px;
-  margin-right: 0.5rem;
+  margin-right: 0.3rem;
 }
 .detail-blurb {
   margin-top: 0.5em;
   font-size: 0.9rem;
   line-height: 1.4;
+  max-height: 6em;
+  overflow: hidden;
 }
 
-/* Games row */
+/* Favorite Games section */
 .member-games {
+  margin-top: 0.5rem;
+}
+.member-games h5 {
+  font-size: 1rem;
+  color: var(--bg-dark);
+  margin-bottom: 0.5rem;
+}
+.member-games .member-games-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
-  margin-bottom: 1rem;
 }
 .game-link {
-  text-decoration: none;
-  color: var(--bg-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+  color: var(--bg-dark);
 }
 .steam-icon {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   margin-bottom: 4px;
 }
 .game-thumb {
-  width: 70px;
+  width: 60px;
   aspect-ratio: 2/3;
   background-size: cover;
   background-position: center;
@@ -117,11 +136,12 @@
 }
 .game-title {
   margin-top: 0.25rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
+  text-align: center;
 }
 
-/* Snacks & Drinks */
+/* Favorites: Drinks & Snacks */
 .detail-snacks {
   margin-top: 1rem;
 }
@@ -133,19 +153,20 @@
 .snack-row {
   display: flex;
   gap: var(--gap);
+  justify-content: center;
 }
 .snack-item {
   text-align: center;
 }
 .snack-thumb {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 4px;
   object-fit: cover;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* Responsive: stack on narrow screens */
+@media (max-width: 700px) {
   .detail-grid { grid-template-columns: 1fr; }
-  .thumb-img { width: 50px; height: 50px; }
+  .member-thumbs { justify-content: center; }
 }
