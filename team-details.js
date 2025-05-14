@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let teamData = {}, currentTeam = null;
 
   // Load JSON data
-  fetch('/teamdata.json')
+  fetch('/microstudio/teamdata.json')
     .then(r => r.json())
     .then(json => teamData = json)
     .catch(err => console.error('Error loading teamdata.json', err));
