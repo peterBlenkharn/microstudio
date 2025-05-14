@@ -6,115 +6,121 @@
   - Renders detail card on the right
 */
 
+/* team-details.js — Final Refinement */
+
 document.addEventListener('DOMContentLoaded', () => {
-  const details = document.getElementById('team-details');
-  const thumbsContainer = details.querySelector('.member-thumbs');
-  const cardContainer  = details.querySelector('.member-detail-card');
-  const arrowEl        = details.querySelector('.details-arrow');
+  const detailsContainer = document.getElementById('team-details');
+  const thumbsContainer  = detailsContainer.querySelector('.member-thumbs');
+  const detailCard       = detailsContainer.querySelector('.member-detail-card');
+  const arrowEl          = detailsContainer.querySelector('.details-arrow');
 
   let teamData = {}, currentTeam = null;
 
-  // Load JSON data
-  fetch('/microstudio/teamdata.json')
+  // Load the JSON file (ensure correct path)
+  fetch('/teamData.json')
     .then(r => r.json())
     .then(json => teamData = json)
-    .catch(err => console.error('Error loading teamdata.json', err));
+    .catch(err => console.error('Failed to load teamData.json', err));
 
-  // Learn More -> show panel and build thumbs
+  // Listen for "Learn More" clicks
   document.body.addEventListener('click', e => {
     if (!e.target.matches('.btn-learn-more')) return;
-    const card = e.target.closest('.game-card');
-    const teamKey = card.dataset.team;
-    if (!teamData[teamKey]) return;
     e.preventDefault();
 
-    // If same team, hide panel
-    if (currentTeam === teamKey) {
-      details.hidden = true;
-      currentTeam = null;
-      return;
-    }
+    const gameCard = e.target.closest('.game-card');
+    const teamKey  = gameCard.dataset.team;
+    if (!teamData[teamKey]) return;
 
-    // Show and build panel
-    currentTeam = teamKey;
-    buildPanel(teamKey, teamData[teamKey]);
-    details.hidden = false;
+    // Toggle panel
+    if (currentTeam === teamKey) {
+      detailsContainer.hidden = true;
+      currentTeam = null;
+    } else {
+      currentTeam = teamKey;
+      buildPanel(teamKey, teamData[teamKey]);
+      detailsContainer.hidden = false;
+    }
   });
 
+  // Build thumbs + auto-select first
   function buildPanel(teamKey, members) {
-    // Render thumbnail list
-    thumbsContainer.innerHTML = Object.entries(members).map(([name,m]) => {
-      const imgSrc = m['Profile Image Name']
+    // 1) Thumbnails
+    thumbsContainer.innerHTML = Object.entries(members).map(([name, m]) => {
+      const imgPath = m['Profile Image Name']
         ? `images/profilepics/${m['Profile Image Name']}.jpg`
         : null;
       return `
         <div class="thumb" data-member="${name}">
-          ${imgSrc
-            ? `<img src="${imgSrc}" alt="${name}" class="thumb-img">`
-            : `<div class="thumb-img placeholder"></div>`
-          }
+          ${imgPath
+            ? `<img src="${imgPath}" alt="${name}" class="thumb-img">`
+            : `<div class="thumb-img placeholder"></div>`}
           <span class="thumb-name">${name}</span>
         </div>
       `;
     }).join('');
-  
-    // Attach click handlers
+
+    // 2) Click handlers for thumbs
     thumbsContainer.querySelectorAll('.thumb').forEach(el => {
       el.addEventListener('click', () => selectMember(el.dataset.member));
     });
-  
-    // Auto-select first
+
+    // 3) Activate first thumb by default
     selectMember(Object.keys(members)[0]);
   }
 
+  // Show details for a specific member
   function selectMember(name) {
+    // Highlight active thumb
+    thumbsContainer.querySelectorAll('.thumb').forEach(el => {
+      el.classList.toggle('active', el.dataset.member === name);
+    });
+
+    // Position arrow under active thumb
+    const activeThumb = thumbsContainer.querySelector('.thumb.active');
+    const thumbRect   = activeThumb.getBoundingClientRect();
+    const parentRect  = detailsContainer.getBoundingClientRect();
+    const centerX     = thumbRect.left + thumbRect.width/2;
+    arrowEl.style.left = (centerX - parentRect.left) + 'px';
+
+    // Render detail card content
     const memberData = teamData[currentTeam][name];
-    if (!memberData) return;
-
-    // 4. Render detail card HTML
-    cardContainer.innerHTML = renderMemberDetail(name, memberData);
-
-    // 5. Position arrow under the correct thumbnail
-    const btn = thumbsContainer.querySelector(`button[data-member="${name}"]`);
-    const rect = btn.getBoundingClientRect();
-    const parentRect = details.getBoundingClientRect();
-    const offsetLeft = rect.left + rect.width/2 - parentRect.left;
-    arrowEl.style.left = offsetLeft + 'px';
+    detailCard.innerHTML = renderMemberDetail(name, memberData);
   }
 
+  // --- Renders the detail card HTML ---
   function renderMemberDetail(name, m) {
-    // Profile vs placeholder
-    const profileHTML = m['Profile Image Name']
+    // Profile photo or placeholder
+    const photoHTML = m['Profile Image Name']
       ? `<img src="images/profilepics/${m['Profile Image Name']}.jpg" class="detail-photo">`
       : `<div class="detail-photo placeholder"></div>`;
-  
-    // Social icons (smaller)
-    const linksHTML = renderLinks(m.Links);
-  
-    // Text block
+
+    // Build social icons under name
+    const socialHTML = renderLinks(m.Links);
+
+    // Text card
     const textCard = `
       <div class="detail-text-card">
         <div class="detail-header">
           <h4 class="detail-name">${name} ${flagEmoji(m.Nationalities)}</h4>
-          <div class="detail-links">${linksHTML}</div>
+          <div class="detail-links">${socialHTML}</div>
         </div>
         <p class="detail-blurb">${m.Blurb || ''}</p>
       </div>
     `;
-  
-    // Games row with Steam icon before title
+
+    // Favorite games
     const gamesHTML = renderGames(m['Favourite Games']);
-  
-    // Snacks & drinks
-    const snacksHTML = renderSnackSection(m['Favourite Drink'], m['Favourite Snack']);
-  
+
+    // Favorites (drinks & snacks)
+    const favsHTML = renderSnackSection(m['Favourite Drink'], m['Favourite Snack']);
+
     return `
       <div class="detail-grid">
-        <div class="photo-cell">${profileHTML}</div>
+        <div class="photo-cell">${photoHTML}</div>
         <div class="text-cell">${textCard}</div>
       </div>
       ${gamesHTML}
-      ${snacksHTML}
+      ${favsHTML}
     `;
   }
 
