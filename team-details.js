@@ -72,7 +72,12 @@ function buildPanel(teamKey, members) {
 
     // Render detail card content
     const memberData = teamData[currentTeam][name];
-    detailCard.innerHTML = renderMemberDetail(name, memberData);
+    // After injecting the detail card HTML:
+    detailCard.innerHTML = renderMemberDetail(name, data);
+    // then parse only that container:
+    twemoji.parse(detailCard, {
+      folder: 'svg', ext: '.svg'
+    });
   }
 
   // --- Renders the detail card HTML ---
