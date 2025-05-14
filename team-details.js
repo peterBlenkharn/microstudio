@@ -93,7 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
       Instagram:'/microstudio/icons/instagram.svg',
       TikTok:'/microstudio/icons/tiktok.svg',
       Website:'/microstudio/icons/link.svg',
-      itchio:'/microstudio/icons/itchio.svg'};
+      itchio:'/microstudio/icons/itchio.svg',
+      Portfolio:'/microstudio/icons/link.svg'};
     const html=Object.entries(links).filter(([,u])=>u).map(([k,u])=>{
       const h=u.startsWith('http')?u:'https://'+u;
       return `<a href="${h}" target="_blank" class="member-link">
