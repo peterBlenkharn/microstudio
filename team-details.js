@@ -10,7 +10,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const detailsContainer = document.getElementById('team-details');
-  const thumbsContainer  = detailsContainer.querySelector('.member-thumbs');
+  const thumbsContainer  = detailsContainer.querySelector('.member-thumbs-vertical');
   const detailCard       = detailsContainer.querySelector('.member-detail-card');
   const arrowEl          = detailsContainer.querySelector('.details-arrow');
 
