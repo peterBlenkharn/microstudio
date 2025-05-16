@@ -1,44 +1,41 @@
-/* Container & vertical thumbs */
-.team-details { display: flex; max-width: var(--max-width); margin:2rem auto; background:var(--cream); padding:1.6rem; border-radius:12px; }
-.member-thumbs-vertical { display:flex; flex-direction:column; gap:var(--gap); margin-right:var(--gap); }
+/* 1) Wider thumbnail column */
+.team-details { display:flex; align-items:flex-start; max-width:var(--max-width); margin:2rem auto; background:var(--cream); padding:1.6rem; border-radius:12px; }
+.member-thumbs-vertical { width:120px; display:flex; flex-direction:column; gap:var(--gap); margin-right:var(--gap); }
 .thumb { text-align:center; cursor:pointer; }
-.thumb-img { width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid transparent; }
+.thumb-img { width:60px; height:60px; border-radius:50%; object-fit:cover; border:3px solid transparent; }
 .thumb.active .thumb-img { border-color:var(--pink); }
-.thumb-name { margin-top:0.25rem; font-size:0.75rem; color:var(--bg-dark); }
+.thumb-name { margin-top:0.3rem; font-size:0.8rem; color:var(--bg-dark); }
 
-/* Details content (right side) */
+/* 2) Details content */
 .details-content-wrap { position:relative; flex:1; }
-.details-arrow { position:absolute; top:0; width:0; height:0; border-left:8px solid transparent; border-right:8px solid transparent; border-bottom:8px solid var(--cream); transform:translateX(-50%) translateY(-100%); }
+.details-arrow { position:absolute; top:0; width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; border-bottom:10px solid var(--cream); transform:translateX(-50%) translateY(-100%); }
 
-/* Header block: photo left, title/links right */
-.detail-header { display:flex; align-items:flex-start; gap:var(--gap); margin-bottom:var(--gap); }
-.detail-photo { width:80px; height:80px; border-radius:8px; object-fit:cover; }
+/* 3) Header: large photo + stacked name/links */
+.detail-header { display:flex; align-items:center; gap:var(--gap); margin-bottom:var(--gap); }
+.detail-photo { width:160px; height:160px; border-radius:8px; object-fit:cover; }
 .detail-photo.placeholder { background:var(--bg-light); }
 .detail-title-links { display:flex; flex-direction:column; }
-.detail-name { margin:0; font-size:1.2rem; color:var(--bg-dark); }
-.detail-links img { width:16px; height:16px; margin:0 0.3rem 0 0; }
-.detail-links { margin-top:0.5rem; }
+.detail-name { margin:0; font-size:1.6rem; color:var(--bg-dark); }
+.detail-links { margin-top:0.5rem; display:flex; gap:0.5rem; }
+.social-icon { width:20px; height:20px; }
 
-/* Blurb block below header */
-.detail-blurb-block { background:#f9f7f0; padding:1rem; border-radius:8px; max-height:6em; overflow:hidden; margin-bottom:var(--gap); }
-.detail-blurb { margin:0; font-size:0.9rem; line-height:1.4; color:var(--bg-dark); }
+/* 4) Blurb below header */
+.detail-blurb-block { background:#f9f7f0; padding:1rem; border-radius:8px; margin-bottom:var(--gap); }
+.detail-blurb { margin:0; font-size:1rem; line-height:1.5; color:var(--bg-dark); }
 
-/* Favorite Games horizontal row */
-.detail-section { margin-bottom:var(--gap); }
-.section-heading { font-size:1rem; margin-bottom:0.5rem; color:var(--bg-dark); }
-.games-row { display:flex; gap:1rem; overflow-x:auto; }
-.game-item { display:flex; flex-direction:column; align-items:center; text-decoration:none; color:var(--bg-dark); }
-.game-steam-icon { width:18px; height:18px; margin-bottom:4px; }
-.game-title { font-size:0.9rem; font-weight:600; }
-.game-thumb { width:60px; aspect-ratio:2/3; background-size:cover; background-position:center; border-radius:4px; transform:scale(0.85); }
+/* 5) Combined games + favorites row */
+.combined-row { display:flex; flex-wrap:wrap; gap:1rem; }
+.game-fav-item { display:flex; flex-direction:column; align-items:center; width:120px; text-decoration:none; color:var(--bg-dark); }
+.game-steam-icon { width:20px; height:20px; margin-bottom:4px; }
+.game-title { font-size:1rem; font-weight:600; text-align:center; margin-bottom:4px; }
+.game-thumb { width:100px; aspect-ratio:2/3; background-size:cover; background-position:center; border-radius:4px; }
 .game-thumb.placeholder { background:var(--bg-light); }
+.snack-thumb { width:100px; aspect-ratio:1; object-fit:contain; border-radius:4px; }
 
-/* Favorites block (drinks/snacks) */
-.detail-snacks { margin-top:var(--gap); }
-.detail-snacks h5 { font-size:1rem; margin-bottom:0.5rem; color:var(--bg-dark); }
-.snack-row { display:flex; gap:var(--gap); }
-.snack-item { text-align:center; }
-.snack-thumb { width:36px; height:36px; border-radius:4px; object-fit:cover; }
-
-/* Responsive: stack on small */
-@media(max-width:800px){ .team-details{flex-direction:column;}
+/* Responsive */
+@media(max-width:800px) {
+  .team-details { flex-direction:column; }
+  .member-thumbs-vertical { flex-direction:row; width:auto; margin-bottom:var(--gap); }
+  .detail-header { flex-direction:column; align-items:center; }
+  .game-fav-item { width:80px; }
+}
