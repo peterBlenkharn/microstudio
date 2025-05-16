@@ -26,10 +26,10 @@
 /* 5) Combined row with games + favorites horizontally */
 .combined-row { display:flex; gap:1rem; flex-wrap:wrap; }
 .game-fav-item { display:flex; flex-direction:column; align-items:center; width:120px; }
-.game-thumb { width:100px; height:150px; background-size:cover; background-position:center; border-radius:4px; }
+.game-thumb { width:200px; height:300px; background-size:cover; background-position:center; border-radius:4px; }
 .game-info { display:flex; align-items:center; gap:0.25rem; margin-top:0.5rem; }
 .game-steam-icon { width:20px; height:20px; }
-.game-title { font-size:1rem; font-weight:600; }
+.game-title { font-size:1rem; font-weight:600; color:var(--bg-dark);}
 .snack-thumb { width:100px; height:100px; object-fit:cover; border-radius:4px; }
 
 /* Responsive */
