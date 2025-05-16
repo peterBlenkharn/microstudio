@@ -140,9 +140,23 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
 }
 
+  // Helper for favorites inside same row:
+function renderSnackHtml(item, type) {
+  const key = `${type} Name`;
+  if (!item?.[key]) return '';
+  return `
+    <div class="game-fav-item">
+      <div class="game-info">
+        <span class="game-title">${item[key]}</span>
+      </div>
+      <img src="images/${type.toLowerCase()}pics/${item['Image Name']}.jpg" class="snack-thumb" alt="${item[key]}">
+    </div>
+  `;
+}
+
 
   // flagEmoji unchanged
-  function flagEmoji(codes=[]) { const A=0x1F1E6; return (codes||[]).map(cc=>
+function flagEmoji(codes=[]) { const A=0x1F1E6; return (codes||[]).map(cc=>
     String.fromCodePoint(A+cc.charCodeAt(0)-65, A+cc.charCodeAt(1)-65)
   ).join(' '); }
 });
