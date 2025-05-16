@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Build thumbnails + auto-select first
   function buildPanel(teamKey, members) {
-    thumbsContainer.innerHTML = Object.entries(members).map(([name,m]) => {
+     thumbsContainer.innerHTML = Object.entries(members).map(([name,m]) => {
       const imgUrl = m['Profile Image Name']
         ? `images/profilepics/${m['Profile Image Name']}.jpg`
         : null;
@@ -96,46 +96,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Blurb below
     const blurb = `<div class="detail-blurb-block"><p class="detail-blurb">${m.Blurb||''}</p></div>`;
-
-    // Games + favorites in one row
-    const items = [];
     // games first
-    Object.values(m['Favourite Games']||{}).forEach(g => {
-      if (!g['Game Name']) return;
-      const thumb = g['Image Name']
-        ? `<div class="game-thumb" style="background-image:url('images/gamepics/${g['Image Name']}.jpg')"></div>`
-        : `<div class="game-thumb placeholder"></div>`;
-      items.push(`
-        <a href="${g['Steam Link']}" target="_blank" class="game-fav-item">
-          <img src="/microstudio/icons/steamicon.png" class="game-steam-icon" alt="Steam">
-          <div class="game-title">${g['Game Name']}</div>
-          ${thumb}
-        </a>
-      `);
-    });
-    // then drink/snack
-    if (m['Favourite Drink']?.['Drink Name']) {
-      const d = m['Favourite Drink'];
-      items.push(`
-        <div class="game-fav-item">
-          <div class="game-title">${d['Drink Name']}</div>
-          <img src="images/drinkpics/${d['Image Name']}.jpg" class="snack-thumb" alt="${d['Drink Name']}">
-        </div>
-      `);
-    }
-    if (m['Favourite Snack']?.['Snack Name']) {
-      const s = m['Favourite Snack'];
-      items.push(`
-        <div class="game-fav-item">
-          <div class="game-title">${s['Snack Name']}</div>
-          <img src="images/snackpics/${s['Image Name']}.jpg" class="snack-thumb" alt="${s['Snack Name']}">
-        </div>
-      `);
-    }
-    const row = `<div class="detail-section combined-row">${items.join('')}</div>`;
-
-    return header + blurb + row;
+    // With this:
+    const rowHtml = renderGamesRow(m['Favourite Games']);
+    return header + blurb + rowHtml;
   }
+
+  function renderGamesRow(games = {}) {
+  const list = Object.values(games).filter(g=>g['Game Name']);
+  if (!list.length) return '';
+
+  // build each game item
+  const gamesHtml = list.map(g => {
+    const thumbHtml = g['Image Name']
+      ? `<div class="game-thumb" style="background-image:url('images/gamepics/${g['Image Name']}.jpg')"></div>`
+      : `<div class="game-thumb placeholder"></div>`;
+
+    return `
+      <div class="game-fav-item">
+        ${thumbHtml}
+        <div class="game-info">
+          <img src="/microstudio/icons/steamicon.png"
+               class="game-steam-icon"
+               alt="Steam">
+          <span class="game-title">${g['Game Name']}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // then your drink/snack markup (re-use your renderSnackHtml helper)
+  const drinkHtml = renderSnackHtml(m['Favourite Drink'], 'Drink');
+  const snackHtml = renderSnackHtml(m['Favourite Snack'], 'Snack');
+
+  return `
+    <div class="detail-section">
+      <div class="combined-row">
+        ${gamesHtml}
+        ${drinkHtml}
+        ${snackHtml}
+      </div>
+    </div>
+  `;
+}
+
 
   // flagEmoji unchanged
   function flagEmoji(codes=[]) { const A=0x1F1E6; return (codes||[]).map(cc=>
