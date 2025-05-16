@@ -1,10 +1,10 @@
-/* 1) Wider thumbnail column */
+/* 1) Wider vertical thumbnail column + flex-row thumbs */
 .team-details { display:flex; align-items:flex-start; max-width:var(--max-width); margin:2rem auto; background:var(--cream); padding:1.6rem; border-radius:12px; }
-.member-thumbs-vertical { width:120px; display:flex; flex-direction:column; gap:var(--gap); margin-right:var(--gap); }
-.thumb { text-align:center; cursor:pointer; }
+.member-thumbs-vertical { width:200px; display:flex; flex-direction:column; gap:var(--gap); margin-right:var(--gap); }
+.thumb { display:flex; align-items:center; gap:0.5rem; padding:0.25rem 0; cursor:pointer; }
 .thumb-img { width:60px; height:60px; border-radius:50%; object-fit:cover; border:3px solid transparent; }
 .thumb.active .thumb-img { border-color:var(--pink); }
-.thumb-name { margin-top:0.3rem; font-size:0.8rem; color:var(--bg-dark); }
+.thumb-name { margin-top:0.3rem; font-size:0.9rem; color:var(--bg-dark); white-space:nowrap; }
 
 /* 2) Details content */
 .details-content-wrap { position:relative; flex:1; }
@@ -23,14 +23,14 @@
 .detail-blurb-block { background:#f9f7f0; padding:1rem; border-radius:8px; margin-bottom:var(--gap); }
 .detail-blurb { margin:0; font-size:1rem; line-height:1.5; color:var(--bg-dark); }
 
-/* 5) Combined games + favorites row */
-.combined-row { display:flex; flex-wrap:wrap; gap:1rem; }
-.game-fav-item { display:flex; flex-direction:column; align-items:center; width:120px; text-decoration:none; color:var(--bg-dark); }
-.game-steam-icon { width:20px; height:20px; margin-bottom:4px; }
-.game-title { font-size:1rem; font-weight:600; text-align:center; margin-bottom:4px; }
-.game-thumb { width:100px; aspect-ratio:2/3; background-size:cover; background-position:center; border-radius:4px; }
-.game-thumb.placeholder { background:var(--bg-light); }
-.snack-thumb { width:100px; aspect-ratio:1; object-fit:contain; border-radius:4px; }
+/* 5) Combined row with games + favorites horizontally */
+.combined-row { display:flex; gap:1rem; flex-wrap:wrap; }
+.game-fav-item { display:flex; flex-direction:column; align-items:center; width:120px; }
+.game-thumb { width:100px; height:150px; background-size:cover; background-position:center; border-radius:4px; }
+.game-info { display:flex; align-items:center; gap:0.25rem; margin-top:0.5rem; }
+.game-steam-icon { width:20px; height:20px; }
+.game-title { font-size:1rem; font-weight:600; }
+.snack-thumb { width:100px; height:100px; object-fit:cover; border-radius:4px; }
 
 /* Responsive */
 @media(max-width:800px) {
