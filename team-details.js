@@ -98,12 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const blurb = `<div class="detail-blurb-block"><p class="detail-blurb">${m.Blurb||''}</p></div>`;
     // games first
     // With this:
-    const rowHtml = renderGamesRow(m['Favourite Games']);
+    const rowHtml = renderGamesRow(m);
     return header + blurb + rowHtml;
   }
 
-  function renderGamesRow(games = {}) {
-  const list = Object.values(games).filter(g=>g['Game Name']);
+  function renderGamesRow(member) {
+  const list = Object.values(member['Favourite Games'] || {}).filter(g => g['Game Name']);
   if (!list.length) return '';
 
   // build each game item
@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }).join('');
 
   // then your drink/snack markup (re-use your renderSnackHtml helper)
-  const drinkHtml = renderSnackHtml(m['Favourite Drink'], 'Drink');
-  const snackHtml = renderSnackHtml(m['Favourite Snack'], 'Snack');
+   const drinkHtml = renderSnackHtml(member['Favourite Drink'], 'Drink');
+   const snackHtml = renderSnackHtml(member['Favourite Snack'], 'Snack');
 
   return `
     <div class="detail-section">
