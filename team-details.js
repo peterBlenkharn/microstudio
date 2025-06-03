@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function buildPanel(teamKey, members) {
      thumbsContainer.innerHTML = Object.entries(members).map(([name,m]) => {
       const imgUrl = m['Profile Image Name']
-        ? `images/profilepics/${m['Profile Image Name']}.jpg`
+        ? `images/profilepics/${m['Profile Image Name']}.png`
         : null;
       return `
         <div class="thumb" data-member="${name}">
