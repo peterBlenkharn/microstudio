@@ -1,139 +1,136 @@
-/* —— Team/Game Cards —— */
-.game-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  padding: 0px;
-  /* background already set on .card */
-}
+/* ══════════════════════════════════════
+   Game Cards (Teams Section)
+   ══════════════════════════════════════ */
 
-/* Game-art banner */
-.game-art img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  max-height: 140px;
-}
-
-.game-art{
-  width: 100%;
-  display: block;
-}
-
-/* Title & tagline */
-.project-title {
-  margin: 1rem 0 .25em;
-  color: var(--bg);
-}
-.tagline {
-  font-size: .9rem;
-  color: #333;
-  padding: 0 .75rem;
-  text-align: center;
-}
-
-/* Circular team photo */
-.team-photo {
-  margin: 1rem 0;
-}
-.team-photo img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--cream);
-}
-
-
-/* 1. Base reset for game-card */
+/* —— Game Card —— */
 .game-card {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  padding: 0;
   background: var(--cream);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.game-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
-/* 2. Full-bleed header image */
+/* Full-bleed header image */
+.game-art {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
 .game-art img {
   width: 100%;
-  height: auto;
+  height: 160px;
   object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
   display: block;
+  transition: transform var(--transition-slow);
+}
+.game-card:hover .game-art img {
+  transform: scale(1.05);
 }
 
-/* 3. Card body with its own padding */
+/* Card body */
 .card-body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 0 1rem;
 }
 
-/* 4. Punchy title */
+/* Project title */
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 0.5em;
+  margin: 1rem 0 0.25em;
   color: var(--bg);
 }
 
-/* 5. Tagline styling */
+/* Tagline */
 .tagline {
-  font-size: 1rem;
-  color: #333; /* or var(--bg-dark) if you prefer */
+  font-size: 0.95rem;
+  color: #555;
   margin-bottom: 1rem;
   max-width: 85%;
+  font-style: italic;
 }
 
-/* 6. Rectangular team photo */
+/* Team photo */
 .team-photo {
-  padding: 0.5rem; /* gives breathing room */
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .team-photo img {
   width: 100%;
+  max-width: 260px;
   height: auto;
   border-radius: 8px;
-  display: block;
   object-fit: cover;
 }
 
-/* 7. Two-button footer */
+/* Two-button CTA footer */
 .card-cta {
   display: flex;
-  gap: 1rem;
-  padding: 1rem 1.5rem 1.5rem;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem 1.25rem;
+  margin-top: auto;
 }
 .card-cta .btn {
   flex: 1;
   text-align: center;
+  margin: 0;
+  font-size: 0.9rem;
 }
 
-/* 8. Steam-style button */
+/* Steam-style button */
 .btn-steam {
-  background: #171a21; /* Steam dark blue-gray */
+  background: #171a21;
   color: var(--cream);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
+.btn-steam:hover {
+  background: #2a475e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(23, 26, 33, 0.4);
+}
 .btn-steam .btn-icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   margin-right: 0.5em;
-  /* ensure your PNG inverts correctly or use a white version */
 }
 
-/* 9. Responsive tweaks */
+/* Coming Soon variation */
+.btn-coming-soon {
+  opacity: 0.7;
+  cursor: default;
+  font-size: 0.85rem;
+}
+.btn-coming-soon:hover {
+  transform: none;
+  box-shadow: none;
+  background: #171a21;
+}
+
+/* Learn More button */
+.btn-learn-more {
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+/* —— Responsive —— */
 @media (max-width: 600px) {
   .card-cta {
     flex-direction: column;

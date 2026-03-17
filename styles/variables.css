@@ -1,3 +1,7 @@
+/* ══════════════════════════════════════
+   CSS Custom Properties (Design Tokens)
+   ══════════════════════════════════════ */
+
 :root {
   /* —— Base Colours —— */
   --bg:             #0a0d16;
@@ -15,14 +19,14 @@
   /* —— Cream Variants —— */
   --cream-light:    #ffffff;
   --cream-dark:     #ded8cf;
-  --cream-very-light:#ffffff;
-  --cream-very-dark: #c2beb6;
+  --cream-very-light: #ffffff;
+  --cream-very-dark:  #c2beb6;
 
   /* —— Yellow Variants —— */
   --yellow-light:    #fff5b8;
   --yellow-dark:     #e6c200;
-  --yellow-very-light:#fffba3;
-  --yellow-very-dark: #b38f00;
+  --yellow-very-light: #fffba3;
+  --yellow-very-dark:  #b38f00;
 
   /* —— Pink Variants —— */
   --pink-light:      #ff80a1;
@@ -36,7 +40,12 @@
   --cyan-very-light: #9ff2f0;
   --cyan-very-dark:  #007c78;
 
-  /* —— Layout Vars —— */
+  /* —— Layout —— */
   --gap:            1.5rem;
   --max-width:      1200px;
+
+  /* —— Transitions —— */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.4s ease;
 }

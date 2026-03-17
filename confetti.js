@@ -1,8 +1,10 @@
-// ===== Configuration =====
-const NUM_CONFETTI = 500;
-const COLORS = ['#FFD700','#FF2E63','#08D9D6'];
+// ===== Confetti Background =====
+// Decorative confetti shapes with mouse/scroll parallax.
+// Reduced from 500 to 60 pieces for performance.
 
-// ===== Utility Functions =====
+const NUM_CONFETTI = 60;
+const COLORS = ['#FFD700', '#FF2E63', '#08D9D6'];
+
 function random(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -14,31 +16,27 @@ function shuffleArray(arr) {
   }
 }
 
-// Generate evenly spaced but jittered grid points
 function generateGridPoints(cols, rows, width, height, count) {
   const pts = [];
-  const cellW   = width  / cols;
-  const cellH   = height / rows;
-  const jitterW = cellW   * 0.3;  // up to ±30% of cell width
-  const jitterH = cellH   * 0.3;  // up to ±30% of cell height
+  const cellW = width / cols;
+  const cellH = height / rows;
+  const jitterW = cellW * 0.3;
+  const jitterH = cellH * 0.3;
 
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
-      // cell centre
       const cx = col * cellW + cellW / 2;
       const cy = row * cellH + cellH / 2;
-      // jitter around centre
-      const px = cx + random(-jitterW, jitterW);
-      const py = cy + random(-jitterH, jitterH);
-      pts.push([px, py]);
+      pts.push([
+        cx + random(-jitterW, jitterW),
+        cy + random(-jitterH, jitterH)
+      ]);
     }
   }
 
   shuffleArray(pts);
-  // just take as many as we need
   return pts.slice(0, count);
 }
-
 
 // ===== Shape Generators =====
 const SHAPE_GENERATORS = {
@@ -49,26 +47,24 @@ const SHAPE_GENERATORS = {
   },
   square: () => {
     const el = document.createElement('div');
-    el.style.borderRadius = '6px';
+    el.style.borderRadius = '4px';
     return el;
   },
   triangle: () => {
-    const svgNS = "http://www.w3.org/2000/svg";
-    const svg = document.createElementNS(svgNS, "svg");
-    svg.setAttribute("width", "20");
-    svg.setAttribute("height", "20");
-
-    const tri = document.createElementNS(svgNS, "polygon");
-    tri.setAttribute("points", "10,0 20,20 0,20");
-    tri.setAttribute("fill", "currentColor");
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('width', '20');
+    svg.setAttribute('height', '20');
+    const tri = document.createElementNS(svgNS, 'polygon');
+    tri.setAttribute('points', '10,0 20,20 0,20');
+    tri.setAttribute('fill', 'currentColor');
     svg.appendChild(tri);
-
-    svg.style.display = "block";
+    svg.style.display = 'block';
     return svg;
   },
   star: () => {
     const el = document.createElement('div');
-    el.innerHTML = '&#9733;';       // ★
+    el.innerHTML = '&#9733;';
     el.style.fontSize = '16px';
     el.style.lineHeight = '1';
     return el;
@@ -79,122 +75,122 @@ const SHAPE_GENERATORS = {
     el.style.height = '12px';
     el.style.position = 'relative';
 
-    const createBar = () => {
+    const createBar = (rotate) => {
       const bar = document.createElement('div');
-      bar.style.background = 'currentColor';
-      bar.style.width = '100%';
-      bar.style.height = '4px';
-      bar.style.position = 'absolute';
-      bar.style.top = '50%';
-      bar.style.left = '0';
-      bar.style.transform = 'translateY(-50%)';
-      bar.style.borderRadius = '2px';
+      bar.style.cssText = `
+        background: currentColor;
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%)${rotate ? ' rotate(90deg)' : ''};
+        border-radius: 2px;
+      `;
       return bar;
     };
 
-    const bar1 = createBar();
-    const bar2 = createBar();
-    bar2.style.transform += ' rotate(90deg)';
-
-    el.append(bar1, bar2);
+    el.append(createBar(false), createBar(true));
     return el;
   }
 };
 
-// ===== Confetti Creation =====
+// ===== Confetti Piece =====
 function createConfettiPiece(container, x, y) {
-  // pick random shape
   const types = Object.keys(SHAPE_GENERATORS);
-  const type  = types[Math.floor(Math.random() * types.length)];
-  const el    = SHAPE_GENERATORS[type]();
+  const type = types[Math.floor(Math.random() * types.length)];
+  const el = SHAPE_GENERATORS[type]();
 
-  // style it
   const color = COLORS[Math.floor(Math.random() * COLORS.length)];
-  const size  = random(12, 18);
-  const rot   = random(0, 360);
-  const depth = random(0.5, 2.0);
+  const size = random(10, 18);
+  const rot = random(0, 360);
+  const depth = random(0.4, 1.8);
 
   el.classList.add('confetti');
+  el.style.position = 'absolute';
+  el.style.opacity = String(0.15 + depth * 0.15);
 
-  // size for non-triangle
   if (type !== 'triangle') {
-    el.style.width  = `${size}px`;
+    el.style.width = `${size}px`;
     el.style.height = `${size}px`;
   }
 
-  // fill logic
   if (type === 'circle' || type === 'square') {
-    // solid CSS background for div-based shapes
     el.style.backgroundColor = color;
   } else {
-    // drives SVG fill (triangle) and text/bars (star, cross)
     el.style.color = color;
   }
 
-  // place + rotate + depth
-  el.style.transform = 
-    `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${depth})`;
+  el.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${depth})`;
+  el.style.willChange = 'transform';
 
-  // store for parallax
-  el.dataset.baseX    = x;
-  el.dataset.baseY    = y;
+  el.dataset.baseX = x;
+  el.dataset.baseY = y;
   el.dataset.rotation = rot;
-  el.dataset.depth    = depth;
+  el.dataset.depth = depth;
 
   container.append(el);
 }
 
+// ===== Parallax (throttled via rAF) =====
+let rafId = null;
 
-// ===== Parallax Update =====
-function updateParallax(mouseX, mouseY, scrollY) {
+function updateParallax(mouseX, mouseY, scrollY, pieces) {
   const centerX = window.innerWidth / 2;
   const centerY = window.innerHeight / 2;
 
-  document.querySelectorAll('.confetti').forEach(el => {
+  for (const el of pieces) {
     const bx = parseFloat(el.dataset.baseX);
     const by = parseFloat(el.dataset.baseY);
     const rot = parseFloat(el.dataset.rotation);
-    const d  = parseFloat(el.dataset.depth);
+    const d = parseFloat(el.dataset.depth);
 
-    const offX = (mouseX - centerX) * 0.01 * d;
-    const offY = (mouseY - centerY + scrollY) * 0.01 * d;
+    const offX = (mouseX - centerX) * 0.008 * d;
+    const offY = (mouseY - centerY + scrollY) * 0.008 * d;
 
-    el.style.transform = 
-      `translate(${bx + offX}px, ${by + offY}px) rotate(${rot}deg) scale(${d})`;
-  });
+    el.style.transform = `translate(${bx + offX}px, ${by + offY}px) rotate(${rot}deg) scale(${d})`;
+  }
 }
 
-// ===== Initialization =====
+// ===== Init =====
 function initConfetti() {
+  // Respect reduced motion preference
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const container = document.getElementById('confetti-bg');
+  if (!container) return;
+
   const W = window.innerWidth;
   const H = window.innerHeight;
 
-  // build an even grid of points
   const cols = Math.ceil(Math.sqrt(NUM_CONFETTI * (W / H)));
   const rows = Math.ceil(NUM_CONFETTI / cols);
   const points = generateGridPoints(cols, rows, W, H, NUM_CONFETTI);
 
-
-  // create each piece
   for (let i = 0; i < NUM_CONFETTI; i++) {
     const [x, y] = points[i];
     createConfettiPiece(container, x, y);
   }
 
-  // track mouse & scroll
-  let mx = W/2, my = H/2;
+  // Cache NodeList for performance
+  const pieces = container.querySelectorAll('.confetti');
+  let mx = W / 2, my = H / 2;
+
+  function scheduleUpdate() {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      updateParallax(mx, my, window.scrollY, pieces);
+      rafId = null;
+    });
+  }
+
   document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    updateParallax(mx, my, window.scrollY);
-  });
-  document.addEventListener('scroll', () => {
-    updateParallax(mx, my, window.scrollY);
-  });
-    // after the for-loop that does createConfettiPiece(...)
-  console.log(`🌟 Appended ${container.children.length} confetti pieces (asked for ${NUM_CONFETTI})`);
+    mx = e.clientX;
+    my = e.clientY;
+    scheduleUpdate();
+  }, { passive: true });
+
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
 }
 
 initConfetti();
-
-
