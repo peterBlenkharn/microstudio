@@ -1,69 +1,111 @@
-/* —— About Panels —— */
+/* ══════════════════════════════════════
+   About Panels (Diagonal Strips)
+   ══════════════════════════════════════ */
+
 .about-panels {
   counter-reset: panel;
 }
+
 .about-panels .panel {
   position: relative;
   overflow: hidden;
   margin: 2rem 0;
-  padding: 3rem 0;
-  clip-path: polygon(0 8%, 100% 0, 100% 92%, 0% 100%);
+  padding: 4rem 0;
+  clip-path: polygon(0 6%, 100% 0, 100% 94%, 0% 100%);
+
+  /* Scroll-reveal initial state */
   opacity: 0;
   transform: translateY(2rem);
-  transition: opacity .6s ease, transform .6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .about-panels .panel:nth-child(even) {
-  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
+  clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 94%);
 }
 
 /* Gradient + noise background */
 .about-panels .panel {
   background-color: var(--panel-bg-start);
-  background-image:
-    linear-gradient(
-      135deg,
-      var(--panel-bg-start) 0%,
-      var(--panel-bg-end)   100%
-    );
+  background-image: linear-gradient(
+    135deg,
+    var(--panel-bg-start) 0%,
+    var(--panel-bg-end) 100%
+  );
 }
 .about-panels .panel::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: url('/microstudio/textures/noise.png') repeat;
-  opacity: 0.28;
+  background: url('../textures/noise.png') repeat;
+  opacity: 0.2;
   pointer-events: none;
 }
 
-/* panel colours via custom-prop overrides */
-.panel-1 { --panel-bg-start: var(--pink-light);   --panel-bg-end: var(--pink-very-dark); }
-.panel-2 { --panel-bg-start: var(--yellow-light); --panel-bg-end: var(--yellow-very-dark); }
-.panel-3 { --panel-bg-start: var(--cyan-light);   --panel-bg-end: var(--cyan-very-dark); }
+/* Panel colour overrides */
+.panel-1 {
+  --panel-bg-start: var(--pink-light);
+  --panel-bg-end: var(--pink-very-dark);
+}
+.panel-2 {
+  --panel-bg-start: var(--yellow-light);
+  --panel-bg-end: var(--yellow-very-dark);
+}
+.panel-3 {
+  --panel-bg-start: var(--cyan-light);
+  --panel-bg-end: var(--cyan-very-dark);
+}
 
-/* Inner content stays level */
+/* Inner content container */
 .panel__inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
-  text-align: center;
+  padding: 0 2rem;
+  text-align: left;
 }
+
+/* Two-column content grid */
 .panel__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 }
+
+/* Alternate image side */
+.panel:nth-child(even) .panel__content {
+  direction: rtl;
+}
+.panel:nth-child(even) .panel__content > * {
+  direction: ltr;
+}
+
+/* Text styling */
+.panel__text h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--bg);
+}
+.panel__text p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--bg);
+  opacity: 0.9;
+}
+
+/* Media (images) */
 .panel__media img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
   object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Badge icon */
+/* Icon badge */
 .icon-badge {
-  width: 3.5rem; height: 3.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: var(--cream);
   color: var(--bg);
   border-radius: 50%;
@@ -72,19 +114,38 @@
   justify-content: center;
   font-size: 1.25rem;
   margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Reveal on scroll */
+/* Scroll reveal activated */
 .about-panels .panel.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Mobile: remove clip & stack */
+/* —— Mobile: stack + remove clip —— */
+@media (max-width: 768px) {
+  .panel__content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  .panel:nth-child(even) .panel__content {
+    direction: ltr;
+  }
+  .panel__media {
+    order: -1;
+  }
+  .panel__inner {
+    text-align: center;
+  }
+}
+
 @media (max-width: 600px) {
   .about-panels .panel {
     clip-path: none;
     padding: 3rem 0;
+    margin: 0;
   }
   .about-panels .panel:nth-child(even) {
     clip-path: none;

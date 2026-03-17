@@ -1,17 +1,232 @@
-/* —— Full-page Confetti Canvas —— */
+/* ══════════════════════════════════════
+   Layout: Confetti Canvas, Footer,
+   Newsletter, Support, Staff
+   ══════════════════════════════════════ */
+
+/* —— Confetti Background —— */
 #confetti-bg {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   overflow: hidden;
   z-index: -1;
 }
 
+/* —— Staff Section —— */
+.staff-section {
+  background: var(--bg-light);
+}
+
+.staff-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.staff-card {
+  background: var(--cream);
+  color: var(--bg);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.staff-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.staff-card-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid var(--bg-light);
+}
+.staff-card-photo.placeholder {
+  background: var(--bg-light);
+}
+
+.staff-card-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.staff-card-role {
+  font-size: 0.9rem;
+  color: var(--bg-very-light);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.staff-card-blurb {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.staff-card-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+.staff-card-links a {
+  transition: opacity var(--transition-fast);
+}
+.staff-card-links a:hover {
+  opacity: 0.7;
+}
+.staff-card-links .social-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* —— Newsletter Section —— */
+.newsletter-section {
+  background: linear-gradient(135deg, var(--pink-dark) 0%, var(--pink-very-dark) 100%);
+  position: relative;
+}
+.newsletter-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('../textures/noise.png') repeat;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.newsletter-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter-blurb {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--cream);
+  color: var(--bg);
+}
+.newsletter-input::placeholder {
+  color: #999;
+}
+.newsletter-input:focus {
+  outline: 2px solid var(--yellow);
+  outline-offset: -2px;
+}
+
+.newsletter-btn {
+  border-radius: 0;
+  margin: 0;
+  white-space: nowrap;
+  padding: 0.85rem 1.5rem;
+}
+
+.newsletter-note {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .newsletter-input-group {
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  .newsletter-input {
+    border-radius: 8px 8px 0 0;
+  }
+  .newsletter-btn {
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+/* —— Support / Contact Section —— */
+.support-section {
+  background: var(--bg-light);
+}
+
+.support-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.support-blurb {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.support-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.support-note {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
 /* —— Footer —— */
 .footer {
-  padding: 2rem 1rem;
-  font-size: .9rem;
+  padding: 2.5rem 1.5rem;
   text-align: center;
-  background: #07090f;
+  background: var(--bg-dark);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  opacity: 0.5;
 }

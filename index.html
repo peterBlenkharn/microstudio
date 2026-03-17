@@ -2,13 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  
-  <title>Micro Studio</title>
-  
-  <link rel="icon" href="icons/favicon_3232.png" />
-   
-  <!-- STYLE SHEETS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Micro Studio: University of Greenwich students building and shipping original games to Steam in just 12 weeks. Meet the teams and follow their journey.">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Micro Studio — University of Greenwich">
+  <meta property="og:description" content="A micro studio for BIG ideas. Students creating original games in 12 weeks.">
+  <!-- TODO: Add og:image once a 1200x630 share image is created -->
+  <!-- <meta property="og:image" content="images/og-share.jpg"> -->
+  <meta property="og:url" content="https://peterBlenkharn.github.io/microstudio/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>Micro Studio — University of Greenwich</title>
+
+  <link rel="icon" href="icons/favicon_3232.png">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/variables.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
@@ -18,24 +33,29 @@
   <link rel="stylesheet" href="styles/modules/about.css">
   <link rel="stylesheet" href="styles/modules/teams.css">
 
+  <!-- Country Flag Emoji Polyfill -->
   <script src="https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill/dist/index.umd.js"></script>
-
 </head>
 
-</head>
 <body>
-  
-  <div id="confetti-bg"></div>
+  <!-- Skip to content (accessibility) -->
+  <a href="#about" class="skip-link">Skip to content</a>
+
+  <!-- Confetti Background -->
+  <div id="confetti-bg" aria-hidden="true"></div>
+
   <!-- Hero -->
   <header class="hero">
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
       <ul class="nav-links">
+        <li><a href="#about">About</a></li>
         <li><a href="#teams">Our Games</a></li>
+        <li><a href="#staff">Staff</a></li>
         <li><a href="#involved">Get Involved</a></li>
       </ul>
     </nav>
+
     <div class="hero-content">
-            <!-- in your hero-content -->
       <h1 class="hero-title">
         A <span class="title-micro">micro</span> studio for
       </h1>
@@ -43,7 +63,8 @@
         <span class="title-big">BIG</span>ideas<span class="title-dot">.</span>
       </h1>
 
-      <p>Students at the University Greenwich creating entire games in just <span class="subtitle-emphasis">12 weeks</span>.</p>
+      <p>Students at the University of Greenwich creating original games in just <span class="subtitle-emphasis">12 weeks</span>.</p>
+
       <div class="hero-cta">
         <a href="https://www.gre.ac.uk/subjects/games-development" class="btn btn-primary">Study Games</a>
         <a href="#newsletter" class="btn btn-secondary">Stay Updated</a>
@@ -52,216 +73,219 @@
     </div>
   </header>
 
-<section id="about" class="about-panels">
-  <!-- Panel 1 -->
-  <div class="panel panel-1">
-    <div class="panel__inner">
-      <div class="panel__content">
-        <div class="panel__text">
-          <div class="icon-badge"><i class="icon gamepad"></i></div>
-          <h3>What It Is</h3>
-          <p>An intensive, collaborative creative project for our
-             undergraduates—launching original student games in 12 weeks.</p>
-        </div>
-        <div class="panel__media">
-          <img src="images/what_is_it.jpg" alt="Students working together">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Panel 2 -->
-  <div class="panel panel-2">
-    <div class="panel__inner">
-      <div class="panel__content">
-        <div class="panel__text">
-          <div class="icon-badge"><i class="icon rocket"></i></div>
-          <h3>What It’s For</h3>
-          <p>Building real-world skills, getting published on Steam,
-             and pushing creative boundaries in a high-energy crash course.</p>
-        </div>
-        <div class="panel__media">
-          <img src="images/what_its_for.jpg" alt="Game prototype in Unity">
+  <!-- About Panels -->
+  <section id="about" class="about-panels">
+    <!-- Panel 1: What It Is -->
+    <div class="panel panel-1">
+      <div class="panel__inner">
+        <div class="panel__content">
+          <div class="panel__text">
+            <div class="icon-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="12" x2="6" y2="12"/><line x1="10" y1="12" x2="10" y2="12"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="18" y1="12" x2="18" y2="12"/><line x1="14" y1="14" x2="14" y2="14"/></svg>
+            </div>
+            <h3>What it is</h3>
+            <p>An intensive, collaborative creative project for our
+               undergraduates — launching original student games in 12 weeks.</p>
+          </div>
+          <div class="panel__media">
+            <img src="images/what_is_it.jpg" alt="Students collaborating on game development at Micro Studio">
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Panel 3 -->
-  <div class="panel panel-3">
-    <div class="panel__inner">
-      <div class="panel__content">
-        <div class="panel__text">
-          <div class="icon-badge"><i class="icon users"></i></div>
-          <h3>Who It’s For</h3>
-          <p>BA Games Dev students teaming up with mentors,
-             industry partners, and each other to ship amazing games.</p>
-        </div>
-        <div class="panel__media">
-          <img src="images/who_its_for.jpg" alt="Final game showcase">
+    <!-- Panel 2: What It's For -->
+    <div class="panel panel-2">
+      <div class="panel__inner">
+        <div class="panel__content">
+          <div class="panel__text">
+            <div class="icon-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            </div>
+            <h3>What it's for</h3>
+            <p>Building real-world skills, getting published on Steam,
+               and pushing creative boundaries in an intensive programme.</p>
+          </div>
+          <div class="panel__media">
+            <img src="images/what_its_for.jpg" alt="Game prototype running in a development engine">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-
-
-  <!-- About
-  <section id="about" class="section about">
-    <h2 class="section-title">About the Programme</h2>
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon"><i class="icon gamepad"></i></div>
-        <h3>What It Is</h3>
-        <p>An intensive, collaborative creative project for our undergraduates.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon"><i class="icon rocket"></i></div>
-        <h3>What It’s For</h3>
-        <p>Building skills, launching games, and exploring new ideas.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon"><i class="icon users"></i></div>
-        <h3>Who It’s For</h3>
-        <p>BA Games Dev students working with mentors and supporters.</p>
+    <!-- Panel 3: Who It's For -->
+    <div class="panel panel-3">
+      <div class="panel__inner">
+        <div class="panel__content">
+          <div class="panel__text">
+            <div class="icon-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3>Who it's for</h3>
+            <p>BSc Games Development students teaming up with mentors,
+               industry partners, and each other to ship games on Steam.</p>
+          </div>
+          <div class="panel__media">
+            <img src="images/who_its_for.jpg" alt="Students presenting their finished games at a showcase event">
+          </div>
+        </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- Teams / Games -->
   <section id="teams" class="section teams">
-  <h2 class="section-title">Meet the Teams</h2>
-  <div class="cards">
-    <div class="card game-card" data-team="Lost Museum Team">
-      
-      <!-- FULL-BLEED HEADER IMAGE -->
-      <div class="game-art">
-        <img src="images/lost_museum_header.jpg" alt="Lost Museum cover art">
-      </div>
-      
-      <!-- CARD BODY: project title, tagline, team photo -->
-      <div class="card-body">
-        <h3 class="project-title">THE LOST MUSEUM</h3>
-        <p class="tagline">Can you unravel the mystery of the museum?</p>
-        <div class="team-photo">
-          <img src="images/team-a.jpg" alt="Lost Museum team photo">
+    <h2 class="section-title">Meet the teams</h2>
+    <div class="cards">
+
+      <!-- The Lost Museum -->
+      <div class="card game-card" data-team="Lost Museum Team">
+        <div class="game-art">
+          <img src="images/lost_museum_header.jpg" alt="The Lost Museum — atmospheric museum environment">
+        </div>
+        <div class="card-body">
+          <h3 class="project-title">The Lost Museum</h3>
+          <p class="tagline">Can you unravel the mystery of the museum?</p>
+          <div class="team-photo">
+            <img src="images/team-a.jpg" alt="The Lost Museum team">
+          </div>
+        </div>
+        <div class="card-cta">
+          <button class="btn btn-primary btn-learn-more">Learn More</button>
+          <span class="btn btn-steam btn-coming-soon">
+            <img src="icons/steamicon.png" alt="" class="btn-icon">Coming Soon
+          </span>
         </div>
       </div>
-      
-      <!-- CARD CTA: two buttons, equal width -->
-      <div class="card-cta">
-        <button class="btn btn-primary btn-learn-more">Learn More</button>
-        <a href="#wishlist" class="btn btn-steam">
-          <img src="icons/steamicon.png" alt="" class="btn-icon">Wishlist
-        </a>
+
+      <!-- Ghrystlyst -->
+      <div class="card game-card" data-team="Ghrystlyst Team">
+        <div class="game-art">
+          <img src="images/ghrystlyst_header.jpg" alt="Ghrystlyst — dark horror atmosphere">
+        </div>
+        <div class="card-body">
+          <h3 class="project-title">Ghrystlyst</h3>
+          <p class="tagline">The butcher wants your flesh.</p>
+          <div class="team-photo">
+            <img src="images/team-b.jpg" alt="The Ghrystlyst team">
+          </div>
+        </div>
+        <div class="card-cta">
+          <button class="btn btn-primary btn-learn-more">Learn More</button>
+          <span class="btn btn-steam btn-coming-soon">
+            <img src="icons/steamicon.png" alt="" class="btn-icon">Coming Soon
+          </span>
+        </div>
+      </div>
+
+      <!-- Parapet -->
+      <div class="card game-card" data-team="Parapet Team">
+        <div class="game-art">
+          <img src="images/parapet_header.jpg" alt="Parapet — castle defence scene">
+        </div>
+        <div class="card-body">
+          <h3 class="project-title">Parapet</h3>
+          <p class="tagline">Defend your keep from waves of skellies.</p>
+          <div class="team-photo">
+            <img src="images/team-c.jpg" alt="The Parapet team">
+          </div>
+        </div>
+        <div class="card-cta">
+          <button class="btn btn-primary btn-learn-more">Learn More</button>
+          <span class="btn btn-steam btn-coming-soon">
+            <img src="icons/steamicon.png" alt="" class="btn-icon">Coming Soon
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Team Details Container -->
+    <div id="team-details" class="team-details" hidden>
+      <div class="member-thumbs-vertical">
+        <!-- JS injects member thumbnails -->
+      </div>
+      <div class="details-content-wrap">
+        <div class="details-arrow"></div>
+        <div class="member-detail-card"></div>
       </div>
     </div>
 
-    <div class="card game-card" data-team="Ghrystlyst Team">
-      
-      <!-- FULL-BLEED HEADER IMAGE -->
-      <div class="game-art">
-        <img src="images/ghrystlyst_header.jpg" alt="Ghrystlyst cover art">
-      </div>
-      
-      <!-- CARD BODY: project title, tagline, team photo -->
-      <div class="card-body">
-        <h3 class="project-title">GHRYSTLYST</h3>
-        <p class="tagline">The butcher wants your flesh.</p>
-        <div class="team-photo">
-          <img src="images/team-b.jpg" alt="Ghrystlyst team photo">
-        </div>
-      </div>
-      
-      <!-- CARD CTA: two buttons, equal width -->
-      <div class="card-cta">
-        <button class="btn btn-primary btn-learn-more">Learn More</button>
-        <a href="#wishlist" class="btn btn-steam">
-          <img src="icons/steamicon.png" alt="" class="btn-icon">Wishlist
-        </a>
-      </div>
-    </div>
-
-    <div class="card game-card" data-team="Parapet Team">
-      
-      <!-- FULL-BLEED HEADER IMAGE -->
-      <div class="game-art">
-        <img src="images/parapet_header.jpg" alt="Parapet cover art">
-      </div>
-      
-      <!-- CARD BODY: project title, tagline, team photo -->
-      <div class="card-body">
-        <h3 class="project-title">PARAPET</h3>
-        <p class="tagline">Defend your keep from waves of skellies.</p>
-        <div class="team-photo">
-          <img src="images/team-c.jpg" alt="Parapet team photo">
-        </div>
-      </div>
-      
-      <!-- CARD CTA: two buttons, equal width -->
-      <div class="card-cta">
-        <button class="btn btn-primary btn-learn-more">Learn More</button>
-        <a href="#wishlist" class="btn btn-steam">
-          <img src="icons/steamicon.png" alt="" class="btn-icon">Wishlist
-        </a>
-      </div>
-    </div>
-    
-  </div>
-    
-  <!-- Team Details Container -->
-<div id="team-details" class="team-details" hidden>
-
-  <!-- Vertical Thumbnail List -->
-  <div class="member-thumbs-vertical">
-    <!-- JS injects:
-      <div class="thumb" data-member="Andreea">
-        <img src="images/profilepics/andreea.jpg" alt="Andreea" class="thumb-img">
-        <span class="thumb-name">Andreea</span>
-      </div>
-    -->
-  </div>
-
-  <!-- Panel Content: arrow + detail card -->
-  <div class="details-content-wrap">
-    <div class="details-arrow"></div>
-    <div class="member-detail-card"></div>
-  </div>
-
-</div>
-    
   </section>
 
-  <!-- CTAs -->
+  <!-- Staff Section -->
+  <section id="staff" class="section staff-section">
+    <h2 class="section-title">The people behind it</h2>
+    <p class="section-subtitle">Lecturers, technicians, and supporters keeping the studio running.</p>
+    <div class="staff-cards" id="staff-cards">
+      <!-- JS injects staff cards from teamdata.json "Management Team" -->
+    </div>
+  </section>
+
+  <!-- Get Involved -->
   <section id="involved" class="section ctas">
-    <h2 class="section-title">Get Involved with Micro Studio</h2>
+    <h2 class="section-title">Get involved</h2>
     <div class="cards">
       <div class="card">
-        <i class="icon graduation"></i>
+        <svg class="card-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c6 3 10 0 12-1v-4"/></svg>
         <h3>Want to make games like this?</h3>
-        <p>Join our BSc Games Development programme.</p>
+        <p>Join our BSc Games Development programme at the University of Greenwich.</p>
         <a href="https://www.gre.ac.uk/subjects/games-development" class="btn btn-primary small">Apply Now</a>
       </div>
       <div class="card">
-        <i class="icon envelope"></i>
-        <h3>Follow the Journey</h3>
-        <p>Sign up for updates, playtests, and BTS stories.</p>
+        <svg class="card-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <h3>Follow the journey</h3>
+        <p>Sign up for updates, playtests, and behind-the-scenes stories.</p>
         <a href="#newsletter" class="btn btn-secondary small">Join Mailing List</a>
       </div>
       <div class="card">
-        <i class="icon handshake"></i>
-        <h3>Help Us Grow</h3>
+        <svg class="card-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <h3>Help us grow</h3>
         <p>Industry or academic support through mentoring, tools, or funding.</p>
         <a href="#support" class="btn btn-tertiary small">Contact Us</a>
       </div>
     </div>
   </section>
 
+  <!-- Newsletter Signup -->
+  <section id="newsletter" class="section newsletter-section">
+    <div class="newsletter-inner">
+      <h2 class="section-title">Stay in the loop</h2>
+      <p class="newsletter-blurb">Get updates on our games, playtest invitations, and behind-the-scenes stories. No spam — just the good stuff.</p>
+      <form class="newsletter-form" action="#" method="POST">
+        <!-- TODO: Connect to Mailchimp, Buttondown, or similar backend -->
+        <div class="newsletter-input-group">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="your@email.com" required class="newsletter-input">
+          <button type="submit" class="btn btn-secondary newsletter-btn">Subscribe</button>
+        </div>
+        <p class="newsletter-note">We respect your privacy. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact / Support -->
+  <section id="support" class="section support-section">
+    <div class="support-inner">
+      <h2 class="section-title">Support the programme</h2>
+      <p class="support-blurb">Whether you're from industry, academia, or just want to help — we'd love to hear from you. We're looking for mentors, guest speakers, tool sponsors, and funding partners.</p>
+      <div class="support-cta">
+        <!-- TODO: Replace with real contact email or form URL -->
+        <a href="mailto:p.blenkharn@greenwich.ac.uk" class="btn btn-tertiary">Get in Touch</a>
+        <p class="support-note">Or reach out to Peter Blenkharn directly via <a href="https://www.linkedin.com/in/peterblenkharn" class="inline-link">LinkedIn</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
-    <p>© University of Greenwich Micro Studio</p>
+    <div class="footer-inner">
+      <p class="footer-brand">Micro Studio — University of Greenwich</p>
+      <p class="footer-copy">&copy; 2025 University of Greenwich. All rights reserved.</p>
+    </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="confetti.js"></script>
   <script src="scroll-reveal.js"></script>
   <script src="team-details.js"></script>

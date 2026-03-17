@@ -1,27 +1,87 @@
+/* ══════════════════════════════════════
+   Reusable Components: Buttons, Cards,
+   Icons
+   ══════════════════════════════════════ */
+
 /* —— Buttons —— */
 .btn {
   display: inline-block;
-  padding: .75em 1.5em;
-  border-radius: 6px;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  margin: .5em .25em;
+  font-size: 1rem;
+  margin: 0.5em 0.25em;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
 }
-.btn-primary   { background: var(--yellow); color: var(--bg); }
-.btn-secondary { background: var(--pink);   color: var(--bg); }
-.btn-tertiary  { background: var(--cyan);   color: var(--bg); }
+
+.btn:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--yellow);
+  color: var(--bg);
+}
+.btn-primary:hover {
+  background: var(--yellow-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background: var(--pink);
+  color: var(--cream);
+}
+.btn-secondary:hover {
+  background: var(--pink-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 46, 99, 0.3);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-tertiary {
+  background: var(--cyan);
+  color: var(--bg);
+}
+.btn-tertiary:hover {
+  background: var(--cyan-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(8, 217, 214, 0.3);
+}
+.btn-tertiary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn.small {
+  font-size: 0.9rem;
+  padding: 0.6em 1.2em;
+}
 
 /* —— Card Grid —— */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--gap);
   max-width: var(--max-width);
   margin: 0 auto;
   align-items: stretch;
 }
 
-/* —— Base Card Styles —— */
+/* —— Base Card —— */
 .card {
   background: var(--cream);
   color: var(--bg);
@@ -31,17 +91,40 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* ensure every card’s button hugs the bottom */
+.card h3 {
+  margin-top: 0.5em;
+}
+.card p {
+  margin: 0.5em 0 1em;
+}
+
+/* Push button to card bottom */
 .card .btn {
   margin-top: auto;
 }
 
-/* —— Icon Utility —— */
-.icon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: .5em;
-  color: currentColor;
+/* —— Card Icons (inline SVG) —— */
+.card-icon {
+  color: var(--pink);
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+.card:nth-child(2) .card-icon {
+  color: var(--yellow-dark);
+}
+.card:nth-child(3) .card-icon {
+  color: var(--cyan-dark);
+}
+
+/* —— Subtitle Emphasis —— */
+.subtitle-emphasis {
+  color: var(--yellow);
+  font-weight: 700;
 }
