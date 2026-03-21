@@ -2,7 +2,7 @@
 // Decorative confetti shapes with mouse/scroll parallax.
 // Reduced from 500 to 60 pieces for performance.
 
-const NUM_CONFETTI = 60;
+const NUM_CONFETTI = window.innerWidth < 768 ? 30 : 60;
 const COLORS = ['#FFD700', '#FF2E63', '#08D9D6'];
 
 function random(min, max) {

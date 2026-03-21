@@ -298,6 +298,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
   }
 
+  // ===== Escape Key to Close Detail Panel =====
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !detailsContainer.hidden) {
+      detailsContainer.hidden = true;
+      currentTeam = null;
+    }
+  });
+
   // ===== FAQ Accordion =====
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
