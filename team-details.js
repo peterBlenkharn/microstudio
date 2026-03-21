@@ -1,6 +1,6 @@
-// ===== Team Details & Staff Section =====
+// ===== Team Details, Staff Section & FAQ =====
 // Fetches teamdata.json (cohort-based schema), powers the expandable
-// team detail panel and populates the staff section.
+// team detail panel, populates the staff section, and handles FAQ accordion.
 
 document.addEventListener('DOMContentLoaded', () => {
   const detailsContainer = document.getElementById('team-details');
@@ -14,14 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => r.json())
     .then(json => {
       teamData = json;
-      // Build staff from current cohort's management + creatives
       const currentCohort = json.cohorts?.['2026'];
       if (currentCohort) {
+        // Build staff from management + creatives
         const staffMembers = [
           ...(currentCohort.management || []),
           ...(currentCohort.creatives || [])
         ];
         buildStaffSection(staffMembers);
+
+        // Build team member cards from subteams
+        buildTeamCards(currentCohort.subteams || {});
       }
     })
     .catch(e => console.error('teamdata.json load error:', e));
@@ -32,11 +35,61 @@ document.addEventListener('DOMContentLoaded', () => {
     if (teamData.teams && teamData.teams[teamKey]) {
       return teamData.teams[teamKey].members;
     }
-    // Fallback for old schema
     if (teamData[teamKey]) {
       return teamData[teamKey];
     }
     return null;
+  }
+
+  // ===== Team Member Cards from Subteams =====
+  function buildTeamCards(subteams) {
+    const container = document.getElementById('team-cards');
+    if (!container) return;
+
+    // If subteams have no members yet, show a placeholder
+    const hasMembers = Object.values(subteams).some(st =>
+      st.members && st.members.length > 0
+    );
+
+    if (!hasMembers) {
+      container.innerHTML = `
+        <div class="card" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+          <h3>Team roster coming soon</h3>
+          <p>Our Cohort 3 team members will be announced here shortly.</p>
+        </div>
+      `;
+      return;
+    }
+
+    // Build cards for each subteam member
+    // (Implementation for when members are populated)
+  }
+
+  // ===== Subteam Tab Filtering =====
+  const tabNav = document.querySelector('.subteam-nav');
+  if (tabNav) {
+    tabNav.addEventListener('click', e => {
+      const tab = e.target.closest('.subteam-tab');
+      if (!tab) return;
+
+      tabNav.querySelectorAll('.subteam-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Filter cards by subteam (when populated)
+      const filter = tab.dataset.filter;
+      const cards = document.querySelectorAll('#team-cards .game-card');
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.subteam === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
   }
 
   // Toggle team details on "Learn More"
@@ -44,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!e.target.matches('.btn-learn-more')) return;
     e.preventDefault();
 
-    const gameCard = e.target.closest('.game-card');
-    const teamKey = gameCard.dataset.team;
+    const gameCard = e.target.closest('.game-card, .archive-card');
+    const teamKey = gameCard?.dataset.team;
     const members = getTeamMembers(teamKey);
     if (!members) return;
 
@@ -57,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
       buildPanel(teamKey, members);
       detailsContainer.hidden = false;
 
-      // Smooth scroll to details
       setTimeout(() => {
         detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 50);
@@ -71,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `images/profilepics/${m['Profile Image Name']}.jpg`
         : null;
       return `
-        <div class="thumb" data-member="${escapeHtml(name)}">
+        <div class="thumb" data-member="${escapeHtml(name)}" tabindex="0" role="button" aria-label="View ${escapeHtml(name)}">
           ${imgUrl
             ? `<img src="${imgUrl}" alt="${escapeHtml(name)}" class="thumb-img" loading="lazy">`
             : '<div class="thumb-img placeholder"></div>'}
@@ -80,9 +132,15 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }).join('');
 
-    thumbsContainer.querySelectorAll('.thumb').forEach(el =>
-      el.addEventListener('click', () => selectMember(el.dataset.member))
-    );
+    thumbsContainer.querySelectorAll('.thumb').forEach(el => {
+      el.addEventListener('click', () => selectMember(el.dataset.member));
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectMember(el.dataset.member);
+        }
+      });
+    });
 
     selectMember(Object.keys(members)[0]);
   }
@@ -105,7 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const links = buildSocialLinks(m.Links || {});
 
-    // Show role if present
     const role = m.role || m.Title || '';
     const roleHtml = role
       ? `<span class="role-badge">${escapeHtml(role)}</span>`
@@ -216,8 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== Staff Section =====
-  // Now reads from an array of staff objects (management + creatives)
-  // instead of the old "Management Team" keyed object
   function buildStaffSection(staffArray) {
     const container = document.getElementById('staff-cards');
     if (!container || !staffArray || !staffArray.length) return;
@@ -230,8 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const links = buildSocialLinks(m.Links || {});
       const role = m.role || m.Title || '';
-      const category = m.category || '';
-      const blurb = m.Blurb || '<em>Bio coming soon.</em>';
 
       return `
         <div class="staff-card">
@@ -244,4 +297,32 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }).join('');
   }
+
+  // ===== FAQ Accordion =====
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    if (!btn || !answer) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      faqItems.forEach(other => {
+        other.classList.remove('open');
+        const otherBtn = other.querySelector('.faq-question');
+        const otherAnswer = other.querySelector('.faq-answer');
+        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        if (otherAnswer) otherAnswer.style.maxHeight = null;
+      });
+
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
 });
