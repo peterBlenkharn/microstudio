@@ -369,8 +369,9 @@
   line-height: 1.7;
 }
 
-/* Scroll reveal for new sections */
-.reveal-section {
+/* Scroll reveal for new sections — JS adds .reveal-ready,
+   so content is visible by default if JS fails (progressive enhancement) */
+.reveal-section.reveal-ready {
   opacity: 0;
   transform: translateY(2rem);
   transition: opacity 0.6s ease, transform 0.6s ease;
