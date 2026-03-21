@@ -82,6 +82,42 @@ font-family: 'Inter', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto C
 | `--gap` | `1.5rem` | Grid gaps, component spacing |
 | `--max-width` | `1200px` | Content max-width container |
 
+### Spacing Scale (Planned Addition)
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--space-xs` | `0.25rem` | Micro spacing (4px) |
+| `--space-sm` | `0.5rem` | Tight spacing (8px) |
+| `--space-md` | `1rem` | Standard (16px) |
+| `--space-lg` | `1.5rem` | Component gap (24px) — same as `--gap` |
+| `--space-xl` | `2rem` | Section spacing (32px) |
+| `--space-2xl` | `3rem` | Large section (48px) |
+| `--space-4xl` | `4rem` | Hero padding (64px) |
+
+### Border Radius (Planned Addition)
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--radius-sm` | `6px` | Buttons, small elements |
+| `--radius-md` | `8px` | Inputs, media containers |
+| `--radius-lg` | `12px` | Cards, panels |
+| `--radius-full` | `50%` | Circular elements (photos, icons) |
+
+### Box Shadows (Planned Addition)
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--shadow-sm` | `0 2px 8px rgba(0,0,0,0.1)` | Cards, subtle elevation |
+| `--shadow-md` | `0 4px 16px rgba(0,0,0,0.15)` | Hover states, forms |
+| `--shadow-lg` | `0 8px 24px rgba(0,0,0,0.2)` | Modals, dropdowns |
+
+### Grey Text Colours (Planned Addition)
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--text-muted` | `#555` | Secondary text on light backgrounds |
+| `--text-subtle` | `#999` | Placeholder text, metadata |
+
 ### Section Padding
 
 | Context | Padding |
@@ -161,9 +197,45 @@ When `prefers-reduced-motion: reduce` is active:
 
 | Breakpoint | Behaviour |
 |------------|-----------|
-| < 600px | Panels lose clip-path, cards stack, team details stack vertically |
-| 600–768px | Intermediate layout |
-| 768px+ | Full desktop layout, larger type, more padding |
+| < 480px | Small phones — minimal layout, stacked content |
+| 480–768px | Large phones / small tablets — intermediate layout |
+| 768–1024px | Tablets — panels gain clip-path, grid layouts |
+| 1024px+ | Desktop — full layout, larger type, more padding |
+
+### Planned Standardisation
+Current breakpoints are inconsistent (480, 600, 768, 800). These will be consolidated to:
+- **480px** — small phone threshold
+- **768px** — tablet threshold
+- **1024px** — desktop threshold (new)
+- Ad-hoc breakpoints at 600px and 800px will be migrated where possible.
+
+## New Components (Planned)
+
+### Role Badge
+Small pill showing a team member's role:
+- Background: colour-coded by category (student=cream, creative=pink-light, management=cyan-light)
+- Text: dark, small (0.8rem), uppercase
+- Class: `.role-badge`, `.role-badge--student`, `.role-badge--creative`, `.role-badge--management`
+
+### Subteam Tabs
+Tab navigation for filtering team members by subteam:
+- Active tab: underlined with brand colour
+- Inactive: subtle text
+- Keyboard-accessible (arrow keys to switch)
+- Class: `.subteam-tabs`, `.subteam-tab`, `.subteam-tab--active`
+
+### FAQ Accordion
+Expandable Q&A items:
+- Question: bold, clickable, with +/− indicator
+- Answer: hidden by default, revealed with smooth height transition
+- Keyboard: Enter/Space to toggle, aria-expanded attribute
+- Class: `.faq-item`, `.faq-question`, `.faq-answer`
+
+### Archive Card
+Smaller card for past projects:
+- Similar to game card but reduced visual weight
+- Greyscale or muted colour treatment
+- Class: `.archive-card`
 
 ---
 

@@ -74,16 +74,15 @@ The hero is the first thing anyone sees. It needs to:
 1. Communicate what this is (students making games)
 2. Convey the energy and ambition
 3. Anchor the "micro/BIG" contrast that defines the brand
+4. Signal that this is Cohort 3 (2026) — a programme with track record
 
 **Current copy:**
 > A micro studio for BIG ideas.
-> Students at the University of Greenwich creating entire games in just 12 weeks.
+> Students at the University of Greenwich creating original games in just 12 weeks.
 
-This is strong. The "micro/BIG" contrast works well visually and conceptually. The subtitle is factual and compelling.
+The "micro/BIG" contrast works well visually and conceptually. The subtitle is factual and compelling. Use "original" rather than "entire" to emphasise creativity over scope.
 
-**Suggestions:**
-- Consider adding a seasonal element: "Summer 2025" or the current cohort year
-- The word "entire" could be replaced with "original" to emphasise creativity over scope
+**For Cohort 3:** Consider adding a seasonal/cohort reference: "Year Three" or "Cohort 3 — 2026" to signal continuity and track record.
 
 ### About Panels
 
@@ -95,15 +94,28 @@ Three panels answering the obvious questions a visitor has:
 | What It's For | "Building real-world skills, getting published on Steam, and pushing creative boundaries in a high-energy crash course." | "High-energy crash course" is good but "crash course" undersells the depth. Consider "intensive programme". |
 | Who It's For | "BSc Games Development students teaming up with mentors, industry partners, and each other to ship amazing games." | "Ship amazing games" is slightly generic. Consider specifics: "...to ship games on Steam." |
 
-### Game Taglines
+### Game Description — Dream Box (Cohort 3)
 
-Each game card needs a short, evocative tagline (one sentence, <10 words):
+The current project needs multiple levels of description:
 
-| Game | Current | Notes |
+| Context | Length | Tone | Example |
+|---------|--------|------|---------|
+| **Tagline** | <10 words | Atmospheric, evocative | "The room remembers what you forgot." |
+| **One-liner** | 1 sentence | Clear, intriguing | "A first-person surrealist game set inside a single transforming room." |
+| **Short description** | 2-3 sentences | Informative, compelling | Used for project spotlight section |
+| **Core pillars** | 4 bullet points | Conceptual, concise | Surreal over Real, Aggressive Scope Control, etc. |
+
+The game's "Digital Dadaism" aesthetic and dream-logic concept should inform the writing — lean into strangeness and provocation, but keep it accessible. Avoid technical jargon (URP, raycast, singleton) in marketing copy.
+
+### Past Game Taglines (Archive)
+
+These are preserved for the archive section:
+
+| Game | Tagline | Notes |
 |------|---------|-------|
-| The Lost Museum | "Can you unravel the mystery of the museum?" | Good — question format creates intrigue |
+| The Lost Museum | "Can you unravel the mystery of the museum?" | Question format creates intrigue |
 | Ghrystlyst | "The butcher wants your flesh." | Punchy and atmospheric |
-| Parapet | "Defend your keep from waves of skellies." | "Skellies" is charming and informal — fits the indie vibe |
+| Parapet | "Defend your keep from waves of skellies." | "Skellies" is charming and informal |
 
 ### Student Bios
 
@@ -130,6 +142,30 @@ Three clear paths for three audiences:
 | "Follow the Journey" | General public | Join Mailing List → newsletter signup |
 | "Help Us Grow" | Industry/academia | Contact Us → support form |
 
+### Team Member Roles (Cohort 3)
+
+When describing team members, include their role and subteam:
+
+| Category | Roles | Tone |
+|----------|-------|------|
+| **Students** | Programmer, Designer, Artist, etc. | Personal, authentic — written by them |
+| **Management** | Lecturer/Game Director, Technician | Professional, brief — focus on role |
+| **Creatives** | Art Director, Music Director, Voice Artist | Professional, highlight expertise |
+
+Team leads should be identified but not over-emphasised — this is a collaborative programme.
+
+### Writing for Different Audiences
+
+The site serves multiple audiences. Tailor section content accordingly:
+
+| Audience | What they want | Key sections |
+|----------|---------------|--------------|
+| **Prospective students** | "Can I do this? How do I apply?" | Hero, About, FAQ |
+| **Employers** | "Can these students work? What skills?" | Team profiles, Project spotlight |
+| **Sponsors/partners** | "What's the value? How can I help?" | For Partners, Project spotlight |
+| **Academics** | "How does this programme work?" | About, FAQ, Our History |
+| **Stakeholders** | "Is this worth supporting?" | Project spotlight, Our History, Team |
+
 ---
 
 ## Content Placeholders
@@ -142,9 +178,13 @@ Items marked `[TODO]` need real content:
 - **Several team member profiles** are empty (Parapet team especially)
 - **Peter Blenkharn's bio** in the management section is blank
 - **OG description** — write a ~155 character summary for social sharing
+- **Dream Box game description** — short and long versions for the project spotlight
+- **New creative staff bios** — Jana Frost, Sam Hall, Amy May Trudgeon
+- **Peter Blenkharn's bio** — management section bio is still blank
+- **FAQ content** — questions and answers for students, employers, academics
 
 ### Suggested OG Description
-> "Micro Studio: University of Greenwich students building and shipping original games to Steam in just 12 weeks. Meet the teams and follow their journey."
+> "Micro Studio: University of Greenwich students building and shipping original games to Steam in just 12 weeks. Meet the team and follow their journey."
 
 ---
 
