@@ -31,7 +31,7 @@
 .staff-card {
   background: var(--cream);
   color: var(--bg);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 2rem;
   text-align: center;
   display: flex;
@@ -40,8 +40,8 @@
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 .staff-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .staff-card-photo {
@@ -73,7 +73,7 @@
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1rem;
-  color: #444;
+  color: var(--text-muted);
 }
 
 .staff-card-links {
@@ -132,7 +132,7 @@
   gap: 0;
   width: 100%;
   max-width: 450px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
@@ -147,7 +147,7 @@
   color: var(--bg);
 }
 .newsletter-input::placeholder {
-  color: #999;
+  color: var(--text-subtle);
 }
 .newsletter-input:focus {
   outline: 2px solid var(--yellow);
@@ -169,7 +169,7 @@
 @media (max-width: 480px) {
   .newsletter-input-group {
     flex-direction: column;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
   }
   .newsletter-input {
     border-radius: 8px 8px 0 0;

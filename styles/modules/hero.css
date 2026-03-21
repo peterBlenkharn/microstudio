@@ -48,6 +48,10 @@
 .nav-links a:hover {
   color: var(--yellow);
 }
+.nav-links a:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
+}
 
 /* —— Hero Section —— */
 .hero {

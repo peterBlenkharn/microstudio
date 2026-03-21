@@ -50,8 +50,8 @@ button {
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: var(--text-3xl);
+  font-weight: var(--fw-bold);
   margin-bottom: 2rem;
 }
 
@@ -70,9 +70,9 @@ button {
   background: var(--yellow);
   color: var(--bg);
   padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: 600;
-  z-index: 1000;
+  border-radius: var(--radius-sm);
+  font-weight: var(--fw-semibold);
+  z-index: var(--z-skip-link);
   transition: top var(--transition-fast);
 }
 .skip-link:focus {
@@ -102,6 +102,10 @@ button {
 }
 .inline-link:hover {
   color: var(--cyan-light);
+}
+.inline-link:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
 }
 
 /* Reduced motion */
