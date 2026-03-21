@@ -9,13 +9,13 @@
   overflow: hidden;
   padding: 0;
   background: var(--cream);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 .game-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Full-bleed header image */
@@ -58,7 +58,7 @@
 /* Tagline */
 .tagline {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-muted);
   margin-bottom: 1rem;
   max-width: 85%;
   font-style: italic;
@@ -73,7 +73,7 @@
   width: 100%;
   max-width: 260px;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   object-fit: cover;
 }
 

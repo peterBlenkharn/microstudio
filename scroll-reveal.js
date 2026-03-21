@@ -1,12 +1,12 @@
 // ===== Scroll Reveal =====
-// Adds .visible class to panels when they enter the viewport.
-// Works with CSS opacity/transform transitions in about.css.
+// Adds .visible class to panels and sections when they enter the viewport.
+// Works with CSS opacity/transform transitions in about.css and sections.css.
 
 document.addEventListener('DOMContentLoaded', () => {
-  const panels = document.querySelectorAll('.about-panels .panel');
+  const elements = document.querySelectorAll('.about-panels .panel, .reveal-section');
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    panels.forEach(panel => panel.classList.add('visible'));
+    elements.forEach(el => el.classList.add('visible'));
     return;
   }
 
@@ -19,5 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.15 });
 
-  panels.forEach(panel => observer.observe(panel));
+  elements.forEach(el => observer.observe(el));
 });

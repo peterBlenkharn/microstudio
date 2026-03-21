@@ -11,8 +11,8 @@
   margin: 2rem auto;
   background: var(--cream);
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   animation: fadeIn 0.3s ease;
 }
 
@@ -37,11 +37,15 @@
   gap: 0.5rem;
   padding: 0.4rem 0.5rem;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   transition: background var(--transition-fast);
 }
 .thumb:hover {
   background: rgba(0, 0, 0, 0.05);
+}
+.thumb:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
 }
 .thumb.active {
   background: rgba(0, 0, 0, 0.08);
@@ -92,7 +96,7 @@
 .detail-photo {
   width: 140px;
   height: 140px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -100,7 +104,7 @@
   background: var(--bg-light);
   width: 140px;
   height: 140px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
 }
 
 .detail-title-links {
@@ -127,13 +131,17 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   background: var(--bg-light);
   transition: background var(--transition-fast), transform var(--transition-fast);
 }
 .social-link:hover {
   background: var(--bg);
   transform: translateY(-2px);
+}
+.social-link:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
 }
 
 .social-icon {
@@ -147,9 +155,9 @@
 
 /* —— Blurb —— */
 .detail-blurb-block {
-  background: #f0ede5;
+  background: var(--cream-dark);
   padding: 1rem 1.25rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   margin-bottom: var(--gap);
 }
 
@@ -184,7 +192,7 @@
   aspect-ratio: 2/3;
   background-size: cover;
   background-position: center;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   transition: transform var(--transition-fast);
 }
 .game-thumb:hover {
@@ -219,7 +227,7 @@
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
 
 /* —— Responsive —— */

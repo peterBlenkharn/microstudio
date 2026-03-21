@@ -1,0 +1,407 @@
+/* ══════════════════════════════════════
+   New Sections: Project Spotlight,
+   Archive, Partners, FAQ
+   ══════════════════════════════════════ */
+
+/* —— Project Spotlight —— */
+.project-spotlight {
+  background: var(--bg-light);
+  position: relative;
+}
+
+.project-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.project-hero-banner {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.project-game-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--fw-black);
+  color: var(--cream);
+  margin-bottom: var(--space-xs);
+}
+
+.project-title-note {
+  font-size: var(--text-sm);
+  opacity: 0.6;
+  font-style: italic;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.project-genre {
+  font-size: var(--text-lg);
+  color: var(--cyan);
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--space-lg);
+}
+
+.project-tagline {
+  font-size: var(--text-2xl);
+  color: var(--yellow);
+  font-weight: var(--fw-bold);
+  font-style: italic;
+  margin-bottom: var(--space-xl);
+}
+
+.project-description {
+  font-size: var(--text-lg);
+  max-width: 700px;
+  margin: 0 auto var(--space-2xl);
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+/* Pillar cards */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--gap);
+  margin-bottom: var(--space-2xl);
+}
+
+.pillar-card {
+  background: var(--bg);
+  border: 1px solid rgba(245, 241, 232, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pillar-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.pillar-card h4 {
+  font-size: var(--text-base);
+  font-weight: var(--fw-bold);
+  color: var(--cream);
+  margin-bottom: var(--space-xs);
+}
+
+.pillar-card p {
+  font-size: var(--text-sm);
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+/* Tech badges */
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.4em 0.9em;
+  background: rgba(245, 241, 232, 0.08);
+  border: 1px solid rgba(245, 241, 232, 0.15);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--cream);
+}
+
+.tech-badge svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+}
+
+.project-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+/* —— Subteam Tabs —— */
+.subteam-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.subteam-tab {
+  padding: 0.6em 1.2em;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  background: rgba(245, 241, 232, 0.08);
+  color: var(--cream);
+  border: 1px solid rgba(245, 241, 232, 0.15);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+.subteam-tab:hover {
+  background: rgba(245, 241, 232, 0.15);
+}
+.subteam-tab.active {
+  background: var(--yellow);
+  color: var(--bg);
+  border-color: var(--yellow);
+}
+.subteam-tab:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+/* —— Archive / History Section —— */
+.archive-section {
+  background: var(--bg-light);
+}
+
+.archive-intro {
+  max-width: 600px;
+  margin: 0 auto var(--space-2xl);
+  font-size: var(--text-lg);
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.archive-year {
+  margin-bottom: var(--space-2xl);
+}
+
+.archive-year-label {
+  font-size: var(--text-xl);
+  font-weight: var(--fw-bold);
+  color: var(--yellow);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.archive-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--gap);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.archive-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.archive-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.archive-card-art img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.archive-card-body {
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+}
+
+.archive-card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--fw-black);
+  color: var(--bg);
+  margin-bottom: var(--space-xs);
+}
+
+.archive-card-tagline {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
+.archive-card-team {
+  font-size: var(--text-xs);
+  color: var(--text-subtle);
+}
+
+/* —— Partners Section —— */
+.partners-section {
+  background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan-very-dark) 100%);
+  position: relative;
+}
+.partners-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('../textures/noise.png') repeat;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.partners-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.partners-blurb {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xl);
+  opacity: 0.95;
+  line-height: 1.7;
+}
+
+.partners-benefits {
+  list-style: none;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);
+}
+
+.partners-benefits li {
+  padding: var(--space-sm) 0;
+  font-size: var(--text-base);
+  position: relative;
+  padding-left: var(--space-xl);
+}
+.partners-benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--yellow);
+  font-weight: var(--fw-bold);
+}
+
+.partners-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* —— FAQ Section —— */
+.faq-section {
+  background: var(--bg);
+}
+
+.faq-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(245, 241, 232, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: var(--space-lg) 0;
+  font-size: var(--text-base);
+  font-weight: var(--fw-semibold);
+  color: var(--cream);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  font-family: inherit;
+  transition: color var(--transition-fast);
+}
+.faq-question:hover {
+  color: var(--yellow);
+}
+.faq-question:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-base);
+}
+
+.faq-answer-inner {
+  padding: 0 0 var(--space-lg);
+  font-size: var(--text-sm);
+  opacity: 0.8;
+  line-height: 1.7;
+}
+
+/* Scroll reveal for new sections */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* —— Responsive —— */
+@media (max-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-game-title {
+    font-size: var(--text-3xl);
+  }
+  .project-tagline {
+    font-size: var(--text-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .subteam-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .archive-cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Micro Studio: University of Greenwich students building and shipping original games to Steam in just 12 weeks. Meet the teams and follow their journey.">
+  <meta name="description" content="Micro Studio: University of Greenwich students building and shipping original games to Steam in just 12 weeks. Now in our third year — meet the team behind Dream Box.">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Micro Studio — University of Greenwich">
-  <meta property="og:description" content="A micro studio for BIG ideas. Students creating original games in 12 weeks.">
+  <meta property="og:description" content="A micro studio for BIG ideas. Cohort 3: Dream Box — a surrealist exploration game built by students in 12 weeks.">
   <!-- TODO: Add og:image once a 1200x630 share image is created -->
   <!-- <meta property="og:image" content="images/og-share.jpg"> -->
   <meta property="og:url" content="https://peterBlenkharn.github.io/microstudio/">
@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="styles/modules/hero.css">
   <link rel="stylesheet" href="styles/modules/about.css">
   <link rel="stylesheet" href="styles/modules/teams.css">
+  <link rel="stylesheet" href="styles/modules/sections.css">
 
   <!-- Country Flag Emoji Polyfill -->
   <script src="https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill/dist/index.umd.js"></script>
@@ -44,13 +45,14 @@
   <!-- Confetti Background -->
   <div id="confetti-bg" aria-hidden="true"></div>
 
-  <!-- Hero -->
+  <!-- ═══════════════ Hero ═══════════════ -->
   <header class="hero">
     <nav class="nav" role="navigation" aria-label="Main navigation">
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#teams">Our Games</a></li>
-        <li><a href="#staff">Staff</a></li>
+        <li><a href="#project">The Game</a></li>
+        <li><a href="#team">The Team</a></li>
+        <li><a href="#history">Past Projects</a></li>
         <li><a href="#involved">Get Involved</a></li>
       </ul>
     </nav>
@@ -63,17 +65,17 @@
         <span class="title-big">BIG</span>ideas<span class="title-dot">.</span>
       </h1>
 
-      <p>Students at the University of Greenwich creating original games in just <span class="subtitle-emphasis">12 weeks</span>.</p>
+      <p>Year 3. One team. One game. Students at the University of Greenwich shipping to <span class="subtitle-emphasis">Steam in 12 weeks</span>.</p>
 
       <div class="hero-cta">
         <a href="https://www.gre.ac.uk/subjects/games-development" class="btn btn-primary">Study Games</a>
-        <a href="#newsletter" class="btn btn-secondary">Stay Updated</a>
-        <a href="#support" class="btn btn-tertiary">Support Us</a>
+        <a href="#project" class="btn btn-secondary">See the Game</a>
+        <a href="#involved" class="btn btn-tertiary">Get Involved</a>
       </div>
     </div>
   </header>
 
-  <!-- About Panels -->
+  <!-- ═══════════════ About Panels ═══════════════ -->
   <section id="about" class="about-panels">
     <!-- Panel 1: What It Is -->
     <div class="panel panel-1">
@@ -85,7 +87,8 @@
             </div>
             <h3>What it is</h3>
             <p>An intensive, collaborative creative project for our
-               undergraduates — launching original student games in 12 weeks.</p>
+               undergraduates — now in its third year, building and launching
+               original student games on Steam in just 12 weeks.</p>
           </div>
           <div class="panel__media">
             <img src="images/what_is_it.jpg" alt="Students collaborating on game development at Micro Studio">
@@ -104,7 +107,8 @@
             </div>
             <h3>What it's for</h3>
             <p>Building real-world skills, getting published on Steam,
-               and pushing creative boundaries in an intensive programme.</p>
+               and pushing creative boundaries — one unified project,
+               three specialist subteams, professional support.</p>
           </div>
           <div class="panel__media">
             <img src="images/what_its_for.jpg" alt="Game prototype running in a development engine">
@@ -122,8 +126,8 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
             </div>
             <h3>Who it's for</h3>
-            <p>BSc Games Development students teaming up with mentors,
-               industry partners, and each other to ship games on Steam.</p>
+            <p>BSc Games Development students working alongside lecturers,
+               industry creatives, and each other to ship a game on Steam.</p>
           </div>
           <div class="panel__media">
             <img src="images/who_its_for.jpg" alt="Students presenting their finished games at a showcase event">
@@ -133,71 +137,99 @@
     </div>
   </section>
 
-  <!-- Teams / Games -->
-  <section id="teams" class="section teams">
-    <h2 class="section-title">Meet the teams</h2>
-    <div class="cards">
+  <!-- ═══════════════ Project Spotlight: Dream Box ═══════════════ -->
+  <section id="project" class="section project-spotlight reveal-section">
+    <div class="project-inner">
+      <div class="project-header">
+        <h2 class="project-game-title">Dream Box</h2>
+        <span class="project-title-note">Working Title</span>
+        <p class="project-genre">First-Person Surrealist Exploration</p>
+        <p class="project-tagline">"The room remembers what you forgot."</p>
+        <p class="project-description">
+          A first-person surrealist exploration game set entirely within a single room
+          — the inside of someone's mind, infected by digital noise. The room transforms
+          around you using dream logic as you interact with corrupted domestic objects.
+        </p>
+      </div>
 
-      <!-- The Lost Museum -->
-      <div class="card game-card" data-team="Lost Museum Team">
-        <div class="game-art">
-          <img src="images/lost_museum_header.jpg" alt="The Lost Museum — atmospheric museum environment">
-        </div>
-        <div class="card-body">
-          <h3 class="project-title">The Lost Museum</h3>
-          <p class="tagline">Can you unravel the mystery of the museum?</p>
-          <div class="team-photo">
-            <img src="images/team-a.jpg" alt="The Lost Museum team">
-          </div>
-        </div>
-        <div class="card-cta">
-          <button class="btn btn-primary btn-learn-more">Learn More</button>
-          <span class="btn btn-steam btn-coming-soon">
-            <img src="icons/steamicon.png" alt="" class="btn-icon">Coming Soon
+      <!-- Core Pillars -->
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
           </span>
+          <h4>Surreal over Real</h4>
+          <p>Symbolic logic, collage-based aesthetics, Digital Dadaism.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </span>
+          <h4>Aggressive Scope Control</h4>
+          <p>One room, no external scenes — the journey is the transformation.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+          <h4>Diegetic Immersion</h4>
+          <p>Minimal UI — the world tells you what you need to know.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </span>
+          <h4>Strangeness and Simplicity</h4>
+          <p>Simple but strange — provocative mechanics over complex systems.</p>
         </div>
       </div>
 
-      <!-- Ghrystlyst -->
-      <div class="card game-card" data-team="Ghrystlyst Team">
-        <div class="game-art">
-          <img src="images/ghrystlyst_header.jpg" alt="Ghrystlyst — dark horror atmosphere">
-        </div>
-        <div class="card-body">
-          <h3 class="project-title">Ghrystlyst</h3>
-          <p class="tagline">The butcher wants your flesh.</p>
-          <div class="team-photo">
-            <img src="images/team-b.jpg" alt="The Ghrystlyst team">
-          </div>
-        </div>
-        <div class="card-cta">
-          <button class="btn btn-primary btn-learn-more">Learn More</button>
-          <span class="btn btn-steam btn-coming-soon">
-            <img src="icons/steamicon.png" alt="" class="btn-icon">Coming Soon
-          </span>
-        </div>
+      <!-- Tech Badges -->
+      <div class="tech-badges">
+        <span class="tech-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Unity 6 (URP)
+        </span>
+        <span class="tech-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/></svg>
+          Windows PC
+        </span>
+        <span class="tech-badge">
+          <img src="icons/steamicon.png" alt="" style="width:16px;height:16px;filter:brightness(0) invert(1);">
+          Steam
+        </span>
+        <span class="tech-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          60–90 min
+        </span>
       </div>
 
-      <!-- Parapet -->
-      <div class="card game-card" data-team="Parapet Team">
-        <div class="game-art">
-          <img src="images/parapet_header.jpg" alt="Parapet — castle defence scene">
-        </div>
-        <div class="card-body">
-          <h3 class="project-title">Parapet</h3>
-          <p class="tagline">Defend your keep from waves of skellies.</p>
-          <div class="team-photo">
-            <img src="images/team-c.jpg" alt="The Parapet team">
-          </div>
-        </div>
-        <div class="card-cta">
-          <button class="btn btn-primary btn-learn-more">Learn More</button>
-          <span class="btn btn-steam btn-coming-soon">
-            <img src="icons/steamicon.png" alt="" class="btn-icon">Coming Soon
-          </span>
-        </div>
+      <!-- CTA -->
+      <div class="project-cta">
+        <span class="btn btn-steam btn-coming-soon">
+          <img src="icons/steamicon.png" alt="" class="btn-icon">Coming Soon on Steam
+        </span>
+        <a href="#team" class="btn btn-primary">Meet the Team</a>
       </div>
+    </div>
+  </section>
 
+  <!-- ═══════════════ Meet the Team ═══════════════ -->
+  <section id="team" class="section teams reveal-section">
+    <h2 class="section-title">Meet the team</h2>
+    <p class="section-subtitle">Three subteams, one vision. Click a member to learn more.</p>
+
+    <!-- Subteam Tabs -->
+    <nav class="subteam-nav" role="tablist" aria-label="Team filter">
+      <button class="subteam-tab active" role="tab" aria-selected="true" data-filter="all">Everyone</button>
+      <button class="subteam-tab" role="tab" aria-selected="false" data-filter="Game Design">Game Design</button>
+      <button class="subteam-tab" role="tab" aria-selected="false" data-filter="Programming">Programming</button>
+      <button class="subteam-tab" role="tab" aria-selected="false" data-filter="Creative Production">Creative Production</button>
+    </nav>
+
+    <!-- Team member cards will be injected by JS -->
+    <div class="cards" id="team-cards">
+      <!-- JS injects subteam member cards -->
     </div>
 
     <!-- Team Details Container -->
@@ -210,20 +242,63 @@
         <div class="member-detail-card"></div>
       </div>
     </div>
-
   </section>
 
   <!-- Staff Section -->
-  <section id="staff" class="section staff-section">
+  <section id="staff" class="section staff-section reveal-section">
     <h2 class="section-title">The people behind it</h2>
-    <p class="section-subtitle">Lecturers, technicians, and supporters keeping the studio running.</p>
+    <p class="section-subtitle">Lecturers, creatives, and supporters keeping the studio running.</p>
     <div class="staff-cards" id="staff-cards">
-      <!-- JS injects staff cards from teamdata.json "Management Team" -->
+      <!-- JS injects staff cards from teamdata.json management + creatives -->
     </div>
   </section>
 
-  <!-- Get Involved -->
-  <section id="involved" class="section ctas">
+  <!-- ═══════════════ Past Projects / Archive ═══════════════ -->
+  <section id="history" class="section archive-section reveal-section">
+    <h2 class="section-title">Past projects</h2>
+    <p class="archive-intro">This is our third year. Here's what our previous cohorts built.</p>
+
+    <div class="archive-year">
+      <h3 class="archive-year-label">Cohort 2 — 2024/2025</h3>
+      <div class="archive-cards">
+        <!-- The Lost Museum -->
+        <div class="archive-card" data-team="Lost Museum Team">
+          <div class="archive-card-art">
+            <img src="images/lost_museum_header.jpg" alt="The Lost Museum — atmospheric museum environment" loading="lazy">
+          </div>
+          <div class="archive-card-body">
+            <h4 class="archive-card-title">The Lost Museum</h4>
+            <p class="archive-card-tagline">Can you unravel the mystery of the museum?</p>
+          </div>
+        </div>
+
+        <!-- Ghrystlyst -->
+        <div class="archive-card" data-team="Ghrystlyst Team">
+          <div class="archive-card-art">
+            <img src="images/ghrystlyst_header.jpg" alt="Ghrystlyst — dark horror atmosphere" loading="lazy">
+          </div>
+          <div class="archive-card-body">
+            <h4 class="archive-card-title">Ghrystlyst</h4>
+            <p class="archive-card-tagline">The butcher wants your flesh.</p>
+          </div>
+        </div>
+
+        <!-- Parapet -->
+        <div class="archive-card" data-team="Parapet Team">
+          <div class="archive-card-art">
+            <img src="images/parapet_header.jpg" alt="Parapet — castle defence scene" loading="lazy">
+          </div>
+          <div class="archive-card-body">
+            <h4 class="archive-card-title">Parapet</h4>
+            <p class="archive-card-tagline">Defend your keep from waves of skellies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ Get Involved ═══════════════ -->
+  <section id="involved" class="section ctas reveal-section">
     <h2 class="section-title">Get involved</h2>
     <div class="cards">
       <div class="card">
@@ -242,16 +317,115 @@
         <svg class="card-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
         <h3>Help us grow</h3>
         <p>Industry or academic support through mentoring, tools, or funding.</p>
-        <a href="#support" class="btn btn-tertiary small">Contact Us</a>
+        <a href="#partners" class="btn btn-tertiary small">Partner with Us</a>
       </div>
     </div>
   </section>
 
-  <!-- Newsletter Signup -->
+  <!-- ═══════════════ For Partners ═══════════════ -->
+  <section id="partners" class="section partners-section reveal-section">
+    <div class="partners-inner">
+      <h2 class="section-title">Partner with Micro Studio</h2>
+      <p class="partners-blurb">
+        We're building the next generation of game developers. Partner with us to support student talent,
+        gain visibility in the games education space, and connect with future hires.
+      </p>
+      <ul class="partners-benefits">
+        <li>Access to a pipeline of skilled, motivated graduates</li>
+        <li>Brand visibility across our site, showcases, and events</li>
+        <li>Guest speaking and mentoring opportunities</li>
+        <li>Tool sponsorship and technology partnerships</li>
+        <li>Direct involvement in shaping industry-ready talent</li>
+      </ul>
+      <div class="partners-cta">
+        <a href="mailto:p.blenkharn@greenwich.ac.uk" class="btn btn-primary">Get in Touch</a>
+        <p class="support-note">Or reach out to Peter Blenkharn via <a href="https://www.linkedin.com/in/peterblenkharn" class="inline-link">LinkedIn</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FAQ ═══════════════ -->
+  <section id="faq" class="section faq-section reveal-section">
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is Micro Studio?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Micro Studio is an extracurricular programme at the University of Greenwich where selected BSc Games Development
+            students form teams and build a complete game in 12 weeks, with the goal of launching on Steam. Students work
+            alongside lecturers, professional creatives, and each other in a real studio environment.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do students get selected?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Students on the BSc Games Development programme can apply or be invited based on their skills, enthusiasm,
+            and commitment. The programme is competitive but inclusive — we look for passion and willingness to learn
+            as much as technical ability.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I hire your graduates?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Absolutely. Our graduates leave with real shipping experience, teamwork skills, and a published game on
+            their CV. Get in touch with us to discuss hiring opportunities, internships, or placement partnerships.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How can I support the programme?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            We welcome support in many forms: mentoring, guest talks, tool or software sponsorship, funding,
+            and industry connections. Visit our <a href="#partners" class="inline-link">Partners</a> section
+            or contact us directly to discuss how you can help.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is this an assessed module?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Micro Studio is extracurricular — it runs alongside the regular degree programme. Students participate
+            voluntarily for the experience, portfolio building, and the opportunity to ship a real game. It is not
+            formally assessed, though the skills gained directly complement their coursework.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ Newsletter ═══════════════ -->
   <section id="newsletter" class="section newsletter-section">
     <div class="newsletter-inner">
       <h2 class="section-title">Stay in the loop</h2>
-      <p class="newsletter-blurb">Get updates on our games, playtest invitations, and behind-the-scenes stories. No spam — just the good stuff.</p>
+      <p class="newsletter-blurb">Get updates on our game, playtest invitations, and behind-the-scenes stories. No spam — just the good stuff.</p>
       <form class="newsletter-form" action="#" method="POST">
         <!-- TODO: Connect to Mailchimp, Buttondown, or similar backend -->
         <div class="newsletter-input-group">
@@ -264,24 +438,24 @@
     </div>
   </section>
 
-  <!-- Contact / Support -->
+  <!-- ═══════════════ Contact / Support ═══════════════ -->
   <section id="support" class="section support-section">
     <div class="support-inner">
-      <h2 class="section-title">Support the programme</h2>
+      <h2 class="section-title">Get in touch</h2>
       <p class="support-blurb">Whether you're from industry, academia, or just want to help — we'd love to hear from you. We're looking for mentors, guest speakers, tool sponsors, and funding partners.</p>
       <div class="support-cta">
         <!-- TODO: Replace with real contact email or form URL -->
-        <a href="mailto:p.blenkharn@greenwich.ac.uk" class="btn btn-tertiary">Get in Touch</a>
+        <a href="mailto:p.blenkharn@greenwich.ac.uk" class="btn btn-tertiary">Email Us</a>
         <p class="support-note">Or reach out to Peter Blenkharn directly via <a href="https://www.linkedin.com/in/peterblenkharn" class="inline-link">LinkedIn</a>.</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ═══════════════ Footer ═══════════════ -->
   <footer class="footer">
     <div class="footer-inner">
       <p class="footer-brand">Micro Studio — University of Greenwich</p>
-      <p class="footer-copy">&copy; 2025 University of Greenwich. All rights reserved.</p>
+      <p class="footer-copy">&copy; 2026 University of Greenwich. All rights reserved.</p>
     </div>
   </footer>
 
