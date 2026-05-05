@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Flag images from ISO country codes.
   // Uses FlagsAPI instead of emoji flags because Windows does not reliably render
   // regional indicator emoji as flag glyphs.
-  function flagIconss(codes = []) {
+  function flagIcons(codes = []) {
     return (codes || [])
       .filter(cc => typeof cc === 'string' && cc.trim().length === 2)
       .map(cc => {
