@@ -191,46 +191,6 @@
           "title": "Programming",
           "members": [
             {
-              "name": "Roberto Scialpi",
-              "Preferred Name": "Roberto Scialpi",
-              "role": "Programming",
-              "Profile Image Name": "robertoS",
-              "Nationalities": [
-                "IT"
-              ],
-              "Links": {
-                "Github": "https://github.com/DarkBoB92",
-                "LinkedIn": "https://www.linkedin.com/in/roberto-scialpi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                "Portfolio": "https://darkbob92.github.io/website-portfolio/"
-              },
-              "Blurb": "Just come up with something, I don't know how to explain who I am, I don't know who I am XD",
-              "Favourite Games": {
-                "Game 1": {
-                  "Game Name": "Final Fantasy",
-                  "Link": "",
-                  "Image Name": ""
-                },
-                "Game 2": {
-                  "Game Name": "God of War",
-                  "Link": "",
-                  "Image Name": ""
-                },
-                "Game 3": {
-                  "Game Name": "The Binding of Isaac",
-                  "Link": "",
-                  "Image Name": ""
-                }
-              },
-              "Favourite Drink": {
-                "Drink Name": "Monster",
-                "Image Name": ""
-              },
-              "Favourite Snack": {
-                "Snack Name": "It depends on my mood",
-                "Image Name": ""
-              }
-            },
-            {
               "name": "Firat Yildiz",
               "Preferred Name": "Firat Yildiz",
               "role": "Programming",
