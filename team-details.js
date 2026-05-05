@@ -321,7 +321,15 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
   }
-
+  
+  function samePerson(a, b) {
+    return String(a || '')
+      .trim()
+      .toLowerCase() === String(b || '')
+      .trim()
+      .toLowerCase();
+  }
+  
   // Escape HTML to prevent XSS from data
   function escapeHtml(str) {
     if (!str) return '';
