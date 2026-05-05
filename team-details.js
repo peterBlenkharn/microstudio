@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="eyebrow">${escapeHtml(teamTitle)}</p>
 
           <h3 class="project-title">
-            ${escapeHtml(displayName)} ${flagEmoji(member.Nationalities)}
+            ${escapeHtml(displayName)} ${flagIcons(member.Nationalities)}
           </h3>
 
           ${isLeader ? '<span class="team-leader-badge">Team Leader</span>' : ''}
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="detail-header">
         ${photo}
         <div class="detail-title-links">
-          <h4 class="detail-name">${escapeHtml(name)} ${flagEmoji(m.Nationalities)}</h4>
+          <h4 class="detail-name">${escapeHtml(name)} ${flagIcons(m.Nationalities)}</h4>
           ${roleHtml}
           <div class="detail-links">${links}</div>
         </div>
@@ -338,12 +338,32 @@ document.addEventListener('DOMContentLoaded', () => {
     return div.innerHTML;
   }
 
-  // Flag emoji from ISO country codes
-  function flagEmoji(codes = []) {
-    const A = 0x1F1E6;
-    return (codes || []).map(cc =>
-      String.fromCodePoint(A + cc.charCodeAt(0) - 65, A + cc.charCodeAt(1) - 65)
-    ).join(' ');
+  // Flag images from ISO country codes.
+  // Uses FlagsAPI instead of emoji flags because Windows does not reliably render
+  // regional indicator emoji as flag glyphs.
+  function flagIconss(codes = []) {
+    return (codes || [])
+      .filter(cc => typeof cc === 'string' && cc.trim().length === 2)
+      .map(cc => {
+        const code = cc.trim().toUpperCase();
+        const safeCode = escapeHtml(code);
+  
+        return `
+          <span class="flag-icon-wrap" title="${safeCode}" aria-label="${safeCode} flag">
+            <img
+              src="https://flagsapi.com/${safeCode}/flat/24.png"
+              alt="${safeCode} flag"
+              class="flag-icon"
+              width="24"
+              height="18"
+              loading="lazy"
+              onerror="this.closest('.flag-icon-wrap').classList.add('flag-icon-wrap--failed')"
+            >
+            <span class="flag-code" aria-hidden="true">${safeCode}</span>
+          </span>
+        `;
+      })
+      .join('');
   }
 
   // ===== Staff Section =====
@@ -363,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return `
         <div class="staff-card">
           ${photo}
-          <h3 class="staff-card-name">${escapeHtml(name)} ${flagEmoji(m.Nationalities)}</h3>
+          <h3 class="staff-card-name">${escapeHtml(name)} ${flagIcons(m.Nationalities)}</h3>
           ${role ? `<p class="staff-card-role">${escapeHtml(role)}</p>` : ''}
           <p class="staff-card-blurb">${m.Blurb ? escapeHtml(m.Blurb) : '<em>Bio coming soon.</em>'}</p>
           <div class="staff-card-links">${links}</div>
