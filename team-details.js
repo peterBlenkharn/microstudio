@@ -29,15 +29,38 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(e => console.error('teamdata.json load error:', e));
 
-  // Get members for a team key — supports new schema (teams.X.members)
-  // and falls back to old schema (direct root keys) for compatibility
+  // Convert a member array into the object format used by the detail panel.
+  function normaliseMembers(members) {
+    if (!members) return null;
+    if (Array.isArray(members)) {
+      return Object.fromEntries(
+        members
+          .filter(m => m && m.name)
+          .map(m => [m.name, m])
+      );
+    }
+    return members;
+  }
+
+  // Get members for a team key — supports:
+  // 1. current cohort subteams: cohorts.2026.subteams.X.members
+  // 2. older team schema: teams.X.members
+  // 3. legacy root keys
   function getTeamMembers(teamKey) {
+    const currentCohort = teamData.cohorts?.['2026'];
+    const subteamMembers = currentCohort?.subteams?.[teamKey]?.members;
+    if (subteamMembers) {
+      return normaliseMembers(subteamMembers);
+    }
+
     if (teamData.teams && teamData.teams[teamKey]) {
-      return teamData.teams[teamKey].members;
+      return normaliseMembers(teamData.teams[teamKey].members);
     }
+
     if (teamData[teamKey]) {
-      return teamData[teamKey];
+      return normaliseMembers(teamData[teamKey]);
     }
+
     return null;
   }
 
@@ -46,9 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('team-cards');
     if (!container) return;
 
-    // If subteams have no members yet, show a placeholder
-    const hasMembers = Object.values(subteams).some(st =>
-      st.members && st.members.length > 0
+    const entries = Object.entries(subteams || {});
+    const hasMembers = entries.some(([, st]) =>
+      Array.isArray(st.members) && st.members.length > 0
     );
 
     if (!hasMembers) {
@@ -61,8 +84,36 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Build cards for each subteam member
-    // (Implementation for when members are populated)
+    container.innerHTML = entries.flatMap(([subteamKey, subteam]) => {
+      const teamTitle = subteam.title || subteam.name || subteamKey;
+      return (subteam.members || []).map(member => {
+        const name = member.name || '';
+        const imgUrl = member['Profile Image Name']
+          ? `images/profilepics/${member['Profile Image Name']}.jpg`
+          : null;
+
+        const blurb = member.Blurb
+          ? escapeHtml(member.Blurb)
+          : 'Bio coming soon.';
+
+        return `
+          <article class="game-card team-member-card"
+            data-subteam="${escapeHtml(subteamKey)}"
+            data-team="${escapeHtml(subteamKey)}"
+            data-member="${escapeHtml(name)}">
+            ${imgUrl
+              ? `<img src="${imgUrl}" alt="${escapeHtml(name)}" class="game-card-image" loading="lazy">`
+              : '<div class="game-card-image placeholder"></div>'}
+            <div class="game-card-content">
+              <p class="eyebrow">${escapeHtml(teamTitle)}</p>
+              <h3>${escapeHtml(name)} ${flagEmoji(member.Nationalities)}</h3>
+              <p>${blurb}</p>
+              <a href="#" class="btn-learn-more">Learn More</a>
+            </div>
+          </article>
+        `;
+      });
+    }).join('');
   }
 
   // ===== Subteam Tab Filtering =====
@@ -79,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
 
-      // Filter cards by subteam (when populated)
+      // Filter cards by subteam
       const filter = tab.dataset.filter;
       const cards = document.querySelectorAll('#team-cards .game-card');
       cards.forEach(card => {
@@ -107,7 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
       currentTeam = null;
     } else {
       currentTeam = teamKey;
-      buildPanel(teamKey, members);
+      const selectedMember = gameCard?.dataset.member || null;
+      buildPanel(teamKey, members, selectedMember);
       detailsContainer.hidden = false;
 
       setTimeout(() => {
@@ -117,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Build thumbnail sidebar + auto-select first member
-  function buildPanel(teamKey, members) {
+  function buildPanel(teamKey, members, initialMember = null) {
     thumbsContainer.innerHTML = Object.entries(members).map(([name, m]) => {
       const imgUrl = m['Profile Image Name']
         ? `images/profilepics/${m['Profile Image Name']}.jpg`
@@ -142,7 +194,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    selectMember(Object.keys(members)[0]);
+    const firstMember = Object.keys(members)[0];
+    const memberToSelect = initialMember && members[initialMember]
+      ? initialMember
+      : firstMember;
+    selectMember(memberToSelect);
   }
 
   // Select and render a member
