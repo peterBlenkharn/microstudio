@@ -25,6 +25,7 @@
       "subteams": {
         "game-design": {
           "title": "Game Design",
+          "leader": "Patryk Parzelski",
           "members": [
             {
               "name": "Kasper Crittenden-Wedge",
@@ -189,6 +190,7 @@
         },
         "programming": {
           "title": "Programming",
+          "leader":"Joshua Gorton",
           "members": [
             {
               "name": "Firat Yildiz",
@@ -351,6 +353,7 @@
         },
         "creative-production": {
           "title": "Creative Production",
+          "leader":"D'Arcy Everitt",
           "members": [
             {
               "name": "D'Arcy Everitt",
