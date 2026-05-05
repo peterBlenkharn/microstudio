@@ -96,22 +96,24 @@ document.addEventListener('DOMContentLoaded', () => {
           ? escapeHtml(member.Blurb)
           : 'Bio coming soon.';
 
-        return `
-          <article class="game-card team-member-card"
-            data-subteam="${escapeHtml(subteamKey)}"
-            data-team="${escapeHtml(subteamKey)}"
-            data-member="${escapeHtml(name)}">
-            ${imgUrl
-              ? `<img src="${imgUrl}" alt="${escapeHtml(name)}" class="game-card-image" loading="lazy">`
-              : '<div class="game-card-image placeholder"></div>'}
-            <div class="game-card-content">
-              <p class="eyebrow">${escapeHtml(teamTitle)}</p>
-              <h3>${escapeHtml(name)} ${flagEmoji(member.Nationalities)}</h3>
-              <p>${blurb}</p>
-              <a href="#" class="btn-learn-more">Learn More</a>
-            </div>
-          </article>
-        `;
+          return `
+            <article class="card game-card team-member-card"
+              data-subteam="${escapeHtml(teamTitle)}"
+              data-team="${escapeHtml(subteamKey)}"
+              data-member="${escapeHtml(name)}">
+              <div class="game-art team-member-art">
+                ${imgUrl
+                  ? `<img src="${imgUrl}" alt="${escapeHtml(name)}" loading="lazy">`
+                  : '<div class="game-card-image placeholder"></div>'}
+              </div>
+              <div class="card-body team-member-card-content">
+                <p class="eyebrow">${escapeHtml(teamTitle)}</p>
+                <h3 class="project-title">${escapeHtml(name)} ${flagEmoji(member.Nationalities)}</h3>
+                <p class="tagline">${blurb}</p>
+                <a href="#" class="btn btn-primary small btn-learn-more">Learn More</a>
+              </div>
+            </article>
+          `;
       });
     }).join('');
   }
