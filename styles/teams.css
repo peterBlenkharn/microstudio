@@ -268,3 +268,56 @@
     width: calc(50% - 0.375rem);
   }
 }
+
+/* ══════════════════════════════════════
+   Generated Team Member Cards
+   ══════════════════════════════════════ */
+
+.team-member-card {
+  min-height: 100%;
+}
+
+.team-member-art {
+  width: 100%;
+  height: 160px;
+  background: var(--bg-light);
+  overflow: hidden;
+}
+
+.team-member-art img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.team-member-art .game-card-image.placeholder {
+  width: 100%;
+  height: 160px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.25), transparent 35%),
+    radial-gradient(circle at 70% 60%, rgba(255, 46, 99, 0.22), transparent 35%),
+    var(--bg-light);
+}
+
+.team-member-card-content {
+  padding: 1rem;
+}
+
+.team-member-card-content .eyebrow {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+
+.team-member-card-content .project-title {
+  margin: 0.25rem 0 0.5rem;
+}
+
+.team-member-card-content .tagline {
+  max-width: 100%;
+  margin-bottom: 1rem;
+  font-style: normal;
+}
