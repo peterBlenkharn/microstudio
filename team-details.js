@@ -85,37 +85,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     container.innerHTML = entries.flatMap(([subteamKey, subteam]) => {
-      const teamTitle = subteam.title || subteam.name || subteamKey;
-      return (subteam.members || []).map(member => {
-        const name = member.name || '';
-        const imgUrl = member['Profile Image Name']
-          ? `images/profilepics/${member['Profile Image Name']}.jpg`
-          : null;
+  const teamTitle = subteam.title || subteam.name || subteamKey;
+  const leaderName = subteam.leader || '';
 
-        const blurb = member.Blurb
-          ? escapeHtml(member.Blurb)
-          : 'Bio coming soon.';
+  return (subteam.members || []).map(member => {
+    const name = member.name || '';
+    const displayName = member['Preferred Name'] || name;
+    const imgUrl = member['Profile Image Name']
+      ? `images/profilepics/${member['Profile Image Name']}.jpg`
+      : null;
 
-          return `
-            <article class="card game-card team-member-card"
-              data-subteam="${escapeHtml(teamTitle)}"
-              data-team="${escapeHtml(subteamKey)}"
-              data-member="${escapeHtml(name)}">
-              <div class="game-art team-member-art">
-                ${imgUrl
-                  ? `<img src="${imgUrl}" alt="${escapeHtml(name)}" loading="lazy">`
-                  : '<div class="game-card-image placeholder"></div>'}
-              </div>
-              <div class="card-body team-member-card-content">
-                <p class="eyebrow">${escapeHtml(teamTitle)}</p>
-                <h3 class="project-title">${escapeHtml(name)} ${flagEmoji(member.Nationalities)}</h3>
-                <p class="tagline">${blurb}</p>
-                <a href="#" class="btn btn-primary small btn-learn-more">Learn More</a>
-              </div>
-            </article>
-          `;
-      });
-    }).join('');
+    const isLeader = samePerson(name, leaderName) || samePerson(displayName, leaderName);
+
+    return `
+      <article class="card game-card team-member-card${isLeader ? ' is-team-leader' : ''}"
+        data-subteam="${escapeHtml(teamTitle)}"
+        data-team="${escapeHtml(subteamKey)}"
+        data-member="${escapeHtml(name)}">
+
+        <div class="game-art team-member-art">
+          ${imgUrl
+            ? `<img src="${imgUrl}" alt="${escapeHtml(name)}" loading="lazy">`
+            : '<div class="team-member-placeholder" aria-hidden="true"></div>'}
+        </div>
+
+        <div class="card-body team-member-card-content">
+          <p class="eyebrow">${escapeHtml(teamTitle)}</p>
+
+          <h3 class="project-title">
+            ${escapeHtml(displayName)} ${flagEmoji(member.Nationalities)}
+          </h3>
+
+          ${isLeader ? '<span class="team-leader-badge">Team Leader</span>' : ''}
+
+          <a href="#" class="btn btn-primary small btn-learn-more">Learn More</a>
+        </div>
+      </article>
+    `;
+  });
+}).join('');
   }
 
   // ===== Subteam Tab Filtering =====
