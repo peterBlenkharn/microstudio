@@ -9,6 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
   let teamData = {};
   let currentTeam = null;
 
+  // Profile-pic format fallback: jpg → png.
+  // Capture phase because `error` events don't bubble.
+  document.addEventListener('error', (e) => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    const base = img.dataset.profileFallback;
+    if (!base || img.dataset.profileFallbackTried === '1') return;
+    img.dataset.profileFallbackTried = '1';
+    img.src = `images/profilepics/${base}.png`;
+  }, true);
+
   // Load JSON
   fetch('teamdata.json')
     .then(r => r.json())
@@ -85,45 +96,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     container.innerHTML = entries.flatMap(([subteamKey, subteam]) => {
-  const teamTitle = subteam.title || subteam.name || subteamKey;
-  const leaderName = subteam.leader || '';
+      const teamTitle = subteam.title || subteam.name || subteamKey;
+      const leaderName = subteam.leader || '';
 
-  return (subteam.members || []).map(member => {
-    const name = member.name || '';
-    const displayName = member['Preferred Name'] || name;
-    const imgUrl = member['Profile Image Name']
-      ? `images/profilepics/${member['Profile Image Name']}.jpg`
-      : null;
+      return (subteam.members || []).map(member => {
+        const name = member.name || '';
+        const displayName = member['Preferred Name'] || name;
+        const profileName = member['Profile Image Name'];
 
-    const isLeader = samePerson(name, leaderName) || samePerson(displayName, leaderName);
+        const isLeader = samePerson(name, leaderName) || samePerson(displayName, leaderName);
 
-    return `
-      <article class="card game-card team-member-card${isLeader ? ' is-team-leader' : ''}"
-        data-subteam="${escapeHtml(teamTitle)}"
-        data-team="${escapeHtml(subteamKey)}"
-        data-member="${escapeHtml(name)}">
+        return `
+          <article class="card game-card team-member-card${isLeader ? ' is-team-leader' : ''}"
+            data-subteam="${escapeHtml(teamTitle)}"
+            data-team="${escapeHtml(subteamKey)}"
+            data-member="${escapeHtml(name)}">
 
-        <div class="game-art team-member-art">
-          ${imgUrl
-            ? `<img src="${imgUrl}" alt="${escapeHtml(name)}" loading="lazy">`
-            : '<div class="team-member-placeholder" aria-hidden="true"></div>'}
-        </div>
+            <div class="game-art team-member-art">
+              ${profileName
+                ? profileImgTag(profileName, name)
+                : '<div class="team-member-placeholder" aria-hidden="true"></div>'}
+            </div>
 
-        <div class="card-body team-member-card-content">
-          <p class="eyebrow">${escapeHtml(teamTitle)}</p>
+            <div class="card-body team-member-card-content">
+              <p class="eyebrow">${escapeHtml(teamTitle)}</p>
 
-          <h3 class="project-title">
-            ${escapeHtml(displayName)} ${flagIcons(member.Nationalities)}
-          </h3>
+              <h3 class="project-title">
+                ${escapeHtml(displayName)} ${flagIcons(member.Nationalities)}
+              </h3>
 
-          ${isLeader ? '<span class="team-leader-badge">Team Leader</span>' : ''}
+              ${isLeader ? '<span class="team-leader-badge">Team Leader</span>' : ''}
 
-          <a href="#" class="btn btn-primary small btn-learn-more">Learn More</a>
-        </div>
-      </article>
-    `;
-  });
-}).join('');
+              <a href="#" class="btn btn-primary small btn-learn-more">Learn More</a>
+            </div>
+          </article>
+        `;
+      });
+    }).join('');
   }
 
   // ===== Subteam Tab Filtering =====
@@ -181,13 +190,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Build thumbnail sidebar + auto-select first member
   function buildPanel(teamKey, members, initialMember = null) {
     thumbsContainer.innerHTML = Object.entries(members).map(([name, m]) => {
-      const imgUrl = m['Profile Image Name']
-        ? `images/profilepics/${m['Profile Image Name']}.jpg`
-        : null;
+      const profileName = m['Profile Image Name'];
       return `
         <div class="thumb" data-member="${escapeHtml(name)}" tabindex="0" role="button" aria-label="View ${escapeHtml(name)}">
-          ${imgUrl
-            ? `<img src="${imgUrl}" alt="${escapeHtml(name)}" class="thumb-img" loading="lazy">`
+          ${profileName
+            ? profileImgTag(profileName, name, 'thumb-img')
             : '<div class="thumb-img placeholder"></div>'}
           <span class="thumb-name">${escapeHtml(name.split(' ')[0])}</span>
         </div>
@@ -224,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render member detail HTML
   function renderMemberDetail(name, m) {
     const photo = m['Profile Image Name']
-      ? `<img src="images/profilepics/${m['Profile Image Name']}.jpg" class="detail-photo" alt="${escapeHtml(name)}" loading="lazy">`
+      ? profileImgTag(m['Profile Image Name'], name, 'detail-photo')
       : '<div class="detail-photo placeholder"></div>';
 
     const links = buildSocialLinks(m.Links || {});
@@ -321,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
   }
-  
+
   function samePerson(a, b) {
     return String(a || '')
       .trim()
@@ -329,13 +336,28 @@ document.addEventListener('DOMContentLoaded', () => {
       .trim()
       .toLowerCase();
   }
-  
+
   // Escape HTML to prevent XSS from data
   function escapeHtml(str) {
     if (!str) return '';
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
+  }
+
+  // Build an <img> for a profile picture. Tries .jpg first;
+  // the delegated error listener at the top swaps to .png if the .jpg 404s.
+  function profileImgTag(profileName, alt = '', className = '') {
+    if (!profileName) return '';
+    const safeName  = escapeHtml(profileName);
+    const safeAlt   = escapeHtml(alt);
+    const safeClass = escapeHtml(className);
+    return `<img
+      src="images/profilepics/${safeName}.jpg"
+      data-profile-fallback="${safeName}"
+      alt="${safeAlt}"
+      class="${safeClass}"
+      loading="lazy">`;
   }
 
   // Flag images from ISO country codes.
@@ -347,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .map(cc => {
         const code = cc.trim().toUpperCase();
         const safeCode = escapeHtml(code);
-  
+
         return `
           <span class="flag-icon-wrap" title="${safeCode}" aria-label="${safeCode} flag">
             <img
@@ -374,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = staffArray.map(m => {
       const name = m.name || '';
       const photo = m['Profile Image Name']
-        ? `<img src="images/profilepics/${m['Profile Image Name']}.jpg" class="staff-card-photo" alt="${escapeHtml(name)}" loading="lazy">`
+        ? profileImgTag(m['Profile Image Name'], name, 'staff-card-photo')
         : '<div class="staff-card-photo placeholder"></div>';
 
       const links = buildSocialLinks(m.Links || {});
