@@ -15,11 +15,21 @@
 }
 
 .project-hero-banner {
+  display: block;
   width: 100%;
-  max-height: 360px;
-  object-fit: cover;
+  height: auto;
   border-radius: var(--radius-lg);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-title-art {
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  height: auto;
+  margin: var(--space-md) auto var(--space-xl);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
 }
 
@@ -33,14 +43,6 @@
   font-weight: var(--fw-black);
   color: var(--cream);
   margin-bottom: var(--space-xs);
-}
-
-.project-title-note {
-  font-size: var(--text-sm);
-  opacity: 0.6;
-  font-style: italic;
-  display: block;
-  margin-bottom: var(--space-sm);
 }
 
 .project-genre {

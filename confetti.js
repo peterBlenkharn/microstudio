@@ -2,8 +2,21 @@
 // Decorative confetti shapes with mouse/scroll parallax.
 // Reduced from 500 to 60 pieces for performance.
 
-const NUM_CONFETTI = window.innerWidth < 768 ? 30 : 60;
+const COMPACT_BREAKPOINT = 480;
+const MOBILE_BREAKPOINT = 768;
+const TABLET_BREAKPOINT = 1024;
+const COMPACT_CONFETTI = 12;
+const MOBILE_CONFETTI = 18;
+const TABLET_CONFETTI = 30;
+const DESKTOP_CONFETTI = 60;
 const COLORS = ['#FFD700', '#FF2E63', '#08D9D6'];
+
+function getConfettiCount(width) {
+  if (width < COMPACT_BREAKPOINT) return COMPACT_CONFETTI;
+  if (width <= MOBILE_BREAKPOINT) return MOBILE_CONFETTI;
+  if (width < TABLET_BREAKPOINT) return TABLET_CONFETTI;
+  return DESKTOP_CONFETTI;
+}
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
@@ -122,20 +135,19 @@ function createConfettiPiece(container, x, y) {
   }
 
   el.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${depth})`;
-  el.style.willChange = 'transform';
-
   el.dataset.baseX = x;
   el.dataset.baseY = y;
   el.dataset.rotation = rot;
   el.dataset.depth = depth;
 
   container.append(el);
+  return el;
 }
 
 // ===== Parallax (throttled via rAF) =====
 let rafId = null;
 
-function updateParallax(mouseX, mouseY, scrollY, pieces) {
+function updateParallax(mouseX, mouseY, scrollY, pieces, parallaxEnabled) {
   const centerX = window.innerWidth / 2;
   const centerY = window.innerHeight / 2;
 
@@ -145,8 +157,8 @@ function updateParallax(mouseX, mouseY, scrollY, pieces) {
     const rot = parseFloat(el.dataset.rotation);
     const d = parseFloat(el.dataset.depth);
 
-    const offX = (mouseX - centerX) * 0.008 * d;
-    const offY = (mouseY - centerY + scrollY) * 0.008 * d;
+    const offX = parallaxEnabled ? (mouseX - centerX) * 0.008 * d : 0;
+    const offY = parallaxEnabled ? (mouseY - centerY + scrollY) * 0.008 * d : 0;
 
     el.style.transform = `translate(${bx + offX}px, ${by + offY}px) rotate(${rot}deg) scale(${d})`;
   }
@@ -160,37 +172,75 @@ function initConfetti() {
   const container = document.getElementById('confetti-bg');
   if (!container) return;
 
-  const W = window.innerWidth;
-  const H = window.innerHeight;
+  const coarsePointerQuery = window.matchMedia('(pointer: coarse)');
+  const pieces = [];
+  let mx = window.innerWidth / 2;
+  let my = window.innerHeight / 2;
 
-  const cols = Math.ceil(Math.sqrt(NUM_CONFETTI * (W / H)));
-  const rows = Math.ceil(NUM_CONFETTI / cols);
-  const points = generateGridPoints(cols, rows, W, H, NUM_CONFETTI);
+  function layoutPieces() {
+    const width = Math.max(window.innerWidth, 1);
+    const height = Math.max(window.innerHeight, 1);
+    const count = getConfettiCount(width);
+    const parallaxEnabled = shouldUseParallax();
 
-  for (let i = 0; i < NUM_CONFETTI; i++) {
-    const [x, y] = points[i];
-    createConfettiPiece(container, x, y);
+    while (pieces.length < count) {
+      pieces.push(createConfettiPiece(container, 0, 0));
+    }
+
+    while (pieces.length > count) {
+      pieces.pop().remove();
+    }
+
+    const cols = Math.ceil(Math.sqrt(count * (width / height)));
+    const rows = Math.ceil(count / cols);
+    const points = generateGridPoints(cols, rows, width, height, count);
+
+    pieces.forEach((piece, index) => {
+      const [x, y] = points[index];
+      piece.dataset.baseX = x;
+      piece.dataset.baseY = y;
+      piece.style.willChange = parallaxEnabled ? 'transform' : 'auto';
+    });
+
+    scheduleUpdate();
   }
 
-  // Cache NodeList for performance
-  const pieces = container.querySelectorAll('.confetti');
-  let mx = W / 2, my = H / 2;
+  function shouldUseParallax() {
+    return window.innerWidth > MOBILE_BREAKPOINT && !coarsePointerQuery.matches;
+  }
 
   function scheduleUpdate() {
     if (rafId) return;
     rafId = requestAnimationFrame(() => {
-      updateParallax(mx, my, window.scrollY, pieces);
+      updateParallax(mx, my, window.scrollY, pieces, shouldUseParallax());
       rafId = null;
     });
   }
 
+  layoutPieces();
+
   document.addEventListener('mousemove', e => {
+    if (!shouldUseParallax()) return;
     mx = e.clientX;
     my = e.clientY;
     scheduleUpdate();
   }, { passive: true });
 
-  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (shouldUseParallax()) scheduleUpdate();
+  }, { passive: true });
+
+  let resizeRafId = null;
+  window.addEventListener('resize', () => {
+    if (resizeRafId) return;
+
+    resizeRafId = requestAnimationFrame(() => {
+      resizeRafId = null;
+      mx = window.innerWidth / 2;
+      my = window.innerHeight / 2;
+      layoutPieces();
+    });
+  }, { passive: true });
 }
 
 initConfetti();

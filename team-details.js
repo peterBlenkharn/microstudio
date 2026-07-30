@@ -75,6 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return null;
   }
 
+  // Get the named leader for a team, where that metadata is available.
+  function getTeamLeader(teamKey) {
+    const currentCohort = teamData.cohorts?.['2026'];
+    return currentCohort?.subteams?.[teamKey]?.leader
+      || teamData.teams?.[teamKey]?.leader
+      || '';
+  }
+
   // ===== Team Member Cards from Subteams =====
   function buildTeamCards(subteams) {
     const container = document.getElementById('team-cards');
@@ -225,11 +233,15 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     const members = getTeamMembers(currentTeam);
     if (!members || !members[name]) return;
-    detailCard.innerHTML = renderMemberDetail(name, members[name]);
+    const member = members[name];
+    const leaderName = getTeamLeader(currentTeam);
+    const isLeader = samePerson(name, leaderName)
+      || samePerson(member['Preferred Name'], leaderName);
+    detailCard.innerHTML = renderMemberDetail(name, member, isLeader);
   }
 
   // Render member detail HTML
-  function renderMemberDetail(name, m) {
+  function renderMemberDetail(name, m, isLeader = false) {
     const photo = m['Profile Image Name']
       ? profileImgTag(m['Profile Image Name'], name, 'detail-photo')
       : '<div class="detail-photo placeholder"></div>';
@@ -240,13 +252,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const roleHtml = role
       ? `<span class="role-badge">${escapeHtml(role)}</span>`
       : '';
+    const leaderHtml = isLeader
+      ? '<span class="team-leader-badge team-leader-badge--detail">Team Leader</span>'
+      : '';
+    const badgesHtml = roleHtml || leaderHtml
+      ? `<div class="detail-badges">${roleHtml}${leaderHtml}</div>`
+      : '';
 
     const header = `
       <div class="detail-header">
         ${photo}
         <div class="detail-title-links">
           <h4 class="detail-name">${escapeHtml(name)} ${flagIcons(m.Nationalities)}</h4>
-          ${roleHtml}
+          ${badgesHtml}
           <div class="detail-links">${links}</div>
         </div>
       </div>
@@ -281,10 +299,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }).join('');
   }
 
-  // Render favourite games + drink/snack row
+  // Render favourite games and the optional drink/snack details
   function renderGamesRow(member) {
     const list = Object.values(member['Favourite Games'] || {}).filter(g => g['Game Name']);
-    if (!list.length) return '';
 
     const gamesHtml = list.map(g => {
       const thumbHtml = g['Image Name']
@@ -304,14 +321,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const drinkHtml = renderSnackHtml(member['Favourite Drink'], 'Drink');
     const snackHtml = renderSnackHtml(member['Favourite Snack'], 'Snack');
-
-    return `
-      <div class="detail-section">
-        <div class="combined-row">
-          ${gamesHtml}
+    const gamesSection = gamesHtml
+      ? `
+        <div class="favourites-group">
+          <h5 class="favourites-heading">
+            <img src="icons/steamicon.png" class="favourites-heading-icon" alt="">
+            Favourite games
+          </h5>
+          <div class="favourite-games-grid">
+            ${gamesHtml}
+          </div>
+        </div>
+      `
+      : '';
+    const metaSection = drinkHtml || snackHtml
+      ? `
+        <div class="favourite-meta-grid">
           ${drinkHtml}
           ${snackHtml}
         </div>
+      `
+      : '';
+
+    if (!gamesSection && !metaSection) return '';
+
+    return `
+      <div class="detail-section">
+        ${gamesSection}
+        ${metaSection}
       </div>
     `;
   }
@@ -320,11 +357,27 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderSnackHtml(item, type) {
     const key = `${type} Name`;
     if (!item?.[key]) return '';
+    const label = `Favourite ${type.toLowerCase()}`;
+    const icon = type === 'Drink'
+      ? `<svg class="favourite-meta-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M7 8h10l-1 12H8L7 8Z"></path>
+          <path d="M9 4h7l2-2"></path>
+          <path d="M10 12h4"></path>
+        </svg>`
+      : `<svg class="favourite-meta-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="8"></circle>
+          <circle cx="9" cy="9" r="1"></circle>
+          <circle cx="15" cy="11" r="1"></circle>
+          <circle cx="11" cy="15" r="1"></circle>
+        </svg>`;
+
     return `
-      <div class="game-fav-item">
-        <div class="game-info">
-          <span class="game-title">${escapeHtml(item[key])}</span>
+      <div class="favourite-meta-item">
+        <div class="favourite-meta-label">
+          ${icon}
+          <span>${label}</span>
         </div>
+        <p class="favourite-meta-value">${escapeHtml(item[key])}</p>
       </div>
     `;
   }

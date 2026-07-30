@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════
    Layout: Confetti Canvas, Footer,
-   Newsletter, Support, Staff
+   Support, Staff
    ══════════════════════════════════════ */
 
 /* —— Confetti Background —— */
@@ -13,6 +13,7 @@
   pointer-events: none;
   overflow: hidden;
   z-index: -1;
+  contain: strict;
 }
 
 /* —— Staff Section —— */
@@ -90,93 +91,6 @@
 .staff-card-links .social-icon {
   width: 22px;
   height: 22px;
-}
-
-/* —— Newsletter Section —— */
-.newsletter-section {
-  background: linear-gradient(135deg, var(--pink-dark) 0%, var(--pink-very-dark) 100%);
-  position: relative;
-}
-.newsletter-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: url('../textures/noise.png') repeat;
-  opacity: 0.15;
-  pointer-events: none;
-}
-
-.newsletter-inner {
-  max-width: 600px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.newsletter-blurb {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
-
-.newsletter-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.newsletter-input-group {
-  display: flex;
-  gap: 0;
-  width: 100%;
-  max-width: 450px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.newsletter-input {
-  flex: 1;
-  padding: 0.85rem 1rem;
-  border: none;
-  font-size: 1rem;
-  font-family: inherit;
-  background: var(--cream);
-  color: var(--bg);
-}
-.newsletter-input::placeholder {
-  color: var(--text-subtle);
-}
-.newsletter-input:focus {
-  outline: 2px solid var(--yellow);
-  outline-offset: -2px;
-}
-
-.newsletter-btn {
-  border-radius: 0;
-  margin: 0;
-  white-space: nowrap;
-  padding: 0.85rem 1.5rem;
-}
-
-.newsletter-note {
-  font-size: 0.8rem;
-  opacity: 0.7;
-}
-
-@media (max-width: 480px) {
-  .newsletter-input-group {
-    flex-direction: column;
-    border-radius: var(--radius-md);
-  }
-  .newsletter-input {
-    border-radius: 8px 8px 0 0;
-  }
-  .newsletter-btn {
-    border-radius: 0 0 8px 8px;
-  }
 }
 
 /* —— Support / Contact Section —— */

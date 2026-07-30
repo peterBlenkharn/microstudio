@@ -4,8 +4,8 @@
       "year": "2025-2026",
       "cohortNumber": 3,
       "project": {
-        "title": "Dream Box",
-        "titleNote": "Working Title",
+        "title": "Whoever Left the Light On",
+        "titleNote": "",
         "tagline": "The room remembers what you forgot.",
         "genre": "First-Person Surrealist Exploration",
         "description": "A first-person surrealist exploration game set entirely within a single room — the inside of someone's mind, infected by digital noise. The room transforms around you using dream logic as you interact with corrupted domestic objects.",
@@ -85,17 +85,17 @@
                 "Game 1": {
                   "Game Name": "Whisper of the House",
                   "Link": "https://store.steampowered.com/app/2589500/Whisper_of_the_House/",
-                  "Image Name": ""
+                  "Image Name": "whisperOfTheHouse"
                 },
                 "Game 2": {
                   "Game Name": "Cult of the Lamb",
                   "Link": "https://store.steampowered.com/app/1313140/Cult_of_the_Lamb/",
-                  "Image Name": ""
+                  "Image Name": "cultOfTheLamb"
                 },
                 "Game 3": {
                   "Game Name": "Clair Obscur: Expedition 33",
                   "Link": "https://store.steampowered.com/app/1903340/Clair_Obscur_Expedition_33/",
-                  "Image Name": ""
+                  "Image Name": "clairObscurExpedition33"
                 }
               },
               "Favourite Drink": {
@@ -164,17 +164,17 @@
                 "Game 1": {
                   "Game Name": "Hollow Knight",
                   "Link": "https://store.steampowered.com/app/367520/Hollow_Knight/",
-                  "Image Name": ""
+                  "Image Name": "hollowKnight"
                 },
                 "Game 2": {
                   "Game Name": "Crusader Kings III",
                   "Link": "https://store.steampowered.com/app/1158310/Crusader_Kings_III/",
-                  "Image Name": ""
+                  "Image Name": "crusaderKingsIII"
                 },
                 "Game 3": {
                   "Game Name": "The Guild II",
                   "Link": "https://store.steampowered.com/app/39650/The_Guild_II/",
-                  "Image Name": ""
+                  "Image Name": "theGuildII"
                 }
               },
               "Favourite Drink": {
@@ -207,17 +207,17 @@
                 "Game 1": {
                   "Game Name": "Supreme Commander: Forged Alliance",
                   "Link": "https://store.steampowered.com/app/9420/Supreme_Commander_Forged_Alliance/",
-                  "Image Name": ""
+                  "Image Name": "supremeCommanderForgedAlliance"
                 },
                 "Game 2": {
                   "Game Name": "Impossible Creatures: Steam Edition",
                   "Link": "https://store.steampowered.com/app/324680/Impossible_Creatures_Steam_Edition/",
-                  "Image Name": ""
+                  "Image Name": "impossibleCreatures"
                 },
                 "Game 3": {
                   "Game Name": "ARMORED CORE VI FIRES OF RUBICON",
                   "Link": "https://store.steampowered.com/app/1888160/ARMORED_CORE_VI_FIRES_OF_RUBICON/",
-                  "Image Name": ""
+                  "Image Name": "armoredCoreVI"
                 }
               },
               "Favourite Drink": {
@@ -287,17 +287,17 @@
                 "Game 1": {
                   "Game Name": "ARC Raiders",
                   "Link": "https://store.steampowered.com/app/1808500/ARC_Raiders/",
-                  "Image Name": ""
+                  "Image Name": "arcRaiders"
                 },
                 "Game 2": {
                   "Game Name": "Rust",
                   "Link": "https://store.steampowered.com/app/252490/Rust/",
-                  "Image Name": ""
+                  "Image Name": "rust"
                 },
                 "Game 3": {
                   "Game Name": "Chivalry 2",
                   "Link": "https://store.steampowered.com/app/1824220/Chivalry_2/",
-                  "Image Name": ""
+                  "Image Name": "chivalry2"
                 }
               },
               "Favourite Drink": {
@@ -327,17 +327,17 @@
                 "Game 1": {
                   "Game Name": "ELDEN RING",
                   "Link": "https://store.steampowered.com/app/1245620/ELDEN_RING/",
-                  "Image Name": ""
+                  "Image Name": "eldenRing"
                 },
                 "Game 2": {
                   "Game Name": "Portal 2",
                   "Link": "https://store.steampowered.com/app/620/Portal_2/",
-                  "Image Name": ""
+                  "Image Name": "portal2"
                 },
                 "Game 3": {
                   "Game Name": "Superliminal",
                   "Link": "https://store.steampowered.com/app/1049410/Superliminal/",
-                  "Image Name": ""
+                  "Image Name": "superliminal"
                 }
               },
               "Favourite Drink": {
@@ -373,17 +373,17 @@
                 "Game 1": {
                   "Game Name": "Fears to Fathom: Ironbark Lookout",
                   "Link": "https://store.steampowered.com/app/2506160/Fears_to_Fathom__Ironbark_Lookout/",
-                  "Image Name": ""
+                  "Image Name": "fearsToFathomIronbarkLookout"
                 },
                 "Game 2": {
                   "Game Name": "Cult of the Lamb",
                   "Link": "https://store.steampowered.com/app/1313140/Cult_of_the_Lamb/",
-                  "Image Name": ""
+                  "Image Name": "cultOfTheLamb"
                 },
                 "Game 3": {
                   "Game Name": "My Little Puppy",
                   "Link": "https://store.steampowered.com/app/2102040/My_Little_Puppy/",
-                  "Image Name": ""
+                  "Image Name": "myLittlePuppy"
                 }
               },
               "Favourite Drink": {
@@ -413,17 +413,17 @@
                 "Game 1": {
                   "Game Name": "Subnautica",
                   "Link": "https://store.steampowered.com/app/264710/Subnautica/",
-                  "Image Name": ""
+                  "Image Name": "subnautica"
                 },
                 "Game 2": {
                   "Game Name": "Venba",
                   "Link": "https://store.steampowered.com/app/1491670/Venba/",
-                  "Image Name": ""
+                  "Image Name": "venba"
                 },
                 "Game 3": {
                   "Game Name": "Papers, Please",
                   "Link": "https://store.steampowered.com/app/239030/Papers_Please/",
-                  "Image Name": ""
+                  "Image Name": "papersPlease"
                 }
               },
               "Favourite Drink": {
@@ -521,7 +521,7 @@
       "management": [
         {
           "name": "Peter Blenkharn",
-          "role": "Lecturer / Game Director",
+          "role": "Lecturer/Studio Director",
           "category": "Management",
           "Profile Image Name": "peterBlenkharn",
           "Nationalities": [ "GB" ],
@@ -534,7 +534,7 @@
             "Portfolio": "",
             "itchio": ""
           },
-          "Blurb": "",
+          "Blurb": "Creative Engineer, Educator and all round daft Northerner Peter spends an inexcusable amount of his spare time fiddling with work-related projects in experimental electronics and narrative systems research",
           "Favourite Games": {
             "Game 1": {
               "Game Name": "Slay the Spire",
@@ -549,7 +549,7 @@
             "Game 3": {
               "Game Name": "Cities Skylines II",
               "Steam Link": "https://store.steampowered.com/app/949230/Cities_Skylines_II/",
-              "Image Name": "citiesSkylines2"
+              "Image Name": "citiesSkylinesII"
             }
           },
           "Favourite Drink": {
@@ -562,10 +562,10 @@
           }
         },
         {
-          "name": "Andrei Copascenu",
+          "name": "Andrei Copaceanu",
           "role": "University Technician",
           "category": "Management",
-          "Profile Image Name": "andreiCopascenu",
+          "Profile Image Name": "andreiCopaceanu",
           "Nationalities": [ "RO" ],
           "Links": {
             "Github": "",
@@ -591,7 +591,7 @@
             "Game 3": {
               "Game Name": "Life is Strange",
               "Steam Link": "https://store.steampowered.com/app/1265920/Life_is_Strange_Remastered/",
-              "Image Name": "listIsStrange"
+              "Image Name": "lifeIsStrange"
             }
           },
           "Favourite Drink": {
@@ -606,59 +606,17 @@
       ],
       "creatives": [
         {
-          "name": "Jana Frost",
-          "role": "Art Director",
-          "category": "Creative",
-          "Profile Image Name": "janaFrost",
-          "Nationalities": [],
-          "Links": {
-            "Github": "",
-            "Instagram": "",
-            "Tiktok": "",
-            "Website": "",
-            "LinkedIn": "",
-            "Portfolio": "",
-            "itchio": ""
-          },
-          "Blurb": "",
-          "Favourite Games": {
-            "Game 1": {
-              "Game Name": "",
-              "Steam Link": "",
-              "Image Name": ""
-            },
-            "Game 2": {
-              "Game Name": "",
-              "Steam Link": "",
-              "Image Name": ""
-            },
-            "Game 3": {
-              "Game Name": "",
-              "Steam Link": "",
-              "Image Name": ""
-            }
-          },
-          "Favourite Drink": {
-            "Drink Name": "",
-            "Image Name": ""
-          },
-          "Favourite Snack": {
-            "Snack Name": "",
-            "Image Name": ""
-          }
-        },
-        {
           "name": "Sam Hall",
           "role": "Music Director",
           "category": "Creative",
-          "Profile Image Name": "samHall",
+          "Profile Image Name": "",
           "Nationalities": [],
           "Links": {
             "Github": "",
             "Instagram": "",
             "Tiktok": "",
             "Website": "",
-            "LinkedIn": "",
+            "LinkedIn": "https://www.linkedin.com/in/sam-hall-458029322/",
             "Portfolio": "",
             "itchio": ""
           },
@@ -690,10 +648,52 @@
           }
         },
         {
-          "name": "Amy May Trudgeon",
-          "role": "Voice Artist",
+          "name": "Amy-May Trudgeon",
+          "role": "Voice Artist, Actor, Dancer",
           "category": "Creative",
-          "Profile Image Name": "amyMayTrudgeon",
+          "Profile Image Name": "",
+          "Nationalities": [],
+          "Links": {
+            "Github": "",
+            "Instagram": "https://www.instagram.com/mimimaytrudge?igsh=MWk0ZDB1Y2FzM3V6bg%3D%3D&utm_source=qr",
+            "Tiktok": "",
+            "Website": "",
+            "LinkedIn": "",
+            "Spotlight": "https://app.spotlight.com/8738-0163-0757",
+            "itchio": ""
+          },
+          "Blurb": "Amy is currently mostly known for deceiving a large chunk of TikTok into believing she voices the Jet2 adverts, but she also has over 14 years of training and performance experience in acting, dancing, and singing, as well as four years in voice acting. You can hear her most recent voice work as Katelyn Tulley in GOT Season 8 Redux: Robert's Rebellion. Her acting and dance reels, along with her other projects, are on Instagram at @mimimaytrudge.",
+          "Favourite Games": {
+            "Game 1": {
+              "Game Name": "",
+              "Steam Link": "",
+              "Image Name": ""
+            },
+            "Game 2": {
+              "Game Name": "",
+              "Steam Link": "",
+              "Image Name": ""
+            },
+            "Game 3": {
+              "Game Name": "",
+              "Steam Link": "",
+              "Image Name": ""
+            }
+          },
+          "Favourite Drink": {
+            "Drink Name": "",
+            "Image Name": ""
+          },
+          "Favourite Snack": {
+            "Snack Name": "",
+            "Image Name": ""
+          }
+        },
+        {
+          "name": "Amy Dickinson",
+          "role": "Voice Actor",
+          "category": "Creative",
+          "Profile Image Name": "",
           "Nationalities": [],
           "Links": {
             "Github": "",
@@ -704,7 +704,49 @@
             "Portfolio": "",
             "itchio": ""
           },
-          "Blurb": "",
+          "Blurb": "Amy is an audio fiction voice actor with credits in Rusty Quill productions Stellar Firma (2019–2021) and Inexplicables (2021), and is a writer, series producer, and voice actor for the independently produced G.O.B.L.I.N.S! (2026). Amy also works as a disability access trainer and consultant in the arts.",
+          "Favourite Games": {
+            "Game 1": {
+              "Game Name": "",
+              "Steam Link": "",
+              "Image Name": ""
+            },
+            "Game 2": {
+              "Game Name": "",
+              "Steam Link": "",
+              "Image Name": ""
+            },
+            "Game 3": {
+              "Game Name": "",
+              "Steam Link": "",
+              "Image Name": ""
+            }
+          },
+          "Favourite Drink": {
+            "Drink Name": "",
+            "Image Name": ""
+          },
+          "Favourite Snack": {
+            "Snack Name": "",
+            "Image Name": ""
+          }
+        },
+        {
+          "name": "Tim Meredith",
+          "role": "Voice Actor / Improvisor",
+          "category": "Creative",
+          "Profile Image Name": "",
+          "Nationalities": [],
+          "Links": {
+            "Github": "",
+            "Instagram": "",
+            "Tiktok": "",
+            "Website": "https://goblinspodcast.com/",
+            "LinkedIn": "",
+            "Portfolio": "",
+            "itchio": ""
+          },
+          "Blurb": "Tim is a voice actor and improviser who co-created and starred in the award-winning podcast Stellar Firma and the brand-new show G.O.B.L.I.N.S! He has also featured in The Amelia Project, Trice Forgotten, and One-Shot. He performs live with the musical improv groups Do The Thing and Yes Anderson.",
           "Favourite Games": {
             "Game 1": {
               "Game Name": "",
@@ -902,7 +944,7 @@
             "Game 1": {
               "Game Name": "Animal Crossing",
               "Steam Link": "",
-              "Image Name": "animalCrossing"
+              "Image Name": ""
             },
             "Game 2": {
               "Game Name": "It Takes Two",
@@ -1029,7 +1071,7 @@
             "Game 2": {
               "Game Name": "Kill Bug",
               "Steam Link": "https://store.steampowered.com/app/2211730/KILLBUG/",
-              "Image Name": "killBug"
+              "Image Name": "killbug"
             },
             "Game 3": {
               "Game Name": "",
@@ -1307,7 +1349,7 @@
             "Game 2": {
               "Game Name": "Shadow of Colossus",
               "Steam Link": "",
-              "Image Name": "shadowOfColossus"
+              "Image Name": ""
             },
             "Game 3": {
               "Game Name": "Dragon Quest",
@@ -1346,7 +1388,7 @@
             "Game 2": {
               "Game Name": "Devil May Cry 1",
               "Steam Link": "https://store.steampowered.com/app/631510/Devil_May_Cry_HD_Collection/",
-              "Image Name": "devilMayCry1"
+              "Image Name": "devilMayCry"
             },
             "Game 3": {
               "Game Name": "Metro Exodus",

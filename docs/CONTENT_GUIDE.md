@@ -94,7 +94,7 @@ Three panels answering the obvious questions a visitor has:
 | What It's For | "Building real-world skills, getting published on Steam, and pushing creative boundaries in a high-energy crash course." | "High-energy crash course" is good but "crash course" undersells the depth. Consider "intensive programme". |
 | Who It's For | "BSc Games Development students teaming up with mentors, industry partners, and each other to ship amazing games." | "Ship amazing games" is slightly generic. Consider specifics: "...to ship games on Steam." |
 
-### Game Description — Dream Box (Cohort 3)
+### Game Description — Whoever Left the Light On (Cohort 3)
 
 The current project needs multiple levels of description:
 
@@ -134,12 +134,11 @@ Bios should feel personal and authentic. They're written by the students themsel
 
 ### CTAs (Get Involved)
 
-Three clear paths for three audiences:
+Two clear paths for two audiences:
 
 | Card | Audience | CTA |
 |------|----------|-----|
 | "Want to make games like this?" | Prospective students | Apply Now → gre.ac.uk |
-| "Follow the Journey" | General public | Join Mailing List → newsletter signup |
 | "Help Us Grow" | Industry/academia | Contact Us → support form |
 
 ### Team Member Roles (Cohort 3)
@@ -172,14 +171,11 @@ The site serves multiple audiences. Tailor section content accordingly:
 
 Items marked `[TODO]` need real content:
 
-- **Newsletter form** — needs backend integration (Mailchimp, Buttondown, etc.)
-- **Contact/support section** — needs real email or form URL
 - **Steam wishlist links** — games not yet on Steam, buttons show "Coming Soon"
 - **Several team member profiles** are empty (Parapet team especially)
 - **Peter Blenkharn's bio** in the management section is blank
 - **OG description** — write a ~155 character summary for social sharing
-- **Dream Box game description** — short and long versions for the project spotlight
-- **New creative staff bios** — Jana Frost, Sam Hall, Amy May Trudgeon
+- **Whoever Left the Light On game description** — finalise short and long versions for the project spotlight
 - **Peter Blenkharn's bio** — management section bio is still blank
 - **FAQ content** — questions and answers for students, employers, academics
 

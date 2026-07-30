@@ -14,7 +14,7 @@ This repository is a **single-page GitHub Pages site** serving as the promotiona
 
 ## Current Cohort (2026 — Cohort 3)
 
-### The Game: Dream Box (Working Title)
+### The Game: Whoever Left the Light On
 
 A first-person surrealist exploration game set entirely within a single room — the inside of someone's mind, infected by digital noise. The room transforms around the player using dream logic. Built in Unity 6 (URP) for Windows PC (Steam). Target playtime: 60–90 minutes.
 
@@ -28,9 +28,10 @@ A first-person surrealist exploration game set entirely within a single room —
 |------|------|----------|
 | Lecturer / Game Director | Peter Blenkharn | Management |
 | University Technician | Andrei Copaceanu | Management |
-| Art Director | Jana Frost | Creative |
 | Music Director | Sam Hall | Creative |
-| Voice Artist | Amy May Trudgeon | Creative |
+| Voice Artist / Actor / Dancer | Amy-May Trudgeon | Creative |
+| Voice Actor | Amy Dickinson | Creative |
+| Voice Actor / Improvisor | Tim Meredith | Creative |
 
 Three student subteams, each with a team leader:
 - **Game Design** — game mechanics, level design, puzzles
@@ -232,11 +233,8 @@ See `docs/QA_CHECKLIST.md` for the full checklist.
 ---
 
 ## Known TODOs / Placeholders
-- [ ] Dream Box game assets (header art, screenshots, concept art)
 - [ ] 2026 team member profiles and photos
 - [ ] Steam store page links (games not yet live)
-- [ ] Newsletter signup backend (Mailchimp, Buttondown, etc.)
-- [ ] Contact/support section real email or form
 - [ ] OG image for social sharing (1200x630)
 - [ ] Additional favicon sizes (16x16, 180x180 apple-touch-icon)
 - [ ] Delete legacy style.css after confirming no dependencies

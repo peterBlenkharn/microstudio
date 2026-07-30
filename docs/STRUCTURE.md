@@ -27,7 +27,8 @@ The site is transitioning from a three-game model to a single-project spotlight.
 │  │ For                       │      │
 │  └───────────────────────────┘      │
 ├─────────────────────────────────────┤
-│  THE PROJECT — DREAM BOX            │
+│  THE PROJECT — WHOEVER LEFT THE     │
+│  LIGHT ON                           │
 │  Single large spotlight:            │
 │  - Header art / concept imagery     │
 │  - Title + tagline + description    │
@@ -59,8 +60,8 @@ The site is transitioning from a three-game model to a single-project spotlight.
 │    Ghrystlyst, Parapet              │
 │  Cohort 1 (2024): [TBD]            │
 ├─────────────────────────────────────┤
-│  GET INVOLVED (3 CTA cards)         │
-│  [Apply] [Newsletter] [Contact]     │
+│  GET INVOLVED (2 CTA cards)         │
+│  [Apply] [Contact]                  │
 ├─────────────────────────────────────┤
 │  FOR PARTNERS                       │
 │  Sponsorship / partnership info     │
@@ -69,9 +70,6 @@ The site is transitioning from a three-game model to a single-project spotlight.
 │  FAQ                                │
 │  Accordion Q&A for students,        │
 │  employers, academics               │
-├─────────────────────────────────────┤
-│  NEWSLETTER SIGNUP                  │
-│  Email capture form (placeholder)   │
 ├─────────────────────────────────────┤
 │  FOOTER                             │
 │  © + university branding            │
@@ -84,7 +82,7 @@ The site is transitioning from a three-game model to a single-project spotlight.
 
 ```
 NAV → HERO → ABOUT PANELS → MEET THE TEAMS (3 game cards) →
-TEAM DETAILS → STAFF → GET INVOLVED → NEWSLETTER → CONTACT → FOOTER
+TEAM DETAILS → STAFF → GET INVOLVED → CONTACT → FOOTER
 ```
 
 This structure will be preserved for reference in the archive section.
@@ -111,7 +109,7 @@ This structure will be preserved for reference in the archive section.
 
 ### Project Spotlight (`<section id="project">`) — NEW
 - Replaces the three game cards
-- Single large section for Dream Box
+- Single large section for Whoever Left the Light On
 - Header image / concept art
 - Title, tagline, genre, description
 - Core pillars as 4 feature cards
@@ -141,7 +139,7 @@ This structure will be preserved for reference in the archive section.
 - Accordion-style toggle Q&A
 - Grouped by audience: Students | Employers | Academics
 
-### Newsletter, Footer — unchanged
+### Footer — unchanged
 
 ---
 

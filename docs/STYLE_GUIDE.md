@@ -138,7 +138,7 @@ Three tiers with consistent sizing:
 | Class | Background | Text | Usage |
 |-------|-----------|------|-------|
 | `.btn-primary` | Yellow | Dark | Main CTA (Apply, Learn More) |
-| `.btn-secondary` | Pink | Dark | Secondary CTA (Newsletter) |
+| `.btn-secondary` | Pink | Dark | Secondary CTA |
 | `.btn-tertiary` | Cyan | Dark | Tertiary CTA (Contact) |
 | `.btn-steam` | `#171a21` | Cream | Steam-specific actions |
 

@@ -14,10 +14,20 @@ All notable changes to the Micro Studio marketing site are documented here. Form
 - Validation checklist for pre-commit quality assurance
 
 ### Changed
-- CLAUDE.md overhauled for Cohort 3 (2026) — single-project model, Dream Box game, new team structure
+- CLAUDE.md overhauled for Cohort 3 (2026) — single-project model, current game, and new team structure
 - Updated project overview to reflect third cohort with subteams (Game Design, Programming, Creative Production)
-- Added Dream Box (working title) game details and core pillars
-- Added new creative staff: Jana Frost (Art Director), Sam Hall (Music Director), Amy May Trudgeon (Voice Artist)
+- Added current-game details and core pillars
+- Updated the creative staff roster with Amy-May Trudgeon, Amy Dickinson, and Tim Meredith as voice artists
+- Added profile links and biographies for the creative staff where supplied
+- Removed the mailing-list call to action and updated contact links to Peter Blenkharn's University email address
+- Simplified the browser and social-sharing page title to "Micro Studio"
+- Made the confetti background redistribute and adjust its density when the viewport is resized
+- Reduced confetti density and disabled parallax work on mobile and coarse-pointer devices for smoother scrolling
+- Added locally hosted Steam artwork for current-cohort favourite games and corrected legacy image filename mismatches
+- Renamed the current project to Whoever Left the Light On and added its Steam header and hero artwork
+- Labelled favourite games, drinks, and snacks in team details and added small drink and snack icons
+- Added the Team Leader chip to leader profiles in the expanded team details panel
+- Updated Peter Blenkharn's title and staff biography
 - Updated documentation index with links to all new docs
 
 ---

@@ -6,20 +6,20 @@ Format: ADR-NNN entries in reverse chronological order (newest first).
 
 ---
 
-### ADR-008: Site Aesthetic Alignment with Dream Box's Digital Dadaism
+### ADR-008: Site Aesthetic Alignment with Whoever Left the Light On's Digital Dadaism
 - **Date:** 2026-03-21
 - **Status:** Accepted
-- **Context:** Dream Box uses a "Digital Dadaism" art direction — surrealist B&W collage with glitch/static motifs. The marketing site should feel thematically connected to the game without being a carbon copy.
+- **Context:** Whoever Left the Light On uses a "Digital Dadaism" art direction — surrealist B&W collage with glitch/static motifs. The marketing site should feel thematically connected to the game without being a carbon copy.
 - **Decision:** The site's existing design elements (noise textures, dark backgrounds, vibrant accent colours on dark) already complement the game's aesthetic. Future design updates should lean into this — the noise overlay, the high-contrast colour pops, and the surrealist energy. The site should feel like it belongs to the same creative universe as the game.
 - **Consequences:** Design changes should maintain the dark/vibrant contrast. B&W imagery with selective colour is encouraged. Glitch or static visual effects could be added to reinforce the connection. Avoid bright, clean, corporate aesthetics.
 
 ---
 
-### ADR-007: Dream Box as Cohort 3 Project
+### ADR-007: Whoever Left the Light On as Cohort 3 Project
 - **Date:** 2026-03-21
 - **Status:** Accepted
 - **Context:** Cohort 3 (2026) needed a game project. The brief was developed by Peter Blenkharn based on the programme's constraints (12 weeks, student team, Steam target).
-- **Decision:** "Dream Box" (working title) — a first-person surrealist exploration game set in a single transforming room. Built in Unity 6 (URP) for Windows PC (Steam). 60–90 minute playtime. Core pillars: Surreal over Real, Aggressive Scope Control, Diegetic Immersion, Strangeness and Simplicity.
+- **Decision:** Whoever Left the Light On — a first-person surrealist exploration game set in a single transforming room. Built in Unity 6 (URP) for Windows PC (Steam). 60–90 minute playtime. Core pillars: Surreal over Real, Aggressive Scope Control, Diegetic Immersion, Strangeness and Simplicity.
 - **Consequences:** The marketing site must present a single game prominently (not three). The game's surrealist aesthetic influences site design direction. Game assets (screenshots, concept art, header images) will need to be created and added as development progresses.
 
 ---
@@ -41,7 +41,7 @@ Format: ADR-NNN entries in reverse chronological order (newest first).
   - **Game Design** — mechanics, level design, puzzles, player experience
   - **Programming** — systems, interaction, state management, technical implementation
   - **Creative Production** — art, audio, VFX, asset creation and pipeline
-- **Consequences:** The site's team section needs subteam filtering/tabs. The data model needs a `subteam` field. Team leads need visual distinction. This also maps to the Dream Box GDD's three-month development pipeline (each subteam has month-by-month deliverables).
+- **Consequences:** The site's team section needs subteam filtering/tabs. The data model needs a `subteam` field. Team leads need visual distinction. This also maps to the game's GDD and its three-month development pipeline (each subteam has month-by-month deliverables).
 
 ---
 

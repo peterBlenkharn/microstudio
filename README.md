@@ -14,7 +14,7 @@ This repository is the **promotional one-pager** — a marketing landing page fo
 
 ---
 
-## Current Project — Dream Box (Working Title)
+## Current Project — Whoever Left the Light On
 
 A first-person surrealist exploration game set inside a single transforming room — the inside of someone's mind, infected by digital noise. Built by three student subteams (Game Design, Programming, Creative Production) with support from management and creative professionals.
 
@@ -28,13 +28,12 @@ A first-person surrealist exploration game set inside a single transforming room
 |---------|-------------|
 | **Hero** | Headline, tagline, and primary CTAs |
 | **About Panels** | Three full-width angled strips: What It Is, What It's For, Who It's For |
-| **The Project** | Dream Box spotlight with pillars, description, and Steam CTA |
+| **The Project** | Whoever Left the Light On spotlight with artwork, pillars, description, and Steam CTA |
 | **Meet the Team** | Subteam-filtered member profiles with bios, social links, and favourites |
 | **Our History** | Archive of past cohorts (Lost Museum, Ghrystlyst, Parapet) |
-| **Get Involved** | CTAs for students, followers, and industry partners |
+| **Get Involved** | CTAs for students and industry partners |
 | **For Partners** | Sponsorship and partnership information |
 | **FAQ** | Common questions for students, employers, and academics |
-| **Newsletter** | Email signup |
 | **Footer** | Copyright and university branding |
 
 ---
